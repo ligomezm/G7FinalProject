@@ -159,11 +159,35 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+
+            _hasAnimator = TryGetComponent(out _animator);
+            JumpAndGravity();
+            GroundedCheck();
+            Move();
+            Attack();
         }
 
         private void LateUpdate()
         {
             CameraRotation();
+        }
+
+        private void Attack()
+        {
+
+            if (_input.attack)
+            {
+
+                _animator.SetTrigger("Attack_A");
+
+                _input.attack = false;
+
+            }
+            else
+            {
+                _animator.SetBool("Attack_A", false);
+            }
+
         }
 
         private void AssignAnimationIDs()
