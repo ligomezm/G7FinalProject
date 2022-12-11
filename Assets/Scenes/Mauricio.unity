@@ -160,6 +160,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1031301935914316609, guid: ece33dc063cd45f4e950a8285cb069b9, type: 3}
   m_PrefabInstance: {fileID: 329743496}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &98787036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1031301935914316608, guid: ece33dc063cd45f4e950a8285cb069b9, type: 3}
+  m_PrefabInstance: {fileID: 329743496}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &98787043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,11 +450,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
---- !u!4 &1051874277 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1031301936901200948, guid: ece33dc063cd45f4e950a8285cb069b9, type: 3}
-  m_PrefabInstance: {fileID: 329743496}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1097463915
 GameObject:
   m_ObjectHideFlags: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4cda015163b1d459fdb53ea631690c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1051874277}
+  player: {fileID: 98787036}
   speed: 4
   CameraPosition: {x: 0, y: 0, z: 0}
 --- !u!81 &1097463918
