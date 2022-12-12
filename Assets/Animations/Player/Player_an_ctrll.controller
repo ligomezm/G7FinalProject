@@ -318,7 +318,7 @@ AnimatorController:
   - serializedVersion: 5
     m_Name: SwordAttack
     m_StateMachine: {fileID: -7228650765106031568}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: ad182a8f612448f4daeafc920a55e57c, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -348,7 +348,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 9a1348358444e71448a4c429c2de6ed1, type: 2}
+  m_Motion: {fileID: 7400000, guid: 517e9c78470217c40b4af9ecf680b228, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
