@@ -18,11 +18,10 @@ public class SwordDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            Debug.Log("esta dañando");
-        if (other.gameObject.layer == LayerMask.NameToLayer("EnemyLayer")){
+            Debug.Log("esta dañando " + other.gameObject.name);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy")){
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            //enemyDamage.hp -= enemyDamage.swordDamage;
-            Debug.Log(enemyDamage);
+            enemyDamage.hp -= enemyDamage.swordDamage;
         }
     }
 }
