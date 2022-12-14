@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deba2a138f2501548bd83fe43b6baeb0, type: 3}
   m_Name: TRex
   m_EditorClassIdentifier: 
-  baseDamage: 2
+  baseDamage: 10
   criticalMultiplier: 0.1
