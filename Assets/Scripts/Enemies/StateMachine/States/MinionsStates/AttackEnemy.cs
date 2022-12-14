@@ -28,7 +28,8 @@ public class AttackEnemy : StateMachineBehaviour
     {
         if (!ShouldAttackPlayer(animator.transform.position))
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.CHASE);
-        Debug.Log("Attacking");
+        int data = animator.GetComponent<AIComponent>().enemyBehavior.BaseDamage;
+        Debug.Log($"Attacking with {data}");
         // Add attack functionality
     }
 
@@ -39,5 +40,5 @@ public class AttackEnemy : StateMachineBehaviour
         return (attackerPosition - player.transform.position).sqrMagnitude <= minAttackDistance * minAttackDistance;
     }
 
-    
+
 }
