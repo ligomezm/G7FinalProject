@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
         public bool attack;
+        public bool roll;
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -35,6 +36,17 @@ namespace StarterAssets
             attack = newAttackState;
 
         }
+
+        public void OnRoll(InputValue value)
+        {
+            RollInput(value.isPressed);
+        }
+
+        public void RollInput(bool newRollState)
+        {
+            roll = newRollState;
+        }
+
 
         public void OnMove(InputValue value)
 		{
