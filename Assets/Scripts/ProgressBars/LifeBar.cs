@@ -27,19 +27,19 @@ public class LifeBar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.D))
-        {
-            currentValue += 50 * Time.deltaTime;
-            currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    currentValue += 50 * Time.deltaTime;
+        //    currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
 
-            linearIndicator.SetValue(currentValue);//Use the function SetValue to give the indicator the value to display
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            currentValue -= 50 * Time.deltaTime;
-            currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
+        //    linearIndicator.SetValue(currentValue);//Use the function SetValue to give the indicator the value to display
+        //}
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    currentValue -= 50 * Time.deltaTime;
+        //    currentValue = Mathf.Clamp(currentValue, minValue, maxValue);
 
-            linearIndicator.SetValue(currentValue);
-        }
+        //    linearIndicator.SetValue(currentValue);
+        //}
     }
 }
