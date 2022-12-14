@@ -18,7 +18,6 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        Debug.Log(linearIndicator.gameObject.name);
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class EnemyDamage : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player"){
-            lifeBarPlayer.currentValue -= 75 * Time.deltaTime;
+            lifeBarPlayer.currentValue -= 1000 * Time.deltaTime;
             lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
         }
