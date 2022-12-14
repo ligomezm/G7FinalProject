@@ -164,6 +164,7 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Roll();
             Attack();
         }
 
@@ -188,6 +189,22 @@ namespace StarterAssets
                 _animator.SetBool("Attack_A", false);
             }
 
+        }       
+        private void Roll()
+        {
+
+            if (_input.roll)
+            {
+
+                _animator.SetTrigger("Roll_A");
+
+                _input.roll = false;
+
+            }
+            else
+            {
+                _animator.SetBool("Roll_A", false);
+            }
         }
 
         private void AssignAnimationIDs()
