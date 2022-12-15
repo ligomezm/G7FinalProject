@@ -24,15 +24,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "8c4abdf8-4099-493a-aa1a-129acec7c3df",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Sprint",
                     "type": "PassThrough",
                     "id": "980e881e-182c-404c-8cbf-3d09fdb48fef",
@@ -45,6 +36,15 @@
                     "name": "Attack",
                     "type": "Button",
                     "id": "cc883d6b-8d82-4b9a-920f-455656e6e3a7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "7dce035c-8a49-4513-846b-1a0d8554457d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -186,28 +186,6 @@
                 },
                 {
                     "name": "",
-                    "id": "1bd55a0b-761e-4ae4-89ae-8ec127e08a29",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "9f973413-5e27-4239-acee-38c4a63feeba",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "dc65b89f-9bd3-43fb-92af-d0d87ba5faa4",
                     "path": "<Keyboard>/leftShift",
                     "interactions": "",
@@ -236,6 +214,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9db01b5a-31b4-4ac6-b7cd-b4023e5c2ac5",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "KeyboardMouse",
+                    "action": "Roll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
