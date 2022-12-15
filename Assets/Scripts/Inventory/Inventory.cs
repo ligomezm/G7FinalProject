@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 4;
     public List<IInventoryItem> mItems = new List<IInventoryItem>();
-    public static Dictionary<int, IInventoryItem> itemsDict = new Dictionary<int, IInventoryItem>();
+    public static Dictionary<int, IInventoryItem> itemsDict = new Dictionary<int, IInventoryItem>(); //
     
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;
@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(IInventoryItem item, int itemPosition)
     {
-        
+        if (!itemsDict.ContainsKey(itemPosition)) return;
         if (mItems.Contains(itemsDict[itemPosition]))
         {
             if (ItemRemoved != null)
