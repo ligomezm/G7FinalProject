@@ -26,4 +26,9 @@ public class CubeCollectable : MonoBehaviour, IInventoryItem
     {
         gameObject.SetActive(false);
     }
+
+    public void OnConsume()
+    {
+        Destroy(gameObject);
+    }
 }
