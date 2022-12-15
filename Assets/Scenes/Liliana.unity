@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -246,6 +246,7 @@ GameObject:
   - component: {fileID: 58912535}
   - component: {fileID: 58912534}
   - component: {fileID: 58912533}
+  - component: {fileID: 58912536}
   m_Layer: 5
   m_Name: Border 3
   m_TagString: Untagged
@@ -356,6 +357,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58912531}
   m_CullTransparentMesh: 1
+--- !u!114 &58912536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58912531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b191cd8a2f0c4ea371de2a7934e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &241397854
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,6 +787,7 @@ GameObject:
   - component: {fileID: 505416479}
   - component: {fileID: 505416478}
   - component: {fileID: 505416477}
+  - component: {fileID: 505416480}
   m_Layer: 5
   m_Name: Border 4
   m_TagString: Untagged
@@ -884,6 +898,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 505416475}
   m_CullTransparentMesh: 1
+--- !u!114 &505416480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 505416475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b191cd8a2f0c4ea371de2a7934e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &587206548
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,6 +922,7 @@ GameObject:
   - component: {fileID: 587206552}
   - component: {fileID: 587206551}
   - component: {fileID: 587206550}
+  - component: {fileID: 587206553}
   m_Layer: 5
   m_Name: Border 2
   m_TagString: Untagged
@@ -1006,6 +1033,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587206548}
   m_CullTransparentMesh: 1
+--- !u!114 &587206553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587206548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 082b191cd8a2f0c4ea371de2a7934e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &678809860
 GameObject:
   m_ObjectHideFlags: 0
@@ -8462,6 +8501,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   attack: 0
+  roll: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
@@ -11031,7 +11071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inventory: {fileID: 1170826871}
-  itemToUse: 0
 --- !u!1 &8816311075385839975
 GameObject:
   m_ObjectHideFlags: 0

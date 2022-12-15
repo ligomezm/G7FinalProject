@@ -10,7 +10,7 @@ public class RemoveItem : MonoBehaviour, IInventoryItem
 
     public void OnConsume()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("item has been consumed");
     }
 
     public void OnPickUp()
