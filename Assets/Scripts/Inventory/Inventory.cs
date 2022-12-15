@@ -6,8 +6,10 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 4;
-    private List<IInventoryItem> mItems = new List<IInventoryItem>();
+    public List<IInventoryItem> mItems = new List<IInventoryItem>();
+    
     public event EventHandler<InventoryEventArgs> ItemAdded;
+    public event EventHandler<InventoryEventArgs> ItemRemoved;
 
     public void AddItem(IInventoryItem item)
     {
@@ -29,5 +31,21 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public void RemoveItem(IInventoryItem item)
+    {
+        mItems.ForEach(delegate(IInventoryItem x) { Debug.Log("Item lista " + x); });
+        Debug.Log("item parametro" + item);
+        if (mItems.Contains(item))
+        {
+            if (ItemRemoved != null)
+            {
+                ItemRemoved(this, new InventoryEventArgs(item));
+                mItems.Remove(item);
+                item.OnConsume();
+            }
+            
+            
+        }
+    }
 
 }

@@ -25,4 +25,9 @@ public class SphereCollectable : MonoBehaviour, IInventoryItem
     {
         gameObject.SetActive(false);
     }
+
+    public void OnConsume()
+    {
+        Destroy(gameObject);
+    }
 }
