@@ -27,8 +27,11 @@ public class ChaseEnemy : StateMachineBehaviour
 
     public override void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) 
     {
-        if (!ShouldChasePlayer(animator.transform.position))
+        Vector3 currPosition = animator.transform.position;
+        if (!ShouldChasePlayer(currPosition))
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.IDLE);
+        else if (AttackEnemy.ShouldAttackPlayer(currPosition))
+            animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.ATTACK);
         else 
             if (!navAgent.hasPath || (target.transform.position - navAgent.pathEndPosition).sqrMagnitude > repathTolerance * repathTolerance)
                 SetDestinationNearTarget(navAgent, target);    
