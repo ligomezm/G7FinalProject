@@ -13,4 +13,13 @@ public class EnemyBehavior : Enemy
     {
         baseDamage = _baseDamage;
     }
+    internal void Update()
+    {
+        SimpleAttack();
+    }
+
+    protected override void SimpleAttack()
+    {
+        return;
+    }
 }

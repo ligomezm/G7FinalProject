@@ -11,4 +11,9 @@ public class AIComponent : MonoBehaviour
     {
         enemyBehavior.Initialize(enemyData.baseDamage);
     }
+
+    void Update()
+    {
+        enemyBehavior.Update();
+    }
 }
