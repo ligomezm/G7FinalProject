@@ -5,13 +5,12 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public GameObject player;
-    public float speed;
+    public float speed  =   4;
     public Vector3 CameraPosition;
 
     void start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
     }
 
     // Update is called once per frame
