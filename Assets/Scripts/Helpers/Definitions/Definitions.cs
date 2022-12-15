@@ -10,7 +10,7 @@ public enum Transition
 
 public enum CanvasType
 {
-    BOOT, MAINMENU, GAMEUI, MUSEUM, PAUSE, GAMEOVER, VICTORY 
+    BOOT, MAINMENU, MUSEUM, GAMEUI,  PAUSE, OPTIONS, CREDITS, GAMEOVER, VICTORY, PLACEHOLDER 
 }
 public class Definitions : MonoBehaviour
 {
