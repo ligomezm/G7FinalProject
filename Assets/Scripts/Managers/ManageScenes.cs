@@ -6,14 +6,30 @@ public class ManageScenes : Singleton<ManageScenes>
 {
     GameManager gameManager;
     CanvasManager canvasManager;
+    string currentLevelName;
     void Start()
     {
+        GameManager.OnStateChanged += ChangeLevel;
         gameManager = GameManager.GetInstance();
         canvasManager = CanvasManager.GetInstance();
     }
 
+    void OnDisable()
+    {
+        GameManager.OnStateChanged -= ChangeLevel;
+    }
+
+    public void ChangeLevel()
+    {
+        if (gameManager.CurrentGamestate == GameState.GAME)
+        {
+            LoadLevel("main");
+        }
+    }
+
     public void LoadLevel(string levelName)
     {
+        currentLevelName = levelName;
         AsyncOperation ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
         if (ao == null)
         {
@@ -44,7 +60,7 @@ public class ManageScenes : Singleton<ManageScenes>
     void OnLoadOperationComplete(AsyncOperation ao)
     {
         //controller.CanMove = false;
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("MemoryGame"));
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelName));
         
     }
     void OnUnloadOperationComplete(AsyncOperation ao)

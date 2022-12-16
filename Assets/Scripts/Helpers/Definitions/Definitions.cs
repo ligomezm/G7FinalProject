@@ -20,7 +20,7 @@ public enum GameState
 
 public enum ButtonType
 {
-    PREGAME, MAINMENU, START, PAUSE, RESUME, OPTIONS, RESTART
+    PREGAME, MAINMENU, START, PAUSE, RESUME, OPTIONS, RESTART, QUIT, CREDITS
 }
 
 public class Definitions : MonoBehaviour
