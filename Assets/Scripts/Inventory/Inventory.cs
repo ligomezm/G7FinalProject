@@ -7,9 +7,11 @@ public class Inventory : MonoBehaviour
 {
     private const int SLOTS = 4;
     public List<IInventoryItem> mItems = new List<IInventoryItem>();
+    public static Dictionary<int, IInventoryItem> itemsDict = new Dictionary<int, IInventoryItem>(); //
     
     public event EventHandler<InventoryEventArgs> ItemAdded;
     public event EventHandler<InventoryEventArgs> ItemRemoved;
+    public static event Action<int> OnItemRemoved;
 
     public void AddItem(IInventoryItem item)
     {
@@ -19,8 +21,10 @@ public class Inventory : MonoBehaviour
 
             if (collider.enabled)
             {
+                
                 collider.enabled = false;
                 mItems.Add(item);
+                itemsDict[mItems.IndexOf(item)] = item;
                 item.OnPickUp();
 
                 if (ItemAdded != null)
@@ -31,16 +35,17 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void RemoveItem(IInventoryItem item)
+    public void RemoveItem(IInventoryItem item, int itemPosition)
     {
-        mItems.ForEach(delegate(IInventoryItem x) { Debug.Log("Item lista " + x); });
-        Debug.Log("item parametro" + item);
-        if (mItems.Contains(item))
+        if (!itemsDict.ContainsKey(itemPosition)) return;
+        if (mItems.Contains(itemsDict[itemPosition]))
         {
             if (ItemRemoved != null)
             {
-                ItemRemoved(this, new InventoryEventArgs(item));
-                mItems.Remove(item);
+                Debug.Log(itemsDict[itemPosition]);
+                OnItemRemoved?.Invoke(itemPosition);
+                ItemRemoved(this, new InventoryEventArgs(itemsDict[itemPosition]));
+                mItems.Remove(itemsDict[itemPosition]);
                 item.OnConsume();
             }
             

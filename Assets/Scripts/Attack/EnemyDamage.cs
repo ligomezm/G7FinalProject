@@ -7,6 +7,8 @@ public class EnemyDamage : MonoBehaviour
 {
     public LifeBar lifeBarPlayer;
 
+    bool canAttack;
+
     public float hp = 100;
     public int swordDamage = 35;
 
@@ -34,7 +36,9 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player"){
+        canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
+        if (other.gameObject.tag == "Player" && canAttack)
+        {
             lifeBarPlayer.currentValue -= 1000 * Time.deltaTime;
             lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
