@@ -9,4 +9,9 @@ public class SoundManager : Singleton<SoundManager>
     {
         effectSource.PlayOneShot(clip);
     }
+
+    public void ChangeMasterVolume(float value)
+    {
+        AudioListener.volume = value;
+    }
 }
