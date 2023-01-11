@@ -9,6 +9,7 @@ public class ButtonController : MonoBehaviour
         public ButtonType buttonType;
 
         CanvasManager canvasManager;
+        GameManager gameManager;
         Button menuButton;
         bool hasObjectToAnim = false;
 
@@ -17,6 +18,7 @@ public class ButtonController : MonoBehaviour
             menuButton = GetComponent<Button>();
             menuButton.onClick.AddListener(OnButtonClick);
             canvasManager = CanvasManager.GetInstance();
+            gameManager = GameManager.GetInstance();
         }
 
         private void OnButtonClick()
@@ -27,11 +29,13 @@ public class ButtonController : MonoBehaviour
                     canvasManager.SwitchCanvas(CanvasType.MAINMENU);
                     break;
                 case ButtonType.MAINMENU:
+                    Debug.Log("button has been pressed");
                     canvasManager.SwitchCanvas(CanvasType.MAINMENU);
                     // UnmountScene
                     break;
                 case ButtonType.START:
-                    canvasManager.SwitchCanvas(CanvasType.GAMEUI);
+                    canvasManager.SwitchCanvas(CanvasType.MUSEUM);
+                    gameManager.CurrentGamestate = GameState.MUSEUM;
                     break;
                 case ButtonType.PAUSE:
                     canvasManager.SwitchCanvas(CanvasType.PAUSE);

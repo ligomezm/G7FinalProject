@@ -18,8 +18,21 @@ public class CameraMove : MonoBehaviour
   
     void FixedUpdate()
     {
+        if (player == null) TryGetPlayerArmature();
+        Debug.Log(player);
         Vector3 Dposition = player.transform.position + CameraPosition;
         Vector3 Sposition = Vector3.Lerp(transform.position, Dposition, speed * Time.deltaTime);
         transform.position = Sposition;
+    }
+    void TryGetPlayerArmature()
+    {
+        try
+        {
+            player = GameObject.FindGameObjectsWithTag("Player")[1];
+        }
+        catch(System.Exception)
+        {
+            return;
+        }
     }
 }
