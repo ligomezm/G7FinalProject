@@ -166,6 +166,7 @@ namespace StarterAssets
             Move();
             Roll();
             Attack();
+            SpecialAttack();
         }
 
         private void LateUpdate()
@@ -178,28 +179,37 @@ namespace StarterAssets
 
             if (_input.attack)
             {
-
                 _animator.SetTrigger("Attack_A");
-
                 _input.attack = false;
-
             }
             else
             {
                 _animator.SetBool("Attack_A", false);
             }
 
-        }       
+        }
+        //Special Atttack
+        private void SpecialAttack()
+        {
+            if (_input.specialAttack)
+            {
+                _animator.SetBool("Attack_B", true);
+                _input.specialAttack = false;
+            }
+            else
+            {
+                _animator.SetBool("Attack_B", false);
+            }
+
+        }
+
         private void Roll()
         {
 
             if (_input.roll)
             {
-
                 _animator.SetTrigger("Roll_A");
-
                 _input.roll = false;
-
             }
             else
             {

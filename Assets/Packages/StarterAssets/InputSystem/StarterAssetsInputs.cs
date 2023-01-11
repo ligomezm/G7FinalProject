@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
         public bool attack;
+        public bool specialAttack;
         public bool roll;
 
         [Header("Movement Settings")]
@@ -23,6 +24,7 @@ namespace StarterAssets
 		public bool cursorInputForLook = true;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
+		// Standar Attack 
         public void OnAttack(InputValue value)
         {
 
@@ -37,6 +39,22 @@ namespace StarterAssets
 
         }
 
+		// Special Attack
+        public void OnSpecialAttack(InputValue value)
+        {
+
+            SpecialAttackInput(value.isPressed);
+
+        }
+
+        public void SpecialAttackInput(bool newSpecialAttackState)
+        {
+
+            specialAttack = newSpecialAttackState;
+
+        }
+
+		// Roll 
         public void OnRoll(InputValue value)
         {
             RollInput(value.isPressed);

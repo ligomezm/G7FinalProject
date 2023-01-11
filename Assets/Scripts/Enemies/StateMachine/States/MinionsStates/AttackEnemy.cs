@@ -29,7 +29,7 @@ public class AttackEnemy : StateMachineBehaviour
         if (!ShouldAttackPlayer(animator.transform.position))
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.CHASE);
         int data = animator.GetComponent<AIComponent>().enemyBehavior.BaseDamage;
-        Debug.Log($"Attacking with {data}");
+        //Debug.Log($"Attacking with {data}");
         // animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.ATTACK);
         // Add attack functionality
         // Look at player
