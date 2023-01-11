@@ -15,7 +15,7 @@ public class EnvironmentalDamage : MonoBehaviour
     private void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindGameObjectsWithTag("Player")[1];
         playerAnimator = player.GetComponent<Animator>();
     }
 

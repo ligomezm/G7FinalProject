@@ -27,7 +27,8 @@ public class EnemyDamage : MonoBehaviour
     {
         if (hp < 0)
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         hp = Mathf.Clamp(hp, minValue, maxValue);

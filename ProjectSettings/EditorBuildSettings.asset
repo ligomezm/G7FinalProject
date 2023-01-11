@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/main.unity
     guid: f3751eb8691b235479729534f59501f7
+  - enabled: 1
+    path: Assets/Scenes/Museo.unity
+    guid: eed921481cfc5fe4ebc42f19d22ee252
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: a4811dd64087c274987aa88f8a6a7337
+  - enabled: 1
+    path: Assets/Scenes/Mauricio.unity
+    guid: 936c743d2a316264881034705f9612d9
   m_configObjects: {}
