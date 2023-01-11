@@ -42,4 +42,21 @@ public class LifeBar : MonoBehaviour
         //    linearIndicator.SetValue(currentValue);
         //}
     }
+
+
+    public void TakeDamage(float damage)
+    {
+        currentValue -= damage;
+
+        if (currentValue <= 0)
+        {
+            //Set Game Over Canvas, sound, stop controller, etc. or Back to the museum
+
+        }
+    }
+
+    public void UpdateLifeBar()
+    {
+        linearIndicator.SetValue(currentValue);
+    }
 }
