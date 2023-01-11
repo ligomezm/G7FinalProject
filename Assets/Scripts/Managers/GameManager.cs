@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
+    public static Action<string> OnStateChanged;
     CanvasManager canvasManager;
     ManageScenes sceneManager;
     GameState currentGameState = GameState.BOOT;
+    Camera mainCamera;
+    [SerializeField] EventSystem eventSystem;
 
     void Start()
     {
         canvasManager = CanvasManager.GetInstance();
         sceneManager = ManageScenes.GetInstance();
+        mainCamera = Camera.main;
     }
     void UpdateState(GameState state)
     {
@@ -21,10 +28,18 @@ public class GameManager : Singleton<GameManager>
                 
                 break;
             case GameState.MAINMENU:
+                 mainCamera.gameObject.SetActive(true);
                 break;
             case GameState.GAME:
+                mainCamera.gameObject.SetActive(false);
+                //OnStateChanged?.Invoke();
+                eventSystem.gameObject.SetActive(false);
+                
                 break;
             case GameState.MUSEUM:
+                eventSystem.gameObject.SetActive(false);
+                mainCamera.gameObject.SetActive(false);
+                sceneManager.LoadLevel("Museo");
                 break;
             case GameState.PAUSE:
                 break;

@@ -36,12 +36,26 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (lifeBarPlayer == null) GetPlayerLifeBar();
         canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
         if (other.gameObject.tag == "Player" && canAttack)
         {
             lifeBarPlayer.currentValue -= 1000 * Time.deltaTime;
             lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
+        }
+    }
+
+    void GetPlayerLifeBar()
+    {
+        try
+        {
+            lifeBarPlayer = PlayerSingleton.GetInstance().GetComponent<LifeBar>();
+        }
+        catch (System.Exception)
+        {
+            
+            throw;
         }
     }
 }
