@@ -13,7 +13,14 @@ public class TakeSword : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        try
+        {
+            swordsContainer = GameObject.FindGameObjectWithTag("Swords");
+        }
+        catch(UnityException)
+        {
+            return;
+        }
     }
 
     // Update is called once per frame
@@ -46,9 +53,22 @@ public class TakeSword : MonoBehaviour
 
     void ActiveSwords()
     {
+        if (swordsContainer == null) TryGetSwords();
         for (int i = 0; i < swordsContainer.transform.childCount; i++)
         {
            swordsContainer.transform.GetChild(i).gameObject.SetActive(true);
+        }
+    }
+
+    void TryGetSwords()
+    {
+        try
+        {
+            swordsContainer = GameObject.FindGameObjectWithTag("Swords");
+        }
+        catch (System.Exception)
+        {
+            return;
         }
     }
 }
