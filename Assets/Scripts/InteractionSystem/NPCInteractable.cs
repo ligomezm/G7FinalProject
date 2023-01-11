@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum LevelNameType
 {
-    MAIN, MEZOSOIC, ROME, VIKINGS, MAURICIO
+    MAIN, MEZOSOIC, ROME, VIKINGS, MAURICIO, LEVEL2, 
 }
 public class NPCInteractable : MonoBehaviour
 {
