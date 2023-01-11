@@ -24,7 +24,17 @@ ModelImporter:
   - first:
       74: -7939943700860887483
     second: Armature|Apatosaurus_Idle (1)
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Brown
+    second: {fileID: 2100000, guid: 2dd3b05ca862a1440b3aa5a209514027, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 21b3d1aa2f61dc949bfdc9dcdfb4cf1a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

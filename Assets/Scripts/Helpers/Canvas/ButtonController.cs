@@ -34,8 +34,8 @@ public class ButtonController : MonoBehaviour
                     // UnmountScene
                     break;
                 case ButtonType.START:
-                    canvasManager.SwitchCanvas(CanvasType.GAMEUI);
-                    gameManager.CurrentGamestate = GameState.GAME;
+                    canvasManager.SwitchCanvas(CanvasType.MUSEUM);
+                    gameManager.CurrentGamestate = GameState.MUSEUM;
                     break;
                 case ButtonType.PAUSE:
                     canvasManager.SwitchCanvas(CanvasType.PAUSE);

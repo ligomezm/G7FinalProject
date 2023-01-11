@@ -7,6 +7,7 @@ public class ConsumeItem : MonoBehaviour
 {
     public Inventory Inventory;
     int itemToUse;
+   
 
     private void Update()
     {
@@ -40,6 +41,7 @@ public class ConsumeItem : MonoBehaviour
     
     private void onItemConsumed(int itemToUse)
     {
+        if (Inventory == null) TryGetInventory();
         if (Inventory.mItems != null)
         {
 
@@ -52,6 +54,19 @@ public class ConsumeItem : MonoBehaviour
             {
                 Inventory.RemoveItem(item, itemToUse);
             }
+        }
+    }
+
+    void TryGetInventory()
+    {
+        try
+        {
+            Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        }
+        catch (System.Exception)
+        {
+            
+            return;
         }
     }
 }
