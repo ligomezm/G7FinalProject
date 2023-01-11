@@ -28,17 +28,12 @@ public class LifeBar : MonoBehaviour
             linearIndicator = FindObjectOfType<LinearIndicator>();
             Debug.Log(linearIndicator);
         }
-        if (foundLinearIndicator)
-        {
             //Setup the linear indicator by code or do it in inspector
             linearIndicator.SetupIndicator(minValue, maxValue);
-
 
             //linearIndicator.SetOrientation(LinearIndicator.Orientation.Horizontal);
             //linearIndicator.reverse = false;
             linearIndicator.SetValue(currentValue);
-
-        }
     }
     void TryGetLinearIndicator()
     {
