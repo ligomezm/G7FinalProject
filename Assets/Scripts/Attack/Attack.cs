@@ -6,10 +6,13 @@ public class Attack : MonoBehaviour
 {
     public GameObject weapons;
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
+    Animator animator;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
         for(int i = 0; i < weapons.transform.childCount; i++)
         {
             colliderWeapon.Add(weapons.transform.GetChild(i).gameObject.GetComponent<BoxCollider>());    
@@ -37,5 +40,16 @@ public class Attack : MonoBehaviour
         {
             colliderWeapon[j].enabled = false;
         }
+    }
+
+    public void DesactiveRootMotion()
+    {
+        //Debug.Log("Entro a desactivar Root Motion");
+        animator.applyRootMotion = false;
+    }
+    public void ActiveRootMotion()
+    {
+        //Debug.Log("Entro ha activar Root Motion");
+        animator.applyRootMotion = true;
     }
 }
