@@ -8,11 +8,18 @@ public class Attack : MonoBehaviour
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
     Animator animator;
 
+    int countClicks;
+    bool canClick;
+
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        countClicks = 0;
+        canClick = false;
+
+
         for(int i = 0; i < weapons.transform.childCount; i++)
         {
             colliderWeapon.Add(weapons.transform.GetChild(i).gameObject.GetComponent<BoxCollider>());    
@@ -23,8 +30,8 @@ public class Attack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
+
 
     public void ActiveColliders()
     {
@@ -52,4 +59,6 @@ public class Attack : MonoBehaviour
         //Debug.Log("Entro ha activar Root Motion");
         animator.applyRootMotion = true;
     }
+
+
 }
