@@ -110,6 +110,20 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+
+        //Combo system attack 
+        [Header("Combo system attack ")]
+        public  float cooldownTime = 0.8f;
+        private float nextFireTime = 0f;
+        private  int noOfClicks = 0;
+        private float lastClickedTime = 0;
+        private float maxComboDelay = 1;
+
+
+        private AnimatorClipInfo[] clipInfo;
+
+        
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -154,6 +168,8 @@ namespace StarterAssets
 
         private void Update()
         {
+
+
             _hasAnimator = TryGetComponent(out _animator);
 
             JumpAndGravity();
@@ -165,8 +181,36 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Roll();
-            Attack();
+            //Attack();
             SpecialAttack();
+
+
+            // Comobo System Attack 
+            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+            {
+                //if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A2"))
+                //{
+                //    _animator.SetInteger("StandarAttack", 0);
+                //}
+                 _animator.SetInteger("StandarAttack", 0);
+                if (_animator.GetInteger("StandarAttack") == 3)
+                {
+                    noOfClicks = 0;
+                }
+            }
+
+            if (Time.time - lastClickedTime > maxComboDelay)
+            {
+                noOfClicks = 0;
+            }
+
+            if (Time.time > nextFireTime)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    Attack();
+                }
+            }
         }
 
         private void LateUpdate()
@@ -174,18 +218,49 @@ namespace StarterAssets
             CameraRotation();
         }
 
+        public string GetCurrentClipName()
+        {
+            int layerIndex = 1;
+            clipInfo = _animator.GetCurrentAnimatorClipInfo(layerIndex);
+            return clipInfo[0].clip.name;
+        }
+
         private void Attack()
         {
+            lastClickedTime = Time.time;
+            noOfClicks++;
 
-            if (_input.attack)
+
+            if (_input.attack && noOfClicks == 1)
             {
-                _animator.SetTrigger("Attack_A");
+                _animator.SetInteger("StandarAttack", 1);
                 _input.attack = false;
             }
             else
             {
-                _animator.SetBool("Attack_A", false);
+                _animator.SetInteger("StandarAttack", 0);
             }
+
+            noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+
+            if (noOfClicks >= 2 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
+            {
+                    //Debug.Log("Entro " + GetCurrentClipName());
+                if (_input.attack)
+                {
+                    _animator.SetInteger("StandarAttack", 2);
+                }
+            }
+
+            if (noOfClicks >= 3 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
+            {
+                if (_input.attack)
+                {
+                    _animator.SetInteger("StandarAttack", 3);
+                    noOfClicks = 0;
+                }
+            }
+
 
         }
         //Special Atttack
@@ -443,5 +518,6 @@ namespace StarterAssets
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
         }
+
     }
 }

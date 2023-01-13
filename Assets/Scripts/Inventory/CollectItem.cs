@@ -7,7 +7,7 @@ public class CollectItem : MonoBehaviour
     public Inventory inventory;
     void Start()
     {
-        Debug.Log("This is happening");
+        //Debug.Log("This is happening");
         
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
