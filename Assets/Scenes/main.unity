@@ -3139,6 +3139,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swords
       objectReference: {fileID: 0}
+    - target: {fileID: 6202156200270588590, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
+      propertyPath: m_TagString
+      value: Swords
+      objectReference: {fileID: 0}
     - target: {fileID: 6202156200270588591, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
       propertyPath: m_RootOrder
       value: 4
