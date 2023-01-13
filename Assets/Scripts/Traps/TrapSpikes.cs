@@ -8,13 +8,14 @@ public class TrapSpikes : MonoBehaviour
     private LifeBar lifeBarPlayer;
     private float damage = 5;
 
-    bool spikesReloaded;
+    bool spikesReloaded = true;
     bool receiveDamage;
 
     GameObject player;
     Animator playerAnimator;
 
     public Animation spikeAnimation;
+
 
     private void Start()
     {
@@ -27,7 +28,8 @@ public class TrapSpikes : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
+
+            if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
         {
             receiveDamage = true;
             
@@ -52,7 +54,7 @@ public class TrapSpikes : MonoBehaviour
             playerAnimator.SetBool("Pain", true);
             
             if (spikesReloaded)
-            { 
+            {
             spikeAnimation.Play();
             }
 

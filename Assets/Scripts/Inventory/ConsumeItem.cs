@@ -7,7 +7,19 @@ public class ConsumeItem : MonoBehaviour
 {
     public Inventory Inventory;
     int itemToUse;
-   
+    GameObject itemToConsume;
+
+    GreenGemCollectible greenGemCollectible;
+    BlueGemCollectible blueGemCollectible;
+    GoldKeyCollectable goldKeyCollectable;
+
+    private void Start()
+    {
+        greenGemCollectible = FindObjectOfType<GreenGemCollectible>();
+        blueGemCollectible = FindObjectOfType<BlueGemCollectible>();
+        goldKeyCollectable = FindObjectOfType<GoldKeyCollectable>();
+    }
+
 
     private void Update()
     {
@@ -41,6 +53,7 @@ public class ConsumeItem : MonoBehaviour
     
     private void onItemConsumed(int itemToUse)
     {
+
         if (Inventory == null) TryGetInventory();
         if (Inventory.mItems != null)
         {
@@ -50,8 +63,30 @@ public class ConsumeItem : MonoBehaviour
             //Debug.Log("itemToUse " + inventoryPanel.transform.GetChild(itemToUse).gameObject.name);
             //Debug.Log("child0 " + inventoryPanel.transform.GetChild(itemToUse).GetChild(0).gameObject.name);
             IInventoryItem item = inventoryPanel.transform.GetChild(itemToUse).GetChild(0).GetComponent<IInventoryItem>();
+            Sprite itemSprite = inventoryPanel.transform.GetChild(itemToUse).GetChild(0).GetChild(0).GetComponent<Image>().sprite;
+            Debug.Log("itemsprite: " + itemSprite);
+
+            if (itemSprite.name == "GreenGem")
+            {
+            Debug.Log("Entrando al primer if en on itemconsumed");
+                greenGemCollectible.OnConsume();
+            }
+            
+            if (itemSprite.name == "BlueGem")
+            {
+                blueGemCollectible.OnConsume();
+            }
+            
+            if (itemSprite.name == "GoldKey")
+            {
+                goldKeyCollectable.OnConsume();
+            }
+
+
+            
             if (item != null)
             {
+                item.OnConsume();
                 Inventory.RemoveItem(item, itemToUse);
             }
         }

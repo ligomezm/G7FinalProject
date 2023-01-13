@@ -79,6 +79,11 @@ public class LifeBar : MonoBehaviour
         }
     }
 
+    public void IncreaseLife(float health)
+    {
+        currentValue += health;
+    }
+
     public void UpdateLifeBar()
     {
         linearIndicator.SetValue(currentValue);
