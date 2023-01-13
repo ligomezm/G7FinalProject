@@ -11,6 +11,7 @@ TagManager:
   - 0
   - Inventory
   - Damage
+  - Chest
   layers:
   - Default
   - TransparentFX
