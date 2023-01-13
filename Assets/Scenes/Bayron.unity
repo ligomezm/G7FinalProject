@@ -2400,7 +2400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _particleColor: {r: 0.49043253, g: 0.9716981, b: 0.8777793, a: 1}
-  _particleCount: 100
+  _particleCount: 1000
   _distanceThreshold: 0.1
 --- !u!114 &6392235404090981824
 MonoBehaviour:
