@@ -11,7 +11,6 @@ public class ButtonController : MonoBehaviour
         CanvasManager canvasManager;
         GameManager gameManager;
         Button menuButton;
-        bool hasObjectToAnim = false;
 
         void Start()
         {

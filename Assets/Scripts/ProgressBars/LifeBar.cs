@@ -10,7 +10,7 @@ public class LifeBar : MonoBehaviour
     public float maxValue = 100;
     public float minValue = 0;
     public float currentValue = 100;
-    private bool foundLinearIndicator = false;
+    //private bool foundLinearIndicator = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,18 +35,18 @@ public class LifeBar : MonoBehaviour
             //linearIndicator.reverse = false;
             linearIndicator.SetValue(currentValue);
     }
-    void TryGetLinearIndicator()
-    {
-        try
-        {
-            linearIndicator = FindObjectOfType<LinearIndicator>();
-        }
-        catch (System.Exception)
-        {
-            foundLinearIndicator = true;
-            throw;
-        }
-    }
+    //void TryGetLinearIndicator()
+    //{
+    //    try
+    //    {
+    //        linearIndicator = FindObjectOfType<LinearIndicator>();
+    //    }
+    //    catch (System.Exception)
+    //    {
+    //        foundLinearIndicator = true;
+    //        throw;
+    //    }
+    //}
 
     // Update is called once per frame
     void FixedUpdate()
@@ -77,6 +77,11 @@ public class LifeBar : MonoBehaviour
             //Set Game Over Canvas, sound, stop controller, etc. or Back to the museum
 
         }
+    }
+
+    public void IncreaseLife(float health)
+    {
+        currentValue += health;
     }
 
     public void UpdateLifeBar()
