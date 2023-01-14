@@ -2095,7 +2095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294433283008971936}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.92999995, z: 0}
+  m_LocalPosition: {x: -65.1, y: 0.32, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2187,6 +2187,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
+  cooldownTime: 0.8
 --- !u!114 &294433283008971940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2221,6 +2222,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   attack: 0
+  specialAttack: 0
   roll: 0
   analogMovement: 0
   cursorLocked: 1
@@ -2376,10 +2378,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 0.3742752
+  m_Height: 0.7871305
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.0027122498, y: 0.32578397, z: 0}
 --- !u!114 &1762557374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4112,6 +4114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc2d5b14ccd7074c86e45ded7e7f453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordDamage: 30
+  isSpecialAttack: 0
 --- !u!1 &637083783355486149
 GameObject:
   m_ObjectHideFlags: 0
@@ -5659,6 +5663,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc2d5b14ccd7074c86e45ded7e7f453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordDamage: 30
+  isSpecialAttack: 0
 --- !u!1 &6479878519017957578
 GameObject:
   m_ObjectHideFlags: 0
@@ -5773,6 +5779,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc2d5b14ccd7074c86e45ded7e7f453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordDamage: 30
+  isSpecialAttack: 0
 --- !u!1 &6805244816173068504
 GameObject:
   m_ObjectHideFlags: 0
