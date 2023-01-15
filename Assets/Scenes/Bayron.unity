@@ -32003,7 +32003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 30
-  isSpecialAttack: 0
+  animator: {fileID: 294433283160616680}
 --- !u!65 &3331134663104197757
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33232,7 +33232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 30
-  isSpecialAttack: 0
+  animator: {fileID: 294433283160616680}
 --- !u!65 &6303029943809882426
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33267,7 +33267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordDamage: 30
-  isSpecialAttack: 0
+  animator: {fileID: 294433283160616680}
 --- !u!65 &6303029943932424719
 BoxCollider:
   m_ObjectHideFlags: 0

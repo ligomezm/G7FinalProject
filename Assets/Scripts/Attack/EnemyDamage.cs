@@ -32,7 +32,12 @@ public class EnemyDamage : MonoBehaviour
         if (hp < 0)
         {
             // Destroy(gameObject);
-            shapeEmitter.Emit();
+            try
+            {
+                shapeEmitter.Emit();
+            }
+            catch (System.Exception) {}
+
             gameObject.SetActive(false);
         }
 

@@ -2,12 +2,13 @@ using CurlNoiseParticleSystem.Emitter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class SwordDamage : MonoBehaviour
 {
     public float swordDamage =  30;
-    public Animator animatior;
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,6 @@ public class SwordDamage : MonoBehaviour
 
     private bool IsSpecialAttack()
     {
-        return animatior.GetBool("Attack_B");
+        return animator.GetBool("Attack_B");
     }
 }
