@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 1480559990787510369}
   - component: {fileID: 1480559990787510374}
   - component: {fileID: 3988405121555112758}
+  - component: {fileID: 791157070}
   m_Layer: 8
   m_Name: MinionEnemy
   m_TagString: Untagged
@@ -294,6 +295,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 83ad4be494fb7004b9897e9d588ad313, type: 2}
+--- !u!114 &791157070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4891085937638086863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d6910ffb8ee1449888bc20c566f87f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _filter: {fileID: 4891085937638086834}
+  _countPerParticle: 1
+  _delay: 0.5
 --- !u!1001 &1480559990284007464
 PrefabInstance:
   m_ObjectHideFlags: 0

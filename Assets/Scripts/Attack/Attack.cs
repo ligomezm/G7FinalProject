@@ -10,19 +10,17 @@ public class Attack : MonoBehaviour
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
     Animator animator;
 
-    private List<DistanceEmitter> _emitter = new List<DistanceEmitter>();
+    //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
 
-
-
         for (int i = 0; i < weapons.transform.childCount; i++)
         {
             colliderWeapon.Add(weapons.transform.GetChild(i).gameObject.GetComponent<BoxCollider>());
-                  _emitter.Add(weapons.transform.GetChild(i).gameObject.GetComponent<DistanceEmitter>());
+                  //_emitter.Add(weapons.transform.GetChild(i).gameObject.GetComponent<ShapeEmitter>());
         }
         DesactiveColliders();
     }
@@ -39,7 +37,7 @@ public class Attack : MonoBehaviour
         {
             try
             {
-                _emitter[j].Play();
+                //_emitter[j].Emit();
                 colliderWeapon[j].enabled = true;
             }
             catch (System.Exception)
@@ -54,7 +52,7 @@ public class Attack : MonoBehaviour
         {
             try
             {
-                _emitter[j].Stop();
+                //_emitter[j].Stop();
                 colliderWeapon[j].enabled = false;
             }
             catch (System.Exception)

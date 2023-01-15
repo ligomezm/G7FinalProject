@@ -1,3 +1,4 @@
+using CurlNoiseParticleSystem.Emitter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -28,8 +29,16 @@ public class SwordDamage : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            enemyDamage.hp -= swordDamage;
+            EnemyDamage enemyDamage     = other.gameObject.GetComponent<EnemyDamage>();
+            ShapeEmitter shapeEmitter   = other.gameObject.GetComponent<ShapeEmitter>();
+            try
+            {
+                enemyDamage.hp -= swordDamage;
+                shapeEmitter.Emit();
+            }
+            catch (System.Exception)
+            {
+            }
         }
     }
 

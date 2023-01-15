@@ -1,3 +1,4 @@
+using CurlNoiseParticleSystem.Emitter;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     public LifeBar lifeBarPlayer;
+    private ShapeEmitter shapeEmitter;
 
     bool canAttack;
 
@@ -20,6 +22,8 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
+        shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
+
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class EnemyDamage : MonoBehaviour
         if (hp < 0)
         {
             // Destroy(gameObject);
+            shapeEmitter.Emit();
             gameObject.SetActive(false);
         }
 
