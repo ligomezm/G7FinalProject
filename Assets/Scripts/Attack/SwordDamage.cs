@@ -7,7 +7,7 @@ using UnityEngine;
 public class SwordDamage : MonoBehaviour
 {
     public float swordDamage =  30;
-    public bool isSpecialAttack;
+    public Animator animatior;
     
     // Start is called before the first frame update
     void Start()
@@ -19,9 +19,13 @@ public class SwordDamage : MonoBehaviour
     void Update()
     {
         // If it is special Attack the sword damage increased 10% 
-        if (isSpecialAttack)
+        if (IsSpecialAttack())
         {
             swordDamage = swordDamage + swordDamage * 0.1f;
+        }
+        else
+        {
+            swordDamage = 30;
         }
     }
 
@@ -42,13 +46,8 @@ public class SwordDamage : MonoBehaviour
         }
     }
 
-    public void ActiveSpecialAttack()
+    private bool IsSpecialAttack()
     {
-        isSpecialAttack = true;
-    }
-
-    public void DesativeSpecialAttack()
-    {
-        isSpecialAttack = true;
+        return animatior.GetBool("Attack_B");
     }
 }
