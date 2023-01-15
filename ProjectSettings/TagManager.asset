@@ -12,6 +12,8 @@ TagManager:
   - Inventory
   - Damage
   - Chest
+  - Swords
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

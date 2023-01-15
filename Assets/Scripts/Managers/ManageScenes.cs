@@ -101,6 +101,7 @@ public class ManageScenes : Singleton<ManageScenes>
         {
             PlayerSingleton.GetInstance().EnableLifeBar();
             PlayerSingleton.GetInstance().IsInGameplay = true;
+            playerObject.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
         }
         // if (currentLevelName != "Museo")
         //     PlayerSingleton.GetInstance().SetPlayerPosition();
