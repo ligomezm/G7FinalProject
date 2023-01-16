@@ -50,6 +50,7 @@ public class GoldKeyCollectable : MonoBehaviour, IInventoryItem
 
     public void OnConsume()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }
