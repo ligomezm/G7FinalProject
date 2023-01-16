@@ -8,4 +8,10 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: Medieval
   m_Controller: {fileID: 9100000, guid: c494418b2560d0744bef9b9f4fb6f60b, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: e6a19b13fcf3447459db09486f110815, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d0e77bad7793d0b4d8fe05e2ef6a09ff, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 6aa223ffdc267e946ba1475d9a411bd3, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6aa223ffdc267e946ba1475d9a411bd3, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e4bec770607265341b03f083adac5cd4, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e4bec770607265341b03f083adac5cd4, type: 2}

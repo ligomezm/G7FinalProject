@@ -14,7 +14,7 @@ public class PlayerInteract : MonoBehaviour
     private LevelNameType interactedRelicType;
     private DungeonNameType interactedDoorType;
 
-    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2"};
+    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron"};
     public static string[] dungeonsNames = {"Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4"};
 
     public Inventory inventory;
