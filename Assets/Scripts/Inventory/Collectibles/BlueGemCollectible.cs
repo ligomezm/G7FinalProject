@@ -13,30 +13,12 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
 
     private LifeBar lifeBarPlayer;
     private float life = 10;
-    //private bool isLifeFull;
-    
-    //public Inventory Inventory;
-
-    //Dictionary<int, IInventoryItem> itemsDict;
-    //public int itemPosition;
     
 
     private void Start()
     {
 
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-
-        //Debug.Log("Vida al iniciar: " + lifeBarPlayer.currentValue);
-
-        /*if (lifeBarPlayer.currentValue < 100)
-        {
-            isLifeFull = false;
-        }
-        
-        if (lifeBarPlayer.currentValue >= 100)
-        {
-            isLifeFull = true;
-        }*/
 
     }
 
@@ -56,43 +38,16 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
         if (collectEffect)
             Instantiate(collectEffect, transform.position, Quaternion.identity);
 
-        /*if (!isLifeFull)
-        { 
-            lifeBarPlayer.IncreaseLife(life);
-            
-            //Revisar por que no actualiza
-            //lifeBarPlayer.UpdateLifeBar();
-           
-            GetKeyFromValue(this);
-            
-            gameObject.SetActive(false);
-            
-            Inventory.RemoveItem(this, itemPosition);
-            
-        }*/
-
+       
         gameObject.SetActive(false);
     }
 
-    /*public void GetKeyFromValue(IInventoryItem item)
-    {
-        itemsDict = Inventory.itemsDict;
-                
-        foreach (int keyVar in itemsDict.Keys)
-        {
-            if (itemsDict[keyVar] == item)
-            {
-                itemPosition =  keyVar;
-            }
-        }
-    }*/
-
+   
     public void OnConsume()
     {
         lifeBarPlayer.IncreaseLife(life);
         lifeBarPlayer.UpdateLifeBar();
         gameObject.SetActive(false);
-        //Destroy(gameObject);
     }
     public string Name
     {

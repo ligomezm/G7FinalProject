@@ -43,8 +43,6 @@ public class GreenGemCollectible : MonoBehaviour, IInventoryItem
 
     public void OnConsume()
     {
-        Debug.Log("Esta llegando aca");
-
         lifeBarPlayer.IncreaseLife(life);
         lifeBarPlayer.UpdateLifeBar();
         gameObject.SetActive(false);

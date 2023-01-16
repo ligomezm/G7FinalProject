@@ -13,6 +13,8 @@ public class Inventory : MonoBehaviour
     public event EventHandler<InventoryEventArgs> ItemRemoved;
     public static event Action<int> OnItemRemoved;
 
+    int itemKey;
+
     public void AddItem(IInventoryItem item)
     {
         if (mItems.Count < SLOTS)
@@ -52,4 +54,20 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    public bool ItemInInventory(IInventoryItem item)
+    {
+        return itemsDict.ContainsValue(item) ? true : false;
+    }
+
+    public int GetKeyFromValue(IInventoryItem item)
+    {
+        foreach (var itemD in itemsDict)
+        {
+            if (itemD.Value == item)
+            {
+                itemKey =  itemD.Key;
+            }
+        }
+        return itemKey;
+    }
 }

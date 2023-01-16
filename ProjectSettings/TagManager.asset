@@ -12,6 +12,7 @@ TagManager:
   - Inventory
   - Damage
   - Chest
+  - Door
   - PlayerSpawn
   - Swords
   layers:

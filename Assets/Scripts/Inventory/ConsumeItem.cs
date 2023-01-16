@@ -68,7 +68,6 @@ public class ConsumeItem : MonoBehaviour
 
             if (itemSprite.name == "GreenGem")
             {
-            Debug.Log("Entrando al primer if en on itemconsumed");
                 greenGemCollectible.OnConsume();
             }
             
