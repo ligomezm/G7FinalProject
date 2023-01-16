@@ -26,7 +26,7 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
 
         lifeBarPlayer = FindObjectOfType<LifeBar>();
 
-        Debug.Log("Vida al iniciar: " + lifeBarPlayer.currentValue);
+        //Debug.Log("Vida al iniciar: " + lifeBarPlayer.currentValue);
 
         /*if (lifeBarPlayer.currentValue < 100)
         {

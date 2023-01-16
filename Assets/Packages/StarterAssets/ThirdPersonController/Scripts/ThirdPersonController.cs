@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -119,9 +120,10 @@ namespace StarterAssets
         private float lastClickedTime = 0;
         private float maxComboDelay = 1;
 
+        
+
 
         private AnimatorClipInfo[] clipInfo;
-
         
 
         private bool IsCurrentDeviceMouse
@@ -181,36 +183,36 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             Roll();
-            //Attack();
+            Attack();
             SpecialAttack();
 
 
-            // Comobo System Attack 
-            if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
-            {
-                //if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A2"))
-                //{
-                //    _animator.SetInteger("StandarAttack", 0);
-                //}
-                 _animator.SetInteger("StandarAttack", 0);
-                if (_animator.GetInteger("StandarAttack") == 3)
-                {
-                    noOfClicks = 0;
-                }
-            }
+            //// Comobo System Attack 
+            //if (_animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f)
+            //{
+            //    //if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A") || _animator.GetCurrentAnimatorStateInfo(0).IsName("Attack_A2"))
+            //    //{
+            //    //    _animator.SetInteger("StandarAttack", 0);
+            //    //}
+            //     _animator.SetInteger("StandarAttack", 0);
+            //    if (_animator.GetInteger("StandarAttack") == 3)
+            //    {
+            //        noOfClicks = 0;
+            //    }
+            //}
 
-            if (Time.time - lastClickedTime > maxComboDelay)
-            {
-                noOfClicks = 0;
-            }
+            //if (Time.time - lastClickedTime > maxComboDelay)
+            //{
+            //    noOfClicks = 0;
+            //}
 
-            if (Time.time > nextFireTime)
-            {
-                if (Input.GetMouseButtonDown(0))
-                {
-                    Attack();
-                }
-            }
+            //if (Time.time > nextFireTime)
+            //{
+            //    if (Input.GetMouseButtonDown(0))
+            //    {
+            //        Attack();
+            //    }
+            //}
         }
 
         private void LateUpdate()
@@ -227,11 +229,10 @@ namespace StarterAssets
 
         private void Attack()
         {
-            lastClickedTime = Time.time;
-            noOfClicks++;
+            //lastClickedTime = Time.time;
+            //noOfClicks++;
 
-
-            if (_input.attack && noOfClicks == 1)
+            if (_input.attack)
             {
                 _animator.SetInteger("StandarAttack", 1);
                 _input.attack = false;
@@ -241,28 +242,29 @@ namespace StarterAssets
                 _animator.SetInteger("StandarAttack", 0);
             }
 
-            noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+            //noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
 
-            if (noOfClicks >= 2 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
-            {
-                    //Debug.Log("Entro " + GetCurrentClipName());
-                if (_input.attack)
-                {
-                    _animator.SetInteger("StandarAttack", 2);
-                }
-            }
+            //if (noOfClicks >= 2 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
+            //{
+            //        //Debug.Log("Entro " + GetCurrentClipName());
+            //    if (_input.attack)
+            //    {
+            //        _animator.SetInteger("StandarAttack", 2);
+            //    }
+            //}
 
-            if (noOfClicks >= 3 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
-            {
-                if (_input.attack)
-                {
-                    _animator.SetInteger("StandarAttack", 3);
-                    noOfClicks = 0;
-                }
-            }
-
+            //if (noOfClicks >= 3 && _animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f )
+            //{
+            //    if (_input.attack)
+            //    {
+            //        _animator.SetInteger("StandarAttack", 3);
+            //        noOfClicks = 0;
+            //    }
+            //}
 
         }
+
+
         //Special Atttack
         private void SpecialAttack()
         {
