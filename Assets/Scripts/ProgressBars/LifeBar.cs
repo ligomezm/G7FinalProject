@@ -19,7 +19,26 @@ public class LifeBar : MonoBehaviour
     }
     void OnEnable()
     {
+     
         SetLinearIndicator();
+        ManageScenes.OnSceneLoaded += GetReferences;
+    }
+    void OnDisable()
+    {
+        ManageScenes.OnSceneLoaded -= GetReferences;
+    }
+
+    private void GetReferences()
+    {
+        
+        linearIndicator = FindObjectOfType<LinearIndicator>();
+        
+        //Setup the linear indicator by code or do it in inspector
+        linearIndicator.SetupIndicator(minValue, maxValue);
+
+        //linearIndicator.SetOrientation(LinearIndicator.Orientation.Horizontal);
+        //linearIndicator.reverse = false;
+        linearIndicator.SetValue(currentValue);
     }
     public void SetLinearIndicator()
     {

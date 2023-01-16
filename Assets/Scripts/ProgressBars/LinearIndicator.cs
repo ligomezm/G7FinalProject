@@ -39,6 +39,27 @@ public class LinearIndicator : MonoBehaviour
 
     
     }
+    void OnEnable()
+    {
+        ManageScenes.OnSceneLoaded += GetReferences;
+    }
+    void OnDisable()
+    {
+        ManageScenes.OnSceneLoaded -= GetReferences;
+    }
+    private void GetReferences()
+    {
+        indicatorImage = valueIndicator.GetComponent<UnityEngine.UI.Image>();
+        indicatorImage.color = fillColor;
+        if (reverse)
+        {
+            valueIndicator.pivot = Vector2.one;
+        }
+        else
+        {
+            valueIndicator.pivot = Vector2.zero;
+        }
+    }
 
     void Update()
     {

@@ -41,8 +41,8 @@ public class NPCInteractable : MonoBehaviour
 
             if (currentScene == "Museo")
             { 
-                PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
-            }
+            PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
+        }
 
             if (currentScene == "Level2")
             {
@@ -65,6 +65,7 @@ public class NPCInteractable : MonoBehaviour
 
     public void Interact(LevelNameType levelToLoad)
     {
+        
         //manageScene.ChangeMuseumLevel(PlayerInteract.levelsNames[(int)levelToLoad]);
         gameManager.CurrentGamestate = GameState.GAME;
         GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int) levelToLoad]);

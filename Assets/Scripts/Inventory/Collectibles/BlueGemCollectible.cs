@@ -22,6 +22,20 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
 
     }
 
+    void OnEnable()
+    {
+        ManageScenes.OnSceneLoaded += GetReferences;
+    }
+
+    void OnDisable()
+    {
+        ManageScenes.OnSceneLoaded -= GetReferences;
+    }
+
+    private void GetReferences()
+    {
+        lifeBarPlayer = FindObjectOfType<LifeBar>();
+    }
     void Update()
     {
 

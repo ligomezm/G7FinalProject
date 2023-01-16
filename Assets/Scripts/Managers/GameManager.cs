@@ -29,19 +29,23 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameState.MAINMENU:
                  mainCamera.gameObject.SetActive(true);
+                SetTimeScale(1);
                 break;
             case GameState.GAME:
                 mainCamera.gameObject.SetActive(false);
                 //OnStateChanged?.Invoke();
                 eventSystem.gameObject.SetActive(false);
                 
+                SetTimeScale(1);
                 break;
             case GameState.MUSEUM:
                 eventSystem.gameObject.SetActive(false);
                 mainCamera.gameObject.SetActive(false);
                 sceneManager.LoadLevel("Museo");
+                SetTimeScale(1);
                 break;
             case GameState.PAUSE:
+                SetTimeScale(0);
                 break;
             case GameState.GAMEOVER:
                 break;
@@ -49,10 +53,20 @@ public class GameManager : Singleton<GameManager>
                 break;
             case GameState.VICTORY:
                 break;
+            case GameState.RESUME:
+                SetTimeScale(1);
+                break;
 
 
         }
     }
+    private void SetTimeScale(int t)
+    {
+        if (t == 1 || t == 0)
+            Time.timeScale = t;
+        return;
+    }
+
 
     public GameState CurrentGamestate
     {
