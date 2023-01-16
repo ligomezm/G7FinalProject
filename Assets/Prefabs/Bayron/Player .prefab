@@ -496,14 +496,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749803165554627725}
-  m_LocalRotation: {x: -0, y: -0, z: 0.027498398, w: 0.99962187}
+  m_LocalRotation: {x: -0, y: -0, z: 0.25005937, w: 0.96823055}
   m_LocalPosition: {x: -0.21, y: -0.03, z: 0.17}
   m_LocalScale: {x: 0.5070963, y: 0.5070963, z: 0.5070963}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7027952907781354104}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.151}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 28.962}
 --- !u!2083052967 &1749803165554627722
 VisualEffect:
   m_ObjectHideFlags: 0
@@ -512,7 +512,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749803165554627725}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 91e4d9e77346b824788e71424e565de6, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: f3ff5f77d56700e4dad69de0e41f6757, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0

@@ -87,4 +87,14 @@ public class Attack : MonoBehaviour
         _SlashEffect_B.Play();  
     }
 
+    public void ActiveUnscatched()
+    {
+
+    }
+    public void DesactiveUnscatched()
+    {
+
+    }
+    
+
 }
