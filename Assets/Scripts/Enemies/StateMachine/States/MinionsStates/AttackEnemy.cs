@@ -8,12 +8,14 @@ public class AttackEnemy : StateMachineBehaviour
     NavMeshAgent navAgent;
     PlayerSingleton target;
     public static float minAttackDistance = 2;
+    public float attackDistance;
     public float walkSpeed = 0;
     public float fovAngle = 60;
     public float fovDistance = 10; // To review
     internal Vector3 lastKnownPosition = Vector3.zero;
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) 
     {
+        minAttackDistance = attackDistance;
         if (navAgent == null)
             navAgent = animator.GetComponent<NavMeshAgent>();
         if (target == null)

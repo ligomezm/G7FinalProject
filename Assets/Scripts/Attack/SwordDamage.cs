@@ -1,12 +1,14 @@
+using CurlNoiseParticleSystem.Emitter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal;
 using UnityEngine;
 
 public class SwordDamage : MonoBehaviour
 {
     public float swordDamage =  30;
-    public bool isSpecialAttack;
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -18,9 +20,13 @@ public class SwordDamage : MonoBehaviour
     void Update()
     {
         // If it is special Attack the sword damage increased 10% 
-        if (isSpecialAttack)
+        if (IsSpecialAttack())
         {
             swordDamage = swordDamage + swordDamage * 0.1f;
+        }
+        else
+        {
+            swordDamage = 30;
         }
     }
 
@@ -28,18 +34,21 @@ public class SwordDamage : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            enemyDamage.hp -= swordDamage;
+            EnemyDamage enemyDamage     = other.gameObject.GetComponent<EnemyDamage>();
+            ShapeEmitter shapeEmitter   = other.gameObject.GetComponent<ShapeEmitter>();
+            try
+            {
+                enemyDamage.hp -= swordDamage;
+                shapeEmitter.Emit();
+            }
+            catch (System.Exception)
+            {
+            }
         }
     }
 
-    public void ActiveSpecialAttack()
+    private bool IsSpecialAttack()
     {
-        isSpecialAttack = true;
-    }
-
-    public void DesativeSpecialAttack()
-    {
-        isSpecialAttack = true;
+        return animator.GetBool("Attack_B");
     }
 }

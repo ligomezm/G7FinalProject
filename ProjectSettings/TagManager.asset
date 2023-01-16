@@ -13,6 +13,8 @@ TagManager:
   - Damage
   - Chest
   - Door
+  - Swords
+  - PlayerSpawn
   layers:
   - Default
   - TransparentFX

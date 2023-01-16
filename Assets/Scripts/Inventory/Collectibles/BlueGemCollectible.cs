@@ -33,7 +33,8 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
     public void OnPickUp()
     {
         if (collectSound)
-            AudioSource.PlayClipAtPoint(collectSound, transform.position);
+            SoundManager.GetInstance().PlayClipAtPointRef(collectSound, transform.position);
+            //AudioSource.PlayClipAtPoint(collectSound, transform.position);
         if (collectEffect)
             Instantiate(collectEffect, transform.position, Quaternion.identity);
 

@@ -48,6 +48,9 @@ public class ButtonController : MonoBehaviour
                 case ButtonType.OPTIONS:
                     canvasManager.SwitchCanvas(CanvasType.OPTIONS);
                     break;
+                case ButtonType.PAUSEOPTIONS:
+                    canvasManager.SwitchCanvas(CanvasType.PAUSEOPTIONS);
+                    break;
                 default:
                     break;
             }

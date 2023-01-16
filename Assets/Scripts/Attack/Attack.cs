@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Attack : MonoBehaviour
 {
@@ -10,19 +11,22 @@ public class Attack : MonoBehaviour
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
     Animator animator;
 
-    private List<DistanceEmitter> _emitter = new List<DistanceEmitter>();
+    //Slash VFX 
+    [Header("Slash VFX")]
+    public VisualEffect _SlashEffect_A;
+    public VisualEffect _SlashEffect_B;
+
+    //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
 
-
-
         for (int i = 0; i < weapons.transform.childCount; i++)
         {
             colliderWeapon.Add(weapons.transform.GetChild(i).gameObject.GetComponent<BoxCollider>());
-                  _emitter.Add(weapons.transform.GetChild(i).gameObject.GetComponent<DistanceEmitter>());
+                  //_emitter.Add(weapons.transform.GetChild(i).gameObject.GetComponent<ShapeEmitter>());
         }
         DesactiveColliders();
     }
@@ -39,7 +43,7 @@ public class Attack : MonoBehaviour
         {
             try
             {
-                _emitter[j].Play();
+                //_emitter[j].Emit();
                 colliderWeapon[j].enabled = true;
             }
             catch (System.Exception)
@@ -54,7 +58,7 @@ public class Attack : MonoBehaviour
         {
             try
             {
-                _emitter[j].Stop();
+                //_emitter[j].Stop();
                 colliderWeapon[j].enabled = false;
             }
             catch (System.Exception)
@@ -74,5 +78,23 @@ public class Attack : MonoBehaviour
         animator.applyRootMotion = true;
     }
 
+    public void ActiveSlashAtackA()
+    {
+        _SlashEffect_A.Play();  
+    }
+    public void ActiveSlashAtackB()
+    {
+        _SlashEffect_B.Play();  
+    }
+
+    public void ActiveUnscatched()
+    {
+
+    }
+    public void DesactiveUnscatched()
+    {
+
+    }
+    
 
 }

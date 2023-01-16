@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10287,6 +10287,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swords
       objectReference: {fileID: 0}
+    - target: {fileID: 6202156200270588590, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
+      propertyPath: m_TagString
+      value: Swords
+      objectReference: {fileID: 0}
     - target: {fileID: 6202156200270588591, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
       propertyPath: m_RootOrder
       value: 13
@@ -11896,7 +11900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2b15a34a85b2d4e9cc86bc0439939f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNameType: 0
+  levelNameType: 4
   dialogueBox: {fileID: 664439568}
 --- !u!4 &1399078712 stripped
 Transform:
