@@ -22,6 +22,7 @@ public class NPCInteractable : MonoBehaviour
     GameManager gameManager;
     ManageScenes manageScene;
     string currentScene;
+    Animation doorAnimation;
 
     TMP_Text txt;
 
@@ -30,6 +31,7 @@ public class NPCInteractable : MonoBehaviour
         manageScene = ManageScenes.GetInstance();
         gameManager = GameManager.GetInstance();
         currentScene = SceneManager.GetActiveScene().name;
+        doorAnimation = GetComponent<Animation>();
 
     }
     private void OnTriggerEnter(Collider other)
@@ -72,6 +74,8 @@ public class NPCInteractable : MonoBehaviour
 
     public void InteractWithDoor(DungeonNameType dungeonToLoad)
     {
+        dialogueBox.SetActive(false);
+        doorAnimation.Play();
         Debug.Log("Cambiando de dungeon");
         //Set active new dungeon and deactive current dungeon
     }
