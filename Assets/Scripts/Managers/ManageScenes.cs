@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 public class ManageScenes : Singleton<ManageScenes>
 {
+    public static Action OnSceneLoaded;
     GameManager gameManager;
     CanvasManager canvasManager;
     string currentLevelName;
@@ -99,6 +101,7 @@ public class ManageScenes : Singleton<ManageScenes>
             SceneManager.MoveGameObjectToScene(playerObject, SceneManager.GetActiveScene());
         if (SceneManager.GetActiveScene().name != "Museo")
         {
+            OnSceneLoaded?.Invoke();
             PlayerSingleton.GetInstance().EnableLifeBar();
             PlayerSingleton.GetInstance().IsInGameplay = true;
             playerObject.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;

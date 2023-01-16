@@ -19,6 +19,24 @@ public class ConsumeItem : MonoBehaviour
         blueGemCollectible = FindObjectOfType<BlueGemCollectible>();
         goldKeyCollectable = FindObjectOfType<GoldKeyCollectable>();
     }
+    void OnEnable()
+    {
+        ManageScenes.OnSceneLoaded += GetReferences;
+    }
+
+    void OnDisable()
+    {
+        ManageScenes.OnSceneLoaded -= GetReferences;
+        
+    }
+    private void GetReferences()
+    {
+        greenGemCollectible = FindObjectOfType<GreenGemCollectible>();
+        blueGemCollectible = FindObjectOfType<BlueGemCollectible>();
+        goldKeyCollectable = FindObjectOfType<GoldKeyCollectable>();
+        Inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+
+    }
 
 
     private void Update()
@@ -90,6 +108,9 @@ public class ConsumeItem : MonoBehaviour
             }
         }
     }
+
+    
+
 
     void TryGetInventory()
     {
