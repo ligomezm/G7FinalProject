@@ -40,11 +40,11 @@ public class Inventory : MonoBehaviour
     public void RemoveItem(IInventoryItem item, int itemPosition)
     {
         if (!itemsDict.ContainsKey(itemPosition)) return;
+
         if (mItems.Contains(itemsDict[itemPosition]))
         {
             if (ItemRemoved != null)
             {
-                Debug.Log(itemsDict[itemPosition]);
                 OnItemRemoved?.Invoke(itemPosition);
                 ItemRemoved(this, new InventoryEventArgs(itemsDict[itemPosition]));
                 mItems.Remove(itemsDict[itemPosition]);

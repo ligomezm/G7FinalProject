@@ -35,7 +35,6 @@ public class PlayerInteract : MonoBehaviour
     }
 
 
-
     void OnDisable()
     {
         OnRelicChosen -= InteractionRelic;
@@ -45,49 +44,14 @@ public class PlayerInteract : MonoBehaviour
 
     private void GetReferences()
     {
-        StartCoroutine(WaitToLoadReferences());
-    }
-
-    IEnumerator WaitToLoadReferences()
-    {
-        yield return new WaitForSeconds(1);
+        goldKey = FindObjectOfType<GoldKeyCollectable>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
+
+    
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            float interactRange = 2f;
-            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            Debug.Log(colliderArray.Length);
-            foreach (Collider collider in colliderArray)
-            {
-                if (collider.TryGetComponent(out NPCInteractable nPCInteractable)
-                    && collider.gameObject.CompareTag(Door))
-                {
-                    if(inventory.ItemInInventory(goldKey))
-                    { 
-                        nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
-                        int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
-                        inventory.RemoveItem(goldKey, itemKeyInInventory);
-                        //remover llave de inventario
-                    }
-                    else
-                    {
-                        txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
-                        txt.text = NewTxtUI;
-                    }
-                }
-
-                else if (collider.TryGetComponent(out NPCInteractable npcInteractable) 
-                    && collider.gameObject.GetComponent<NPCInteractable>().levelNameType == interactedRelicType)
-                {
-                    Debug.Log(npcInteractable.levelNameType);
-                    npcInteractable.Interact(npcInteractable.levelNameType);
-                }
-
-            }
-        }
+        InteractWithKeyDown();
     }
 
     private void InteractionRelic(LevelNameType levelNameType)
@@ -100,5 +64,41 @@ public class PlayerInteract : MonoBehaviour
         interactedDoorType = dungeonNameType;
     }
 
+    public void InteractWithKeyDown()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float interactRange = 2f;
+            Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
+            Debug.Log(colliderArray.Length);
+            foreach (Collider collider in colliderArray)
+            {
+                if (collider.TryGetComponent(out NPCInteractable nPCInteractable)
+                    && collider.gameObject.CompareTag(Door))
+                {
+                    if (inventory.ItemInInventory(goldKey))
+                    {
+                        nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
+                        int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
+                        inventory.mItems.Add(goldKey);
+                        inventory.RemoveItem(goldKey, itemKeyInInventory);
+                    }
+                    else
+                    {
+                        txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
+                        txt.text = NewTxtUI;
+                    }
+                }
+
+                else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
+                    && collider.gameObject.GetComponent<NPCInteractable>().levelNameType == interactedRelicType)
+                {
+                    Debug.Log(npcInteractable.levelNameType);
+                    npcInteractable.Interact(npcInteractable.levelNameType);
+                }
+
+            }
+        }
+    }
     
 }

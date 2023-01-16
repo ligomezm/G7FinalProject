@@ -69,7 +69,7 @@ public class ConsumeItem : MonoBehaviour
     }
 
     
-    private void onItemConsumed(int itemToUse)
+    public void onItemConsumed(int itemToUse)
     {
 
         if (Inventory == null) TryGetInventory();
