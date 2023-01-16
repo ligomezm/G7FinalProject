@@ -8,7 +8,7 @@ public class PlayerInteract : MonoBehaviour
     // public static Dictionary<int, string> levelsToLoadDictionary = new Dictionary<int, string>();
     public static Action<LevelNameType> OnRelicChosen;
     private LevelNameType interactedRelicType;
-    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2"};
+    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron"};
     
     void OnEnable()
     {

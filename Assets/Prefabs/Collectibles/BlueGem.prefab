@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2526658148974180509}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -32.82, y: 0.82, z: -30.110466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 73b087a9bd7860f4ca4e130ae6cee2aa, type: 2}
+  - {fileID: 2100000, guid: b4e5b7ea50cd0454a99c308f35f5ce91, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -211,6 +211,4 @@ MonoBehaviour:
   rotationSpeed: 10
   collectSound: {fileID: 8300000, guid: d80b24f9bb3bc0446819fd5e034ca748, type: 3}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f, type: 3}
-  Inventory: {fileID: 0}
-  itemPosition: 0
   _Image: {fileID: 21300000, guid: 094ce43ccc7c0d243b3d0cd00f014097, type: 3}
