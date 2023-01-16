@@ -22,11 +22,13 @@ public class PlayerSingleton : Singleton<PlayerSingleton>
         if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) && !isPaused)
         {
             isPaused = !isPaused;
+            GameManager.GetInstance().CurrentGamestate = GameState.PAUSE;
             CanvasManager.GetInstance().SwitchCanvas(CanvasType.PAUSE);
         }
         else if (Input.GetKeyDown(KeyCode.P) || Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             isPaused = !isPaused;
+            GameManager.GetInstance().CurrentGamestate = GameState.RESUME;
             CanvasManager.GetInstance().SwitchCanvas(CanvasType.GAMEUI);
         }
     }    

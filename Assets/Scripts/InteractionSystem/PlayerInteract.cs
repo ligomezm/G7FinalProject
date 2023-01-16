@@ -23,7 +23,7 @@ public class PlayerInteract : MonoBehaviour
     GoldKeyCollectable goldKey;
     public const string Door = "Door";
     public const string NewTxtUI = "You need a key to open";
-
+    
     void OnEnable()
     {
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
@@ -31,12 +31,27 @@ public class PlayerInteract : MonoBehaviour
 
         OnRelicChosen += InteractionRelic;
         OnDoorChosen += InteractionDoor;
+        ManageScenes.OnSceneLoaded += GetReferences;
     }
+
+
 
     void OnDisable()
     {
         OnRelicChosen -= InteractionRelic;
         OnDoorChosen -= InteractionDoor;
+        ManageScenes.OnSceneLoaded -= GetReferences;
+    }
+
+    private void GetReferences()
+    {
+        StartCoroutine(WaitToLoadReferences());
+    }
+
+    IEnumerator WaitToLoadReferences()
+    {
+        yield return new WaitForSeconds(1);
+        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
     private void Update()
     {
@@ -79,7 +94,7 @@ public class PlayerInteract : MonoBehaviour
     {
         interactedRelicType = levelNameType;
     }
-
+    
     private void InteractionDoor(DungeonNameType dungeonNameType)
     {
         interactedDoorType = dungeonNameType;
