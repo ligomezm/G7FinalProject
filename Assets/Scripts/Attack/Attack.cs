@@ -3,12 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Attack : MonoBehaviour
 {
     public GameObject weapons;
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
     Animator animator;
+
+    //Slash VFX 
+    [Header("Slash VFX")]
+    public VisualEffect _SlashEffect_A;
+    public VisualEffect _SlashEffect_B;
 
     //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
@@ -72,5 +78,13 @@ public class Attack : MonoBehaviour
         animator.applyRootMotion = true;
     }
 
+    public void ActiveSlashAtackA()
+    {
+        _SlashEffect_A.Play();  
+    }
+    public void ActiveSlashAtackB()
+    {
+        _SlashEffect_B.Play();  
+    }
 
 }

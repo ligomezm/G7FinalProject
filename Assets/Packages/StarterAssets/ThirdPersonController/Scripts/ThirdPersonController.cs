@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
+using UnityEngine.VFX;
 #endif
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
@@ -119,9 +120,10 @@ namespace StarterAssets
         private float lastClickedTime = 0;
         private float maxComboDelay = 1;
 
+        
+
 
         private AnimatorClipInfo[] clipInfo;
-
         
 
         private bool IsCurrentDeviceMouse

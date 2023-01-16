@@ -364,8 +364,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 624.0,
-            "y": -143.99996948242188
+            "x": 593.0,
+            "y": 11.999990463256836
         },
         "m_Blocks": [
             {
@@ -670,7 +670,7 @@
         "r": 1.0,
         "g": 1.0,
         "b": 1.0,
-        "a": 0.0
+        "a": 1.0
     },
     "isMainColor": false,
     "m_ColorMode": 1
@@ -1034,10 +1034,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -927.0,
-            "y": 121.00003814697266,
+            "x": -998.0000610351563,
+            "y": 123.99999237060547,
             "width": 144.0,
-            "height": 33.999977111816409
+            "height": 34.00000762939453
         }
     },
     "m_Slots": [
@@ -1756,7 +1756,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 5.0,
+    "m_Value": 1.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -2127,10 +2127,10 @@
     "m_Name": "",
     "m_ChildObjectList": [
         {
-            "m_Id": "25c91bfbcdb749488e390c3ac6c24316"
+            "m_Id": "d1fd4c7d9315463a9e661e76217f3f87"
         },
         {
-            "m_Id": "d1fd4c7d9315463a9e661e76217f3f87"
+            "m_Id": "25c91bfbcdb749488e390c3ac6c24316"
         },
         {
             "m_Id": "b6252126cdea41818cfe09451b1b9e7a"
