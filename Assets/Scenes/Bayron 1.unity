@@ -12231,7 +12231,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1470098850}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 697637953}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd8c42c043bba894b81f6b3b6e3fb38a, type: 3}
   m_Name: 
@@ -17812,6 +17812,10 @@ PrefabInstance:
       value: Swords
       objectReference: {fileID: 0}
     - target: {fileID: 6202156200270588590, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6202156200270588590, guid: 0432a4a752a9c8e4693cd9ec21600f38, type: 3}
       propertyPath: m_TagString
       value: Swords
       objectReference: {fileID: 0}
@@ -19642,11 +19646,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5706149667291559508, guid: bcd4948c20bc2e74d89ca9fc6982da93, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5706149667291559508, guid: bcd4948c20bc2e74d89ca9fc6982da93, type: 3}
       propertyPath: currentValue
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5706149667291559508, guid: bcd4948c20bc2e74d89ca9fc6982da93, type: 3}
       propertyPath: linearIndicator

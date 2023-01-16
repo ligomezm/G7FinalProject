@@ -47,7 +47,7 @@ public class EnemyDamage : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (lifeBarPlayer == null) GetPlayerLifeBar();
+        //if (lifeBarPlayer == null) GetPlayerLifeBar();
         canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
         if (other.gameObject.tag == "Player" && canAttack)
         {

@@ -12005,7 +12005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2b15a34a85b2d4e9cc86bc0439939f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNameType: 6
+  levelNameType: 5
   dialogueBox: {fileID: 664439568}
 --- !u!4 &1399078712 stripped
 Transform:
