@@ -22,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
+        //shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
 
     }
 
@@ -34,7 +34,7 @@ public class EnemyDamage : MonoBehaviour
             // Destroy(gameObject);
             try
             {
-                shapeEmitter.Emit();
+                //shapeEmitter.Emit();
             }
             catch (System.Exception) {}
 

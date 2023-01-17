@@ -37,11 +37,11 @@ public class SwordDamage : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             EnemyDamage enemyDamage     = other.gameObject.GetComponent<EnemyDamage>();
-            ShapeEmitter shapeEmitter   = other.gameObject.GetComponent<ShapeEmitter>();
+            //ShapeEmitter shapeEmitter   = other.gameObject.GetComponent<ShapeEmitter>();
             try
             {
                 enemyDamage.hp -= swordDamage;
-                shapeEmitter.Emit();
+                //shapeEmitter.Emit();
             }
             catch (System.Exception)
             {

@@ -50,11 +50,11 @@ public class EnvironmentalDamage : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
+            //ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
             try
             {
                 enemyDamage.hp -= 0.1f;
-                shapeEmitter.Emit();
+                //shapeEmitter.Emit();
             }
             catch (System.Exception)
             {
