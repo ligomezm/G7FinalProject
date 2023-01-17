@@ -2,7 +2,9 @@ using CurlNoiseParticleSystem.Emitter;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditorInternal;
+#endif
 using UnityEngine;
 
 public class SwordDamage : MonoBehaviour

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LifeBar : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class LifeBar : MonoBehaviour
     public float maxValue = 100;
     public float minValue = 0;
     public float currentValue = 100;
+    bool flag = true;
+
     //private bool foundLinearIndicator = false;
 
     // Start is called before the first frame update
@@ -91,11 +94,7 @@ public class LifeBar : MonoBehaviour
     {
         currentValue -= damage;
 
-        if (currentValue <= 0)
-        {
-            //Set Game Over Canvas, sound, stop controller, etc. or Back to the museum
-
-        }
+        ChekLife();
     }
 
     public void IncreaseLife(float health)
@@ -106,5 +105,21 @@ public class LifeBar : MonoBehaviour
     public void UpdateLifeBar()
     {
         linearIndicator.SetValue(currentValue);
+    }
+
+    public void  ChekLife()
+    {
+        if (currentValue <= 0 && flag)
+        {
+            flag = false;
+            //Set Game Over Canvas, sound, stop controller, etc.or Back to the museum
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene("MainMenu");
+            //ManageScenes.GetInstance().ChangeLevel("MainMenu");
+        }
+        else
+        {
+            flag = true;
+        }
     }
 }

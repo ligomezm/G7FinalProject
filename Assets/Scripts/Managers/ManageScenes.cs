@@ -65,19 +65,26 @@ public class ManageScenes : Singleton<ManageScenes>
             Debug.LogError("[GameManager] unable to load level: " + levelName);
             return;
         }
-        if (placeholder == "Museo")
-        {
-            // FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
-            UnloadLevel("Museo", 1);
-        }
-        
+        //if (placeholder == "Museo")
+        //{
+        //    // FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
+        //    UnloadLevel("Museo", 1);
+        //}
+
         ao.completed += OnLoadOperationComplete;
+
+        if (levelName == SceneManager.GetActiveScene().name)
+        {
+            UnloadLevel(levelName);
+        }
+
+
     }
 
     public void UnloadLevel(string levelName, int i = 0)
     {
-        
-        
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelName));
+
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
         
         if (ao == null)
