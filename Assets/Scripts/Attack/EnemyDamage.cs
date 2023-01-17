@@ -57,7 +57,7 @@ public class EnemyDamage : MonoBehaviour
             lifeBarPlayer.ChekLife();
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
 
-            Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
+            //Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
         }
     }
 

@@ -28,7 +28,7 @@ public class CameraMove : MonoBehaviour
     {
         try
         {
-            player = GameObject.FindGameObjectsWithTag("Player")[1];
+            player = GameObject.FindGameObjectWithTag("Player");
         }
         catch(System.Exception)
         {
