@@ -32,9 +32,9 @@ public class GameManager : Singleton<GameManager>
                 SetTimeScale(1);
                 break;
             case GameState.GAME:
-                mainCamera.gameObject.SetActive(false);
+                //mainCamera.gameObject.SetActive(false);
                 //OnStateChanged?.Invoke();
-                eventSystem.gameObject.SetActive(false);
+                //eventSystem.gameObject.SetActive(false);
                 
                 SetTimeScale(1);
                 break;

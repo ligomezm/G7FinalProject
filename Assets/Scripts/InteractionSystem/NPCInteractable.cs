@@ -67,10 +67,11 @@ public class NPCInteractable : MonoBehaviour
 
     public void Interact(LevelNameType levelToLoad)
     {
-        
+
         //manageScene.ChangeMuseumLevel(PlayerInteract.levelsNames[(int)levelToLoad]);
         gameManager.CurrentGamestate = GameState.GAME;
-        GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int) levelToLoad]);
+        //GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int) levelToLoad]);
+        ManageScenes.GetInstance().normalLevelLoad();
     }
 
     public void InteractWithDoor(DungeonNameType dungeonToLoad)
