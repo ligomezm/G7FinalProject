@@ -16,7 +16,7 @@ public class EnvironmentalDamage : MonoBehaviour
     private void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        player = GameObject.FindGameObjectsWithTag("Player")[1];
+        player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
     }
     void OnEnable()
@@ -30,7 +30,7 @@ public class EnvironmentalDamage : MonoBehaviour
     private void GetReferences()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        player = GameObject.FindGameObjectsWithTag("Player")[1];
+        player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
 
     }
@@ -50,11 +50,11 @@ public class EnvironmentalDamage : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
-            ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
+            //ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
             try
             {
                 enemyDamage.hp -= 0.1f;
-                shapeEmitter.Emit();
+                //shapeEmitter.Emit();
             }
             catch (System.Exception)
             {

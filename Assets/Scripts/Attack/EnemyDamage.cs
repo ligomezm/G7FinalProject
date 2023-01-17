@@ -22,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
     void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
+        //shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
 
     }
 
@@ -34,7 +34,7 @@ public class EnemyDamage : MonoBehaviour
             // Destroy(gameObject);
             try
             {
-                shapeEmitter.Emit();
+                //shapeEmitter.Emit();
             }
             catch (System.Exception) {}
 
@@ -57,7 +57,7 @@ public class EnemyDamage : MonoBehaviour
             lifeBarPlayer.ChekLife();
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
 
-            Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
+            //Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
         }
     }
 

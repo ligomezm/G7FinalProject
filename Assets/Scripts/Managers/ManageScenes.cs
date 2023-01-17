@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -29,7 +30,7 @@ public class ManageScenes : Singleton<ManageScenes>
 
     public void ChangeLevel(string level)
     {
-        LoadLevel(level);   
+        LoadLevel(level);
     }
 
     // public void ChangeMuseumLevel(string level)
@@ -47,15 +48,21 @@ public class ManageScenes : Singleton<ManageScenes>
         currentLevelName = levelName;
         try
         {
-            playerObject = GameObject.FindGameObjectWithTag("Player");
-            
+            playerObject = GameObject.FindGameObjectWithTag("ParentPlayer");
+
         }
         catch (System.Exception)
         {
-            playerObject = null;   
+            playerObject = null;
         }
-        if (playerObject != null)
+        if (playerObject != null) { 
             SceneManager.MoveGameObjectToScene(playerObject, mainPersistenScene);
+        }
+        else
+        {
+            playerObject = GameObject.FindGameObjectWithTag("ParentPlayer");
+
+        }
 
         AsyncOperation ao;
         ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
@@ -65,28 +72,21 @@ public class ManageScenes : Singleton<ManageScenes>
             Debug.LogError("[GameManager] unable to load level: " + levelName);
             return;
         }
-        //if (placeholder == "Museo")
-        //{
-        //    // FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
-        //    UnloadLevel("Museo", 1);
-        //}
-
-        ao.completed += OnLoadOperationComplete;
-
-        if (levelName == SceneManager.GetActiveScene().name)
+        if (placeholder == "Museo")
         {
-            UnloadLevel(levelName);
+            // FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
+            UnloadLevel("Museo", 1);
         }
 
-
+        ao.completed += OnLoadOperationComplete;
     }
 
     public void UnloadLevel(string levelName, int i = 0)
     {
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName(currentLevelName));
+
 
         AsyncOperation ao = SceneManager.UnloadSceneAsync(levelName, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
-        
+
         if (ao == null)
         {
             Debug.LogError("[GameManager] unable to load level: " + levelName);
@@ -96,8 +96,9 @@ public class ManageScenes : Singleton<ManageScenes>
             ao.completed += OnUnloadOperationComplete;
         else
             ao.completed += OnUnloadOperationComplete1;
-        
+
     }
+
 
     void OnLoadOperationComplete(AsyncOperation ao)
     {
@@ -110,31 +111,22 @@ public class ManageScenes : Singleton<ManageScenes>
             OnSceneLoaded?.Invoke();
             PlayerSingleton.GetInstance().EnableLifeBar();
             PlayerSingleton.GetInstance().IsInGameplay = true;
-            playerObject.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+            playerObject.GetComponentInChildren<PlayerSingleton>().transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
         }
         // if (currentLevelName != "Museo")
         //     PlayerSingleton.GetInstance().SetPlayerPosition();
-        
-        
+
+
     }
     void OnUnloadOperationComplete(AsyncOperation ao)
     {
-       
+
     }
     void OnUnloadOperationComplete1(AsyncOperation ao)
     {
         gameManager.CurrentGamestate = GameState.GAME;
-        
-        
-        
+
 
 
     }
-
-    public void normalLevelLoad()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene("Level2");
-    }
-
 }
