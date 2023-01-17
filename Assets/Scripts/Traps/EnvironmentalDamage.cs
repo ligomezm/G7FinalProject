@@ -1,3 +1,4 @@
+using CurlNoiseParticleSystem.Emitter;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,9 +39,26 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerArmature")
         {
+            other.GetComponent<EnemyDamage>().hp -= 30;
             receiveDamage = true;
-
             StartCoroutine(ConstantDamage());
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
+            ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
+            try
+            {
+                enemyDamage.hp -= 0.1f;
+                shapeEmitter.Emit();
+            }
+            catch (System.Exception)
+            {
+            }
         }
     }
 

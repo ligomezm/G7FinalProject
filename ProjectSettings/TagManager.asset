@@ -15,6 +15,7 @@ TagManager:
   - Door
   - PlayerSpawn
   - Swords
+  - Enemy
   layers:
   - Default
   - TransparentFX

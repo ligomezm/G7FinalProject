@@ -9,18 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9baf32cf0635247469e77a6bdab8f278
   - enabled: 1
-    path: Assets/Scenes/main.unity
-    guid: f3751eb8691b235479729534f59501f7
-  - enabled: 1
     path: Assets/Scenes/Museo.unity
     guid: eed921481cfc5fe4ebc42f19d22ee252
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: a4811dd64087c274987aa88f8a6a7337
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Bayron.unity
-    guid: 6e1443c86ebb3ba428ac10759f37be65
   m_configObjects: {}
