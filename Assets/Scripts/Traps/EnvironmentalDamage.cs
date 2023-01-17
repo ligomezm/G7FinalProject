@@ -16,9 +16,12 @@ public class EnvironmentalDamage : MonoBehaviour
     private void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
+        //lifeBarPlayer = GameObject.FindGameObjectWithTag("lifeBarPlayer").GetComponent<LifeBar>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
     }
+
     void OnEnable()
     {
         ManageScenes.OnSceneLoaded += GetReferences;
@@ -29,7 +32,9 @@ public class EnvironmentalDamage : MonoBehaviour
     }
     private void GetReferences()
     {
-        lifeBarPlayer = FindObjectOfType<LifeBar>();
+        //lifeBarPlayer = FindObjectOfType<LifeBar>();
+        lifeBarPlayer = GameObject.FindGameObjectWithTag("lifeBarPlayer").GetComponent<LifeBar>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
 
@@ -39,7 +44,7 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerArmature")
         {
-            other.GetComponent<EnemyDamage>().hp -= 30;
+            //other.GetComponent<EnemyDamage>().hp -= 30;
             receiveDamage = true;
             StartCoroutine(ConstantDamage());
         }

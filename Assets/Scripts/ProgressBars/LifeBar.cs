@@ -93,8 +93,7 @@ public class LifeBar : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentValue -= damage;
-
-        ChekLife();
+        //ChekLife();
     }
 
     public void IncreaseLife(float health)

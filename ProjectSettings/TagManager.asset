@@ -17,6 +17,7 @@ TagManager:
   - Swords
   - Enemy
   - ParentPlayer
+  - lifeBarPlayer
   layers:
   - Default
   - TransparentFX

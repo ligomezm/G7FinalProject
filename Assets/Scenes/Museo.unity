@@ -1779,6 +1779,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2928991548082169551, guid: f71c5b72532f7a348ad8273243c7e792, type: 3}
+      propertyPath: m_TagString
+      value: lifeBarPlayer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f71c5b72532f7a348ad8273243c7e792, type: 3}
 --- !u!1 &454817314
