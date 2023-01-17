@@ -37,7 +37,12 @@ public class LinearIndicator : MonoBehaviour
             valueIndicator.pivot = Vector2.zero;
         }
 
-    
+
+    }
+
+    private void Start()
+    {
+        currentValue = 100;
     }
     void OnEnable()
     {

@@ -52,7 +52,7 @@ public class EnemyDamage : MonoBehaviour
         if (other.gameObject.tag == "Player" && canAttack)
         {
 
-            lifeBarPlayer.currentValue -= 1000 * Time.deltaTime;
+            lifeBarPlayer.currentValue -= 500 * Time.deltaTime;
             lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
             lifeBarPlayer.ChekLife();
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);

@@ -99,7 +99,6 @@ public class ManageScenes : Singleton<ManageScenes>
         
     }
 
-
     void OnLoadOperationComplete(AsyncOperation ao)
     {
         //controller.CanMove = false;
@@ -128,5 +127,14 @@ public class ManageScenes : Singleton<ManageScenes>
         
         
         
+
+
     }
+
+    public void normalLevelLoad()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene("Level2");
+    }
+
 }
