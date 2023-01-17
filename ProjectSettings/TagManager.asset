@@ -16,6 +16,7 @@ TagManager:
   - PlayerSpawn
   - Swords
   - Enemy
+  - ParentPlayer
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - SwordsInScene
   - SwordInHand
   - Enemy
-  - 
+  - PlayerScenes
   - 
   - 
   - 

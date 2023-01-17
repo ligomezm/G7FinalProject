@@ -10,7 +10,7 @@ public enum LevelNameType
 }
 
 public enum DungeonNameType
-{ 
+{
     DUNGEON1, DUNGEON2, DUNGEON3, DUNGEON4
 }
 
@@ -42,15 +42,15 @@ public class NPCInteractable : MonoBehaviour
             //PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
 
             if (currentScene == "Museo")
-            { 
-            PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
-        }
+            {
+                PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
+            }
 
             if (currentScene == "Level2")
             {
                 txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
                 txt.text = "Door: <br>Interact (E)";
-                
+
                 //PlayerInteract.OnDoorChosen?.Invoke(dungeonNameType);
             }
 
@@ -70,8 +70,7 @@ public class NPCInteractable : MonoBehaviour
 
         //manageScene.ChangeMuseumLevel(PlayerInteract.levelsNames[(int)levelToLoad]);
         gameManager.CurrentGamestate = GameState.GAME;
-        //GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int) levelToLoad]);
-        ManageScenes.GetInstance().normalLevelLoad();
+        GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int)levelToLoad]);
     }
 
     public void InteractWithDoor(DungeonNameType dungeonToLoad)
