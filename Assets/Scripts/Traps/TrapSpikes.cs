@@ -20,6 +20,8 @@ public class TrapSpikes : MonoBehaviour
     private void Start()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
+        //lifeBarPlayer = GameObject.FindGameObjectWithTag("lifeBarPlayer").GetComponent<LifeBar>();
+
         spikesReloaded = true;
 
         player = GameObject.FindGameObjectWithTag("Player");
