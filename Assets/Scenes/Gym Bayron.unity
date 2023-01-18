@@ -2390,6 +2390,22 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2718561995631312890, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 104.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718561995631312890, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718561995631312890, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718561995631312890, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.28
+      objectReference: {fileID: 0}
     - target: {fileID: 2718561995631312893, guid: 81e882b221616594088dba1786afb75c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
@@ -2929,6 +2945,22 @@ PrefabInstance:
     - target: {fileID: 6810799067648221037, guid: 81e882b221616594088dba1786afb75c, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832530447134539164, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 113.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832530447134539164, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832530447134539164, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832530447134539164, guid: 81e882b221616594088dba1786afb75c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.29
       objectReference: {fileID: 0}
     - target: {fileID: 6834589146232410936, guid: 81e882b221616594088dba1786afb75c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7311,7 +7343,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0, y: 0.048529413, z: 0.068627454, w: 0.078431375}
+      - m_Value: {x: 0, y: 0.1882353, z: 0.28235295, w: 0.050980393}
         m_Name: Particle color
         m_Overridden: 1
     m_Uint:

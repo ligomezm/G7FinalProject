@@ -31,8 +31,13 @@ public class TrapSpikes : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-            if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
+        if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
         {
+            if (other.gameObject.GetComponent<Attack>().isRoll)
+            {
+                //Debug.Log("Inmune");
+                return;
+            }
             receiveDamage = true;
             
             StartCoroutine(ConstantDamage());
@@ -43,6 +48,11 @@ public class TrapSpikes : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerArmature")
         {
+            //if (other.gameObject.GetComponent<Attack>().isRoll)
+            //{
+            //    Debug.Log("Inmune");
+            //    return;
+            //}
             playerAnimator.SetBool("Pain", false);
             receiveDamage = false;
             StopCoroutine(ConstantDamage());

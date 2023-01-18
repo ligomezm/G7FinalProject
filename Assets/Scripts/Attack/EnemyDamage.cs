@@ -51,13 +51,15 @@ public class EnemyDamage : MonoBehaviour
         canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
         if (other.gameObject.tag == "Player" && canAttack)
         {
+            if (other.gameObject.GetComponent<Attack>().isRoll) {
+                //Debug.Log("Inmune");
+                return;
+            }
 
             lifeBarPlayer.currentValue -= 500 * Time.deltaTime;
             lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
             lifeBarPlayer.ChekLife();
             lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
-
-            //Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
         }
     }
 

@@ -233,9 +233,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -983
+    x: -1099
     y: -28
-    width: 2105
+    width: 2221
     height: 1961
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -311,8 +311,8 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 3
-    min: -Infinity
-    max: Infinity
+    min: 0
+    max: 4
     enumValues: []
     descendantCount: 0
   - name: Turbulence drag
@@ -325,8 +325,8 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 5
-    min: -Infinity
-    max: Infinity
+    min: 0
+    max: 6
     enumValues: []
     descendantCount: 0
   - name: Turbulence frequency
@@ -339,8 +339,8 @@ MonoBehaviour:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
       m_SerializableObject: 1.5
-    min: -Infinity
-    max: Infinity
+    min: 0
+    max: 4
     enumValues: []
     descendantCount: 0
   m_ImportDependencies: []
@@ -1785,7 +1785,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -983, y: 1406}
+  m_UIPosition: {x: -1099, y: 1406}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1946,7 +1946,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -699, y: 1342}
+  m_UIPosition: {x: -815, y: 1342}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -4322,7 +4322,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 2
+      m_SerializableObject: 0
     m_Space: 2147483647
   m_Property:
     name: lacunarity
@@ -4599,7 +4599,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614692}
       inputSlot: {fileID: 8926484042661614685}
-    position: {x: 434, y: 693}
+    position: {x: 424, y: 693}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614692
@@ -4679,7 +4679,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614694}
       inputSlot: {fileID: 8926484042661614687}
-    position: {x: 418, y: 759}
+    position: {x: 418, y: 761}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614694
@@ -4897,7 +4897,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614700}
       inputSlot: {fileID: 8926484042661614571}
-    position: {x: 388, y: 982}
+    position: {x: 403, y: 994}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614700
@@ -4979,7 +4979,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614702}
       inputSlot: {fileID: 8926484042661614572}
-    position: {x: 419, y: 1021}
+    position: {x: 425, y: 1032}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614702
@@ -5061,7 +5061,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661614704}
       inputSlot: {fileID: 8926484042661614677}
-    position: {x: 394, y: 1059}
+    position: {x: 394, y: 1071}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661614704
@@ -5739,7 +5739,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: -864, y: 1275}
+  m_UIPosition: {x: -980, y: 1275}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
