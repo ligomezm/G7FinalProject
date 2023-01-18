@@ -53,6 +53,14 @@ public class ButtonController : MonoBehaviour
                 case ButtonType.PAUSEOPTIONS:
                     canvasManager.SwitchCanvas(CanvasType.PAUSEOPTIONS);
                     break;
+                case ButtonType.QUIT:
+                    // canvasManager.SwitchCanvas(CanvasType.PAUSEOPTIONS);
+                #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.ExitPlaymode();
+                    //UnityEditor.EditorApplication.isPlaying = false;
+                #endif
+                    Application.Quit();
+                    break;
                 default:
                     break;
             }
