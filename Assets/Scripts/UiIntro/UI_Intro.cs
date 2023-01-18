@@ -40,8 +40,6 @@ public class UI_Intro : MonoBehaviour
 
     void TaskOnClick()
     {
-        Debug.Log("You have clicked the button!");
-
         if (textWriterSingle != null && textWriterSingle.IsActive())
         {
             textWriterSingle.WriteAllText();
