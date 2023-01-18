@@ -72,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationTime: 1.1
-  attackDistance: 3
+  attackDistance: 3.2
   walkSpeed: 0
   fovAngle: 60
   fovDistance: 10
