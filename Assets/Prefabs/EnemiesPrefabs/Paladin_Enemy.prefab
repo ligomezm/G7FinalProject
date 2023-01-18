@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995391964}
   m_LocalRotation: {x: -0, y: -0, z: 0.36485022, w: 0.9310663}
-  m_LocalPosition: {x: 0.25, y: 1.05, z: 0.2}
+  m_LocalPosition: {x: 0.25, y: 1.05, z: 0.491}
   m_LocalScale: {x: 0.43951505, y: 0.43951526, z: 0.4395151}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1290,6 +1290,7 @@ GameObject:
   - component: {fileID: 171467245262453290}
   - component: {fileID: 1606595900}
   - component: {fileID: 8219656366460433906}
+  - component: {fileID: 1740909916}
   m_Layer: 8
   m_Name: Paladin_Enemy
   m_TagString: Enemy
@@ -1454,6 +1455,19 @@ CapsuleCollider:
   m_Direction: 1
   m_Center: {x: 0, y: 0.36950013, z: -0}
 --- !u!114 &8219656366460433906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286494434029687291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearInactive: 0
+--- !u!114 &1740909916
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
