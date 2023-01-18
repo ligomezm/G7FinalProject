@@ -31,7 +31,10 @@ public class ChaseEnemy : StateMachineBehaviour
         if (!ShouldChasePlayer(currPosition))
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.IDLE);
         else if (AttackEnemy.ShouldAttackPlayer(currPosition))
+        {
+            LookTowardsPlayer(animator.transform, target.transform);
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.ATTACK);
+        }
         else 
             if (!navAgent.hasPath || (target.transform.position - navAgent.pathEndPosition).sqrMagnitude > repathTolerance * repathTolerance)
                 SetDestinationNearTarget(navAgent, target);    
@@ -58,5 +61,9 @@ public class ChaseEnemy : StateMachineBehaviour
     {
         PlayerSingleton p = PlayerSingleton.GetInstance();
         return (p.transform.position - _chaserPosition).sqrMagnitude < chaseRadius * chaseRadius;
+    }
+    private void LookTowardsPlayer(Transform enemy, Transform player)
+    {
+        enemy.LookAt(player.transform, Vector3.up);
     }
 }
