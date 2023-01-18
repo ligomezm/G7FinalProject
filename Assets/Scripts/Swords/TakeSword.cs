@@ -8,11 +8,15 @@ public class TakeSword : MonoBehaviour
     public GameObject swordsContainer;
     public GameObject swordsInHand;
 
+    public bool playerHasSword;
+
 
     List<GameObject> swords  = new List<GameObject>();
-    // Start is called before the first frame update
+
     void Start()
     {
+        playerHasSword = false;
+       
         try
         {
             swordsContainer = GameObject.FindGameObjectWithTag("Swords");
@@ -23,11 +27,6 @@ public class TakeSword : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -39,6 +38,7 @@ public class TakeSword : MonoBehaviour
 
             other.gameObject.SetActive(false);
             swordsInHand.transform.GetChild(index).gameObject.SetActive(true);
+            playerHasSword = true;
         }
     }
 
