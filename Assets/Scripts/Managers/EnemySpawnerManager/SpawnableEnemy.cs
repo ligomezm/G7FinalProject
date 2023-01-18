@@ -12,11 +12,11 @@ public class SpawnableEnemy : MonoBehaviour
     {
         _manager = manager;
     }
-    
+
 
     void OnDisable()
     {
-        _manager.enemiesToSpawn.Remove(this);
-        OnEnemyDefeated?.Invoke();
+            _manager.enemiesToSpawn.Remove(this);
+            OnEnemyDefeated?.Invoke();
     }
 }

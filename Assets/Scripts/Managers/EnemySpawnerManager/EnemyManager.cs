@@ -28,6 +28,13 @@ public class EnemyManager : MonoBehaviour
     private void ManageEnemies()
     {
         Debug.Log(enemiesToSpawn.Count);
+        if (enemiesToSpawn.Count <= 0)
+        {
+            goldKey.gameObject.SetActive(true);
+            goldKey.transform.position = lastEnemyPosition + Vector3.up * 1.1f;
+            return;
+        }
+
         if (enemiesToSpawn.Count <= enemyCounterToNextWave)
         {
             for (int i = 0; i < enemiesToSpawn.Count; i++)
@@ -36,11 +43,6 @@ public class EnemyManager : MonoBehaviour
                     lastEnemyPosition = enemiesToSpawn[i].gameObject.transform.position;
                 enemiesToSpawn[i].gameObject.SetActive(true);
             }
-        }
-        if (enemiesToSpawn.Count <= 0)
-        {
-            goldKey.gameObject.SetActive(true);
-            goldKey.transform.position = lastEnemyPosition + Vector3.up * 1.1f;
         }
     }
 }

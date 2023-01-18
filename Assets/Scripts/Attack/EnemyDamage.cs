@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class EnemyDamage : MonoBehaviour
 {
+    public VisualEffect _AttackEffect;
 
 
     public float hp = 100;
@@ -44,5 +46,10 @@ public class EnemyDamage : MonoBehaviour
     public void DesactiveColliderSwordAttack()
     {
         sword.gameObject.GetComponent<BoxCollider>().enabled = false;
+    }
+
+    public void ActiveSlashSwordEnemy()
+    {
+        _AttackEffect.Play();
     }
 }
