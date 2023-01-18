@@ -15,6 +15,7 @@ public class Attack : MonoBehaviour
     [Header("Slash VFX")]
     public VisualEffect _SlashEffect_A;
     public VisualEffect _SlashEffect_B;
+    public VisualEffect _RollEffect;
 
     //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
@@ -89,11 +90,11 @@ public class Attack : MonoBehaviour
 
     public void ActiveUnscatched()
     {
-
+        _RollEffect.Play();
     }
     public void DesactiveUnscatched()
     {
-
+        _RollEffect.Stop();
     }
     
 

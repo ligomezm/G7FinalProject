@@ -1175,7 +1175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d6910ffb8ee1449888bc20c566f87f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _filter: {fileID: 153542921}
+  _filter: {fileID: 0}
   _countPerParticle: 1
   _delay: 0
 --- !u!136 &1606595900
@@ -3093,7 +3093,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -164.44
+      value: -164.48
       objectReference: {fileID: 0}
     - target: {fileID: 3690158297695167449, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_Layer

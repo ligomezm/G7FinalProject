@@ -84,7 +84,7 @@ public class EnvironmentalDamage : MonoBehaviour
             playerAnimator.SetBool("Pain", true);
             lifeBarPlayer.TakeDamage(damage);
             lifeBarPlayer.UpdateLifeBar();
-            
+
             yield return new WaitForSeconds(1f);
         }
     }
