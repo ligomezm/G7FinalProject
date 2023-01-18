@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18387091, g: 0.22901797, b: 0.30311298, a: 1}
+  m_IndirectSpecularColor: {r: 0.1838713, g: 0.22901873, b: 0.30311438, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11112,6 +11112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1366942782}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 57660315765566558, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.13670217
@@ -12589,17 +12593,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21563213, y: 0.09195964, z: 0.7007421}
   m_Center: {x: 0.8386555, y: 1.4112257, z: 0.39475125}
---- !u!114 &685822226 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
-  m_PrefabInstance: {fileID: 685822212}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &686873690
 GameObject:
   m_ObjectHideFlags: 0
@@ -19509,6 +19502,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1366942782}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 57660315765566558, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.13670217
@@ -24810,7 +24807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1366942782
 Transform:
   m_ObjectHideFlags: 0
@@ -29300,6 +29297,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appearInactive: 0
+--- !u!114 &1740909917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 2403392331755925015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740909915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1742266781
 GameObject:
   m_ObjectHideFlags: 0
@@ -33564,7 +33572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
@@ -33628,13 +33636,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2109088659}
     - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemyCounterToNextWave
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
       propertyPath: enemiesToSpawn.Array.data[0]
       value: 
-      objectReference: {fileID: 685822226}
+      objectReference: {fileID: 1740909917}
     - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
       propertyPath: enemiesToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 1121608617}
+      objectReference: {fileID: 1740909917}
     - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
       propertyPath: enemiesToSpawn.Array.data[2]
       value: 
