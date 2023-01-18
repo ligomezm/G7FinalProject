@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1838713, g: 0.22901873, b: 0.30311438, a: 1}
+  m_IndirectSpecularColor: {r: 0.18387091, g: 0.22901797, b: 0.30311298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5553,6 +5553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin WProp J Nordstrom (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3347180603050321919, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000000042790305
@@ -9750,6 +9754,24 @@ Transform:
   m_Father: {fileID: 696464300}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &554346044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 196035775}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &554346045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554346044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearInactive: 0
 --- !u!1 &555090968
 GameObject:
   m_ObjectHideFlags: 0
@@ -12567,6 +12589,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21563213, y: 0.09195964, z: 0.7007421}
   m_Center: {x: 0.8386555, y: 1.4112257, z: 0.39475125}
+--- !u!114 &685822226 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 685822212}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &686873690
 GameObject:
   m_ObjectHideFlags: 0
@@ -16648,6 +16681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin WProp J Nordstrom (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3347180603050321919, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000000042790305
@@ -19267,6 +19304,10 @@ PrefabInstance:
     - target: {fileID: 2526658148974180509, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
       propertyPath: m_Name
       value: BlueGem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2526658148974180509, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
@@ -22029,6 +22070,24 @@ Transform:
   m_Father: {fileID: 1616000305}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1121608608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 1005005427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1121608617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121608608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearInactive: 0
 --- !u!1 &1122897685
 GameObject:
   m_ObjectHideFlags: 0
@@ -24751,7 +24810,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1366942782
 Transform:
   m_ObjectHideFlags: 0
@@ -29223,6 +29282,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 342880634003457286, guid: 68d81d4a9eb5e7149a53cd3baafd891e, type: 3}
   m_PrefabInstance: {fileID: 1739388116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1740909915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 2403392331755925015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740909916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740909915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearInactive: 0
 --- !u!1 &1742266781
 GameObject:
   m_ObjectHideFlags: 0
@@ -31549,6 +31626,24 @@ Transform:
   m_Father: {fileID: 144782416}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1953373776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+  m_PrefabInstance: {fileID: 782528532}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1953373785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1953373776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appearInactive: 0
 --- !u!1 &1954892258
 GameObject:
   m_ObjectHideFlags: 0
@@ -33100,6 +33195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KeyGold (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 729216039777274571, guid: 9614163560274da49a64c5f083530486, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9614163560274da49a64c5f083530486, type: 3}
 --- !u!4 &2109088658 stripped
@@ -33107,6 +33206,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 723227803984641023, guid: 9614163560274da49a64c5f083530486, type: 3}
   m_PrefabInstance: {fileID: 2109088657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2109088659 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 727519082063508104, guid: 9614163560274da49a64c5f083530486, type: 3}
+  m_PrefabInstance: {fileID: 2109088657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e933cb283ec6984888f47d5005527d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2109342360 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 465033460254644512, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
@@ -33452,5 +33562,90 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin WProp J Nordstrom
       objectReference: {fileID: 0}
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+--- !u!1001 &6356989899527306918
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 34.93103
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -69.664536
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.151886
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319386, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319388, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: m_Name
+      value: EnemiesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: goldKey
+      value: 
+      objectReference: {fileID: 2109088659}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 685822226}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 1121608617}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 1953373785}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 554346045}
+    - target: {fileID: 6356989900558319389, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
+      propertyPath: enemiesToSpawn.Array.data[4]
+      value: 
+      objectReference: {fileID: 1740909916}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94cf1696b6c73ed42a7ff2f8269e36c9, type: 3}
