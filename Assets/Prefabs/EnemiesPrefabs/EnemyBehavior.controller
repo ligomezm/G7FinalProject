@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0616392fc8f7215409fa1072b76b9b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationTime: 1.1
   attackDistance: 2
   walkSpeed: 0
   fovAngle: 60
