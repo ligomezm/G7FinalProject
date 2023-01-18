@@ -11,10 +11,12 @@ public class Attack : MonoBehaviour
     List<BoxCollider> colliderWeapon = new List<BoxCollider>();
     Animator animator;
 
+    public bool isRoll = false;
     //Slash VFX 
-    [Header("Slash VFX")]
+    [Header("VFX")]
     public VisualEffect _SlashEffect_A;
     public VisualEffect _SlashEffect_B;
+    public VisualEffect _RollEffect;
 
     //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
@@ -89,11 +91,13 @@ public class Attack : MonoBehaviour
 
     public void ActiveUnscatched()
     {
-
+        isRoll = true;
+        _RollEffect.Play();
     }
     public void DesactiveUnscatched()
     {
-
+        isRoll = false;
+        _RollEffect.Stop();
     }
     
 

@@ -3591,9 +3591,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2044217755820040353}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 'Player '
-  m_TagString: Player
+  m_TagString: ParentPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

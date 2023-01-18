@@ -44,6 +44,11 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerArmature")
         {
+            if (other.gameObject.GetComponent<Attack>().isRoll)
+            {
+                //Debug.Log("Inmune");
+                return;
+            }
             //other.GetComponent<EnemyDamage>().hp -= 30;
             receiveDamage = true;
             StartCoroutine(ConstantDamage());
@@ -71,6 +76,11 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         if (other.gameObject.name == "PlayerArmature")
         {
+            //if (other.gameObject.GetComponent<Attack>().isRoll)
+            //{
+            //    //Debug.Log("Inmune");
+            //    return;
+            //}
             playerAnimator.SetBool("Pain", false);
             receiveDamage = false;
             StopCoroutine(ConstantDamage());
@@ -84,7 +94,7 @@ public class EnvironmentalDamage : MonoBehaviour
             playerAnimator.SetBool("Pain", true);
             lifeBarPlayer.TakeDamage(damage);
             lifeBarPlayer.UpdateLifeBar();
-            
+
             yield return new WaitForSeconds(1f);
         }
     }
