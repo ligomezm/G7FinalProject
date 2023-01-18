@@ -37,7 +37,10 @@ public class AttackEnemy : StateMachineBehaviour
         if (!ShouldAttackPlayer(animator.transform.position) && !isAttacking)
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.CHASE);
         else if (ShouldAttackPlayer(animator.transform.position))
+        {
             isAttacking = true;
+            LookTowardsPlayer(animator.transform, target.transform);
+        }
         int data = animator.GetComponent<AIComponent>().enemyBehavior.BaseDamage;
         //Debug.Log($"Attacking with {data}");
         // animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.ATTACK);
@@ -50,6 +53,10 @@ public class AttackEnemy : StateMachineBehaviour
         PlayerSingleton player = PlayerSingleton.GetInstance();
         
         return (attackerPosition - player.transform.position).sqrMagnitude <= minAttackDistance * minAttackDistance;
+    }
+    private void LookTowardsPlayer(Transform enemy, Transform player)
+    {
+        enemy.LookAt(player.transform, Vector3.up);
     }
 
 
