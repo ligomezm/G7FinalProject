@@ -41,6 +41,7 @@ public class ManageScenes : Singleton<ManageScenes>
     //     }
     // }
     string placeholder;
+    
     public void LoadLevel(string levelName, int loadOperation = 0)
     {
         Scene mainPersistenScene = SceneManager.GetSceneByName("MainMenu");
