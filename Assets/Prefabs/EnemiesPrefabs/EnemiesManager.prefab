@@ -44,11 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea843ab0bff74f4fa5295a148578c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCounterToNextWave: 3
+  enemyCounterToNextWave: 0
   goldKey: {fileID: 0}
   enemiesToSpawn:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}

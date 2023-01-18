@@ -5,7 +5,8 @@ using UnityEngine;
 public class SwordEnemyDamage : MonoBehaviour
 {
     public LifeBar lifeBarPlayer;
-    bool canAttack;
+    bool   canAttack;
+
 
     // Start is called before the first frame update
     void Start()
