@@ -39,7 +39,6 @@ public class EnemyManager : MonoBehaviour
         }
         if (enemiesToSpawn.Count <= 0)
         {
-            Debug.Log("Key is appearing");
             goldKey.gameObject.SetActive(true);
             goldKey.transform.position = lastEnemyPosition + Vector3.up * 1.1f;
         }
