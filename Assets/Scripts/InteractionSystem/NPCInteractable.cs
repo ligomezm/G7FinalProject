@@ -19,12 +19,13 @@ public class NPCInteractable : MonoBehaviour
     public LevelNameType levelNameType;
     public DungeonNameType dungeonNameType;
     public GameObject dialogueBox;
+    string currentScene;
+    
     GameManager gameManager;
     ManageScenes manageScene;
-    string currentScene;
     Animation doorAnimation;
-
     TMP_Text txt;
+
 
     void Start()
     {
@@ -32,17 +33,18 @@ public class NPCInteractable : MonoBehaviour
         gameManager = GameManager.GetInstance();
         currentScene = SceneManager.GetActiveScene().name;
         doorAnimation = GetComponent<Animation>();
-
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             dialogueBox.SetActive(true);
-            //PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
 
             if (currentScene == "Museo")
             {
+                string relicName = this.name;
+                txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
+                txt.text = relicName + ": <br>Interact (E)";
                 PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
             }
 

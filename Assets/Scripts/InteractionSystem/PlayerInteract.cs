@@ -18,14 +18,17 @@ public class PlayerInteract : MonoBehaviour
     public static string[] dungeonsNames = {"Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4"};
 
     public Inventory inventory;
+    public TakeSword takeSword;
     TMP_Text txt;
 
     GoldKeyCollectable goldKey;
     public const string Door = "Door";
-    public const string NewTxtUI = "You need a key to open";
+    public const string NewTxtDoorLevel2 = "You need a key to open";
+    public const string NewTxtRelicMuseum = "Get a sword <br>first";
     
     void OnEnable()
     {
+        takeSword = GameObject.FindObjectOfType<TakeSword>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         goldKey = FindObjectOfType<GoldKeyCollectable>();
 
@@ -76,29 +79,40 @@ public class PlayerInteract : MonoBehaviour
                 if (collider.TryGetComponent(out NPCInteractable nPCInteractable)
                     && collider.gameObject.CompareTag(Door))
                 {
-                    if (inventory.ItemInInventory(goldKey))
-                    {
-                        nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
-                        int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
-                        inventory.mItems.Add(goldKey);
-                        inventory.RemoveItem(goldKey, itemKeyInInventory);
-                    }
-                    else
-                    {
-                        txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
-                        txt.text = NewTxtUI;
-                    }
+                    TryToOpenDoor(nPCInteractable, collider);
                 }
 
                 else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
                     && collider.gameObject.GetComponent<NPCInteractable>().levelNameType == interactedRelicType)
                 {
-                    Debug.Log(npcInteractable.levelNameType);
-                    npcInteractable.Interact(npcInteractable.levelNameType);
-                }
 
+                    if (takeSword.playerHasSword)
+                    {
+                        npcInteractable.Interact(npcInteractable.levelNameType);
+                    }
+                    else
+                    {
+                        txt = collider.gameObject.transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>();
+                        txt.text = NewTxtRelicMuseum;
+                    }
+                }
             }
         }
     }
-    
+
+    void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
+    {
+        if (inventory.ItemInInventory(goldKey))
+        {
+            nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
+            int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
+            inventory.mItems.Add(goldKey);
+            inventory.RemoveItem(goldKey, itemKeyInInventory);
+        }
+        else
+        {
+            txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
+            txt.text = NewTxtDoorLevel2;
+        }
+    }
 }
