@@ -6,10 +6,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
-    public LifeBar lifeBarPlayer;
-    private ShapeEmitter shapeEmitter;
 
-    bool canAttack;
 
     public float hp = 100;
     public int swordDamage = 35;
@@ -18,10 +15,11 @@ public class EnemyDamage : MonoBehaviour
     public float maxValue = 100;
     public float minValue = 0;
 
+    public GameObject sword;
+
     // Start is called before the first frame update
     void Start()
     {
-        lifeBarPlayer = FindObjectOfType<LifeBar>();
         //shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
 
     }
@@ -31,13 +29,6 @@ public class EnemyDamage : MonoBehaviour
     {
         if (hp < 0)
         {
-            // Destroy(gameObject);
-            try
-            {
-                //shapeEmitter.Emit();
-            }
-            catch (System.Exception) {}
-
             gameObject.SetActive(false);
         }
 
@@ -45,32 +36,13 @@ public class EnemyDamage : MonoBehaviour
         linearIndicator.SetValue(hp);
     }
 
-    void OnTriggerEnter(Collider other)
+
+    public void ActiveColliderSwordAttack()
     {
-        //if (lifeBarPlayer == null) GetPlayerLifeBar();
-        canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
-        if (other.gameObject.tag == "Player" && canAttack)
-        {
-
-            lifeBarPlayer.currentValue -= 500 * Time.deltaTime;
-            lifeBarPlayer.currentValue = Mathf.Clamp(lifeBarPlayer.currentValue, lifeBarPlayer.minValue, lifeBarPlayer.maxValue);
-            lifeBarPlayer.ChekLife();
-            lifeBarPlayer.linearIndicator.SetValue(lifeBarPlayer.currentValue);
-
-            //Debug.Log("Paso por aqui EnemyDamage.()    " + lifeBarPlayer);
-        }
+        sword.gameObject.GetComponent<BoxCollider>().enabled = true;
     }
-
-    void GetPlayerLifeBar()
+    public void DesactiveColliderSwordAttack()
     {
-        try
-        {
-            lifeBarPlayer = PlayerSingleton.GetInstance().GetComponent<LifeBar>();
-        }
-        catch (System.Exception)
-        {
-            
-            throw;
-        }
+        sword.gameObject.GetComponent<BoxCollider>().enabled = false;
     }
 }
