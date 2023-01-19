@@ -18,20 +18,20 @@ public class EnemyManager : MonoBehaviour
         {
             enemiesToSpawn[i].Init(this);
         }
-        
+        Debug.Log(enemiesToSpawn.Count);
     }
     void OnDisable()
     {
         SpawnableEnemy.OnEnemyDefeated -= ManageEnemies;
     }
 
-    private void ManageEnemies()
+    private void ManageEnemies(Vector3 enemyPosition)
     {
-        Debug.Log(enemiesToSpawn.Count);
+        
         if (enemiesToSpawn.Count <= 0)
         {
             goldKey.gameObject.SetActive(true);
-            goldKey.transform.position = lastEnemyPosition + Vector3.up * 1.1f;
+            goldKey.transform.position = enemyPosition;
             return;
         }
 
@@ -39,8 +39,6 @@ public class EnemyManager : MonoBehaviour
         {
             for (int i = 0; i < enemiesToSpawn.Count; i++)
             {
-                if (i == 0)
-                    lastEnemyPosition = enemiesToSpawn[i].gameObject.transform.position;
                 enemiesToSpawn[i].gameObject.SetActive(true);
             }
         }
