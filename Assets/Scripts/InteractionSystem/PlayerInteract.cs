@@ -82,6 +82,11 @@ public class PlayerInteract : MonoBehaviour
                     TryToOpenDoor(nPCInteractable, collider);
                 }
 
+                else if (collider.TryGetComponent(out NPCInteractable npcInt) && collider.gameObject.name == "Book")
+                {
+                    ShowInstructions(collider);
+                }
+                
                 else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
                     && collider.gameObject.GetComponent<NPCInteractable>().levelNameType == interactedRelicType)
                 {
@@ -92,12 +97,22 @@ public class PlayerInteract : MonoBehaviour
                     }
                     else
                     {
-                        txt = collider.gameObject.transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>();
+                        txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
                         txt.text = NewTxtRelicMuseum;
                     }
                 }
             }
         }
+    }
+
+    void ShowInstructions(Collider collider)
+    {
+        GameObject canvas = collider.transform.GetChild(1).gameObject;
+        canvas.SetActive(true);
+
+        // Canvas con boton de continuar, oprime y se desactiva canvas y se abre puerta
+        
+        
     }
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
