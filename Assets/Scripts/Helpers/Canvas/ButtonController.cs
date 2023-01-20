@@ -56,6 +56,8 @@ public class ButtonController : MonoBehaviour
                 case ButtonType.INTRO:
                     canvasManager.SwitchCanvas(CanvasType.INTRO);
                     break;
+                case ButtonType.NULL:
+                break;                    
                 case ButtonType.QUIT:
                     // canvasManager.SwitchCanvas(CanvasType.PAUSEOPTIONS);
                 #if UNITY_EDITOR
