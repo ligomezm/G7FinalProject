@@ -42,20 +42,23 @@ public class NPCInteractable : MonoBehaviour
 
             if (currentScene == "Museo")
             {
-                string relicName = this.name;
-                txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
-                txt.text = relicName + ": <br>Interact (E)";
+                //string relicName = this.name;
+                //txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
+                //txt.text = this.name + ": <br>Interact (E)";
+
+                FindAndSetInitialText();
                 PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
             }
 
             if (currentScene == "Level2")
             {
-                txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
-                txt.text = "Door: <br>Interact (E)";
+                FindAndSetInitialText();
+
+                //txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
+                //txt.text = this.name + ": <br>Interact (E)";
 
                 //PlayerInteract.OnDoorChosen?.Invoke(dungeonNameType);
             }
-
         }
     }
 
@@ -81,5 +84,11 @@ public class NPCInteractable : MonoBehaviour
         doorAnimation.Play();
         Debug.Log("Cambiando de dungeon");
         //Set active new dungeon and deactive current dungeon
+    }
+
+    void FindAndSetInitialText()
+    {
+        txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
+        txt.text = this.name + ": <br>Interact (E)";
     }
 }

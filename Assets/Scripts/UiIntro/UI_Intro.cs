@@ -10,11 +10,14 @@ public class UI_Intro : MonoBehaviour
     private TextWriter.TextWriterSingle textWriterSingle;
     private AudioSource typingAudioSource;
 
+    ButtonController buttonController;
+
     Button button;
     string textToWrite;
 
     private void Awake()
     {
+        buttonController = transform.Find("Message").GetChild(3).GetComponent<ButtonController>();
         messageText = transform.Find("Message").GetChild(2).GetComponent<TMP_Text>();
         button = transform.Find("Message").GetChild(3).GetComponent<Button>();
         typingAudioSource = transform.Find("Sound").GetComponent<AudioSource>();
@@ -45,7 +48,8 @@ public class UI_Intro : MonoBehaviour
             textWriterSingle.WriteAllText();
         }
         else
-        { 
+        {
+            buttonController.buttonType = ButtonType.START;
             // Go to next scene 
             // Or set another message
         }
