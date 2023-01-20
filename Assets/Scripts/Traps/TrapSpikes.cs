@@ -16,23 +16,28 @@ public class TrapSpikes : MonoBehaviour
 
     public Animation spikeAnimation;
 
-
-    private void Start()
+    void OnEnable()
     {
+        
         lifeBarPlayer = FindObjectOfType<LifeBar>();
         //lifeBarPlayer = GameObject.FindGameObjectWithTag("lifeBarPlayer").GetComponent<LifeBar>();
-
+        Debug.Log("Lifebar from trapspikes: " + lifeBarPlayer);
         spikesReloaded = true;
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-
+        Debug.Log("This is triggering correctly");
         if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
         {
+            Debug.Log("Damage to player");
             if (other.gameObject.GetComponent<Attack>().isRoll)
             {
                 //Debug.Log("Inmune");

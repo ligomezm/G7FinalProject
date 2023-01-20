@@ -11,7 +11,12 @@ public class SwordEnemyDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+    void OnEnable()
+    {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
+        Debug.Log(lifeBarPlayer);
+        
     }
 
     // Update is called once per frame

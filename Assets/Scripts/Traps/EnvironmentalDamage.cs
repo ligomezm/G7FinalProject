@@ -15,20 +15,20 @@ public class EnvironmentalDamage : MonoBehaviour
 
     private void Start()
     {
+    }
+
+    void OnEnable()
+    {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
         //lifeBarPlayer = GameObject.FindGameObjectWithTag("lifeBarPlayer").GetComponent<LifeBar>();
 
         player = GameObject.FindGameObjectWithTag("Player");
         playerAnimator = player.GetComponent<Animator>();
-    }
-
-    void OnEnable()
-    {
-        ManageScenes.OnSceneLoaded += GetReferences;
+        //ManageScenes.OnSceneLoaded += GetReferences;
     }
     void OnDisable()
     {
-        ManageScenes.OnSceneLoaded -= GetReferences;
+        //ManageScenes.OnSceneLoaded -= GetReferences;
     }
     private void GetReferences()
     {
@@ -91,6 +91,7 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         while (receiveDamage)
         {
+            Debug.Log(lifeBarPlayer);
             playerAnimator.SetBool("Pain", true);
             lifeBarPlayer.TakeDamage(damage);
             lifeBarPlayer.UpdateLifeBar();

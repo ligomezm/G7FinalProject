@@ -12,30 +12,46 @@ public class LifeBar : MonoBehaviour
     public float minValue = 0;
     public float currentValue = 100;
     bool flag = true;
+    bool activeAndEnabled = false;
 
     //private bool foundLinearIndicator = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        SetLinearIndicator();
+    }
+    // void Update()
+    // {
+    //     if (this.isActiveAndEnabled && !activeAndEnabled)
+    //     {
+    //         GetReferences();
+    //         activeAndEnabled = true;
+    //     }
+    //     return;
+    // }
+    void Awake()
+    {
         
     }
     void OnEnable()
     {
      
-        SetLinearIndicator();
-        ManageScenes.OnSceneLoaded += GetReferences;
+        //SetLinearIndicator();
+        //ManageScenes.OnSceneLoaded += GetReferences;
+        // Debug.Log("Object and behavior have been enabled");
     }
     void OnDisable()
     {
-        ManageScenes.OnSceneLoaded -= GetReferences;
+        //ManageScenes.OnSceneLoaded -= GetReferences;
     }
 
-    private void GetReferences()
+    
+    public void GetReferences()
     {
-        
+        //Debug.Log("Getting references");
         linearIndicator = FindObjectOfType<LinearIndicator>();
-        
+        //Debug.Log("Linear indicator: " + linearIndicator);
         //Setup the linear indicator by code or do it in inspector
         linearIndicator.SetupIndicator(minValue, maxValue);
 
@@ -45,11 +61,13 @@ public class LifeBar : MonoBehaviour
     }
     public void SetLinearIndicator()
     {
-        if (linearIndicator == null)
-        {
-            linearIndicator = FindObjectOfType<LinearIndicator>();
-            Debug.Log(linearIndicator);
-        }
+        
+        //GetReferences();
+        // if (linearIndicator == null)
+        // {
+        //     linearIndicator = FindObjectOfType<LinearIndicator>();
+        //     Debug.Log(linearIndicator);
+        // }
             //Setup the linear indicator by code or do it in inspector
             linearIndicator.SetupIndicator(minValue, maxValue);
 
