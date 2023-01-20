@@ -29,7 +29,8 @@ public class PlayerInteract : MonoBehaviour
     GameObject canvasInstructionsII;
     Button button;
 
-    GoldKeyCollectable goldKey;
+    //GoldKeyCollectable goldKey;
+    IInventoryItem goldkey;
     public const string Door = "Door";
     public const string NewTxtDoorLevel2 = "You need a key to open";
     public const string NewTxtRelicMuseum = "Get a sword <br>first";
@@ -38,13 +39,14 @@ public class PlayerInteract : MonoBehaviour
     {
         takeSword = GameObject.FindObjectOfType<TakeSword>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        goldKey = FindObjectOfType<GoldKeyCollectable>();
+        //goldKey = FindObjectOfType<GoldKeyCollectable>();
         museumDoorAnimation = museumDoor.GetComponent<Animation>();
 
         OnRelicChosen += InteractionRelic;
         OnDoorChosen += InteractionDoor;
         ManageScenes.OnSceneLoaded += GetReferences;
         museumDoorIsClosed = true;
+        CollectItem.OnitemPickup += SetPickedGoldKey;
     }
 
 
@@ -53,17 +55,26 @@ public class PlayerInteract : MonoBehaviour
         OnRelicChosen -= InteractionRelic;
         OnDoorChosen -= InteractionDoor;
         ManageScenes.OnSceneLoaded -= GetReferences;
+        CollectItem.OnitemPickup -= SetPickedGoldKey;
     }
+
+    void SetPickedGoldKey(IInventoryItem item) => goldkey = item;
 
     private void GetReferences()
     {
-        goldKey = FindObjectOfType<GoldKeyCollectable>();
+        goldkey = FindObjectOfType<GoldKeyCollectable>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
 
     
+
     private void Update()
     {
+        if (inventory == null)
+            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        // if (goldKey == null)
+        //     goldKey = FindObjectOfType<GoldKeyCollectable>();
+            
         InteractWithKeyDown();
         //InteractingWithInstructions();
     }
@@ -80,6 +91,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void InteractWithKeyDown()
     {
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             float interactRange = 2f;
@@ -152,12 +164,16 @@ public class PlayerInteract : MonoBehaviour
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
     {
-        if (inventory.ItemInInventory(goldKey))
+        //inventory.mItems.Add(goldKey);
+        //inventory.AddItem(goldkey);
+        if (inventory.ItemInInventory(goldkey) && inventory.mItems.Contains(goldkey))
         {
+            Debug.Log("Entered inventory list");
+            
+            int itemKeyInInventory = inventory.GetKeyFromValue(goldkey);
+            Debug.Log("item key in inventory: " + itemKeyInInventory);
             nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
-            int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
-            inventory.mItems.Add(goldKey);
-            inventory.RemoveItem(goldKey, itemKeyInInventory);
+            inventory.RemoveItem(goldkey, itemKeyInInventory);
         }
         else
         {
