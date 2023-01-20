@@ -19,7 +19,11 @@ public class PlayerInteract : MonoBehaviour
 
     public Inventory inventory;
     public TakeSword takeSword;
+    public GameObject museumDoor;
     TMP_Text txt;
+    Animation museumDoorAnimation;
+    GameObject canvasInstructions;
+    GameObject canvasInstructionsII;
 
     GoldKeyCollectable goldKey;
     public const string Door = "Door";
@@ -31,6 +35,7 @@ public class PlayerInteract : MonoBehaviour
         takeSword = GameObject.FindObjectOfType<TakeSword>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
         goldKey = FindObjectOfType<GoldKeyCollectable>();
+        museumDoorAnimation = museumDoor.GetComponent<Animation>();
 
         OnRelicChosen += InteractionRelic;
         OnDoorChosen += InteractionDoor;
@@ -55,6 +60,14 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
         InteractWithKeyDown();
+        InteractingWithInstructions();
+        /*if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (canvasInstructions)
+            {
+                InteractingWithInstructions();
+            }
+        }*/
     }
 
     private void InteractionRelic(LevelNameType levelNameType)
@@ -73,7 +86,7 @@ public class PlayerInteract : MonoBehaviour
         {
             float interactRange = 2f;
             Collider[] colliderArray = Physics.OverlapSphere(transform.position, interactRange);
-            Debug.Log(colliderArray.Length);
+
             foreach (Collider collider in colliderArray)
             {
                 if (collider.TryGetComponent(out NPCInteractable nPCInteractable)
@@ -82,6 +95,12 @@ public class PlayerInteract : MonoBehaviour
                     TryToOpenDoor(nPCInteractable, collider);
                 }
 
+                else if (collider.TryGetComponent(out NPCInteractable npcInt) && collider.gameObject.name == "Book")
+                {
+                    ShowInstructions(collider);
+                    museumDoorAnimation.Play();
+                }
+                
                 else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
                     && collider.gameObject.GetComponent<NPCInteractable>().levelNameType == interactedRelicType)
                 {
@@ -92,10 +111,33 @@ public class PlayerInteract : MonoBehaviour
                     }
                     else
                     {
-                        txt = collider.gameObject.transform.GetChild(1).GetChild(1).GetComponent<TMP_Text>();
+                        txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
                         txt.text = NewTxtRelicMuseum;
                     }
                 }
+            }
+        }
+    }
+
+    void ShowInstructions(Collider collider)
+    {
+        canvasInstructions = collider.transform.GetChild(1).gameObject;
+        canvasInstructionsII = collider.transform.GetChild(2).gameObject;
+        canvasInstructions.SetActive(true);  
+    }
+
+    void InteractingWithInstructions()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (canvasInstructions.activeInHierarchy)
+            {
+                canvasInstructions.SetActive(false);
+                canvasInstructionsII.SetActive(true);
+            }
+            else
+            {
+                canvasInstructionsII.SetActive(false);
             }
         }
     }
