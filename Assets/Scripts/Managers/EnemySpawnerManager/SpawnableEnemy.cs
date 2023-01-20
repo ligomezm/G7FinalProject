@@ -4,8 +4,7 @@ using UnityEngine;
 using System;
 public class SpawnableEnemy : MonoBehaviour
 {
-    public bool appearInactive = false;
-    public static Action OnEnemyDefeated;
+    public static Action<Vector3> OnEnemyDefeated;
     private EnemyManager _manager;
 
     public void Init(EnemyManager manager)
@@ -16,7 +15,8 @@ public class SpawnableEnemy : MonoBehaviour
 
     void OnDisable()
     {
-            _manager.enemiesToSpawn.Remove(this);
-            OnEnemyDefeated?.Invoke();
+        Debug.Log("Enemies position: " + transform.position);
+        _manager.enemiesToSpawn.Remove(this);
+        OnEnemyDefeated?.Invoke(transform.position);
     }
 }

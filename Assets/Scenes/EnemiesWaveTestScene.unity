@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 0
 --- !u!1001 &334428030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,6 +147,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -200,7 +207,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1001 &350367530
 PrefabInstance:
@@ -290,6 +303,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -342,7 +363,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1 &438221471 stripped
 GameObject:
@@ -585,6 +612,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -633,7 +668,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin_Enemy (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1001 &817095770
 PrefabInstance:
@@ -642,6 +687,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -690,7 +743,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin_Enemy (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1 &928874235 stripped
 GameObject:
@@ -709,7 +772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 1
 --- !u!1001 &942979421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -717,6 +779,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -765,7 +835,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin_Enemy (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1001 &956522422
 PrefabInstance:
@@ -774,6 +854,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -826,7 +914,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1001 &1139371221
 PrefabInstance:
@@ -835,6 +929,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -887,7 +989,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1001 &1248608053
 PrefabInstance:
@@ -896,6 +1004,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -944,7 +1056,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin_Enemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8219656366460433906, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    - {fileID: 1740909916, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1 &1267296051
 GameObject:
@@ -1061,7 +1179,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 1
 --- !u!1 &1368040887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,17 +1208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ea843ab0bff74f4fa5295a148578c1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyCounterToNextWave: 4
+  enemyCounterToNextWave: 0
   goldKey: {fileID: 1539737856}
   enemiesToSpawn:
   - {fileID: 1621182598}
-  - {fileID: 2046618534}
-  - {fileID: 1803779286}
-  - {fileID: 246703973}
-  - {fileID: 2127480543}
-  - {fileID: 1325754866}
-  - {fileID: 1403414609}
-  - {fileID: 928874245}
 --- !u!4 &1368040889
 Transform:
   m_ObjectHideFlags: 0
@@ -1134,7 +1244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 1
 --- !u!114 &1539737856 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 727519082063508104, guid: 9614163560274da49a64c5f083530486, type: 3}
@@ -1339,7 +1448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 0
 --- !u!1 &1803779276 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
@@ -1357,7 +1465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 0
 --- !u!1 &2046618524 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
@@ -1375,7 +1482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 0
 --- !u!1 &2127480533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
@@ -1393,4 +1499,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  appearInactive: 1
