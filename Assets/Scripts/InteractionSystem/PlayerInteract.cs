@@ -33,7 +33,7 @@ public class PlayerInteract : MonoBehaviour
     public const string Door = "Door";
     public const string NewTxtDoorLevel2 = "You need a key to open";
     public const string NewTxtRelicMuseum = "Get a sword <br>first";
-    
+
     void OnEnable()
     {
         takeSword = GameObject.FindObjectOfType<TakeSword>();
@@ -123,7 +123,8 @@ public class PlayerInteract : MonoBehaviour
 
     void ShowInstructions(Collider collider)
     {
-        SetCursorState(true);
+        SetCursorState(false);
+        
         canvasInstructions = collider.transform.GetChild(1).gameObject;
         canvasInstructionsII = collider.transform.GetChild(2).gameObject;
         
@@ -151,11 +152,6 @@ public class PlayerInteract : MonoBehaviour
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
     {
-        foreach (IInventoryItem itemlist in inventory.mItems)
-        { 
-            Debug.Log(itemlist);
-        
-        }
         if (inventory.ItemInInventory(goldKey))
         {
             nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
