@@ -14,12 +14,13 @@ public class PlayerInteract : MonoBehaviour
     private LevelNameType interactedRelicType;
     private DungeonNameType interactedDoorType;
 
-    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron"};
-    public static string[] dungeonsNames = {"Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4"};
+    public static string[] levelsNames = { "main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron" };
+    public static string[] dungeonsNames = { "Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4" };
 
     public Inventory inventory;
     public TakeSword takeSword;
     public GameObject museumDoor;
+
     TMP_Text txt;
     Animation museumDoorAnimation;
     bool museumDoorIsClosed;
@@ -150,6 +151,11 @@ public class PlayerInteract : MonoBehaviour
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
     {
+        foreach (IInventoryItem itemlist in inventory.mItems)
+        { 
+            Debug.Log(itemlist);
+        
+        }
         if (inventory.ItemInInventory(goldKey))
         {
             nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);

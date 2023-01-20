@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19224687, g: 0.2635824, b: 0.38059157, a: 1}
+  m_IndirectSpecularColor: {r: 0.19224696, g: 0.26358253, b: 0.38059163, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -828,7 +828,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &247233954
 Transform:
   m_ObjectHideFlags: 0
@@ -844,7 +844,7 @@ Transform:
   - {fileID: 1520157711}
   - {fileID: 1749203849}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &371286492
 GameObject:
@@ -1384,7 +1384,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &588338624
 MeshFilter:
@@ -1732,6 +1732,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520157711}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2297,7 +2301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526334370762646175, guid: 6b7b8b808a9863b438b380ea9d322c8d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4526334370762646175, guid: 6b7b8b808a9863b438b380ea9d322c8d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2870,6 +2874,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520157711}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -3110,6 +3118,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1520157711}
     m_Modifications:
+    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3603,7 +3615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2524087079409401859, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2524087079409401859, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
       propertyPath: m_LocalPosition.x
