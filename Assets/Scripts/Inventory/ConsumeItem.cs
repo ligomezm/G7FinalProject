@@ -81,9 +81,11 @@ public class ConsumeItem : MonoBehaviour
             //Debug.Log("itemToUse " + inventoryPanel.transform.GetChild(itemToUse).gameObject.name);
             //Debug.Log("child0 " + inventoryPanel.transform.GetChild(itemToUse).GetChild(0).gameObject.name);
             IInventoryItem item = inventoryPanel.transform.GetChild(itemToUse).GetChild(0).GetComponent<IInventoryItem>();
+            if (item == null)
+                return;
             Sprite itemSprite = inventoryPanel.transform.GetChild(itemToUse).GetChild(0).GetChild(0).GetComponent<Image>().sprite;
-            Debug.Log("itemsprite: " + itemSprite);
-
+            if (itemSprite == null)
+                return;
             if (itemSprite.name == "GreenGem")
             {
                 greenGemCollectible.OnConsume();
@@ -98,8 +100,6 @@ public class ConsumeItem : MonoBehaviour
             {
                 goldKeyCollectable.OnConsume();
             }
-
-
             
             if (item != null)
             {
