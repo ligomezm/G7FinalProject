@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244335951683, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_TagString
-      value: Door
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244335951684, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_RootOrder

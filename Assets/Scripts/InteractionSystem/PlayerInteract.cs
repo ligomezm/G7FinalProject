@@ -22,8 +22,11 @@ public class PlayerInteract : MonoBehaviour
     public GameObject museumDoor;
     TMP_Text txt;
     Animation museumDoorAnimation;
+    bool museumDoorIsClosed;
+
     GameObject canvasInstructions;
     GameObject canvasInstructionsII;
+    Button button;
 
     GoldKeyCollectable goldKey;
     public const string Door = "Door";
@@ -40,6 +43,7 @@ public class PlayerInteract : MonoBehaviour
         OnRelicChosen += InteractionRelic;
         OnDoorChosen += InteractionDoor;
         ManageScenes.OnSceneLoaded += GetReferences;
+        museumDoorIsClosed = true;
     }
 
 
@@ -60,14 +64,7 @@ public class PlayerInteract : MonoBehaviour
     private void Update()
     {
         InteractWithKeyDown();
-        InteractingWithInstructions();
-        /*if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (canvasInstructions)
-            {
-                InteractingWithInstructions();
-            }
-        }*/
+        //InteractingWithInstructions();
     }
 
     private void InteractionRelic(LevelNameType levelNameType)
@@ -98,7 +95,11 @@ public class PlayerInteract : MonoBehaviour
                 else if (collider.TryGetComponent(out NPCInteractable npcInt) && collider.gameObject.name == "Book")
                 {
                     ShowInstructions(collider);
-                    museumDoorAnimation.Play();
+                    if (museumDoorIsClosed)
+                    { 
+                        museumDoorAnimation.Play();
+                        museumDoorIsClosed = false;
+                    }
                 }
                 
                 else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
@@ -121,25 +122,30 @@ public class PlayerInteract : MonoBehaviour
 
     void ShowInstructions(Collider collider)
     {
+        SetCursorState(true);
         canvasInstructions = collider.transform.GetChild(1).gameObject;
         canvasInstructionsII = collider.transform.GetChild(2).gameObject;
-        canvasInstructions.SetActive(true);  
+        
+        canvasInstructions.SetActive(true);
+                
+        button = canvasInstructions.transform.GetChild(0).GetChild(0).GetComponent<Button>();
+        button.onClick.AddListener(InteractingWithInstructions);
     }
 
     void InteractingWithInstructions()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
             if (canvasInstructions.activeInHierarchy)
             {
                 canvasInstructions.SetActive(false);
                 canvasInstructionsII.SetActive(true);
-            }
+                button = canvasInstructionsII.transform.GetChild(0).GetChild(0).GetComponent<Button>();
+                button.onClick.AddListener(InteractingWithInstructions);
+        }
             else
             {
                 canvasInstructionsII.SetActive(false);
+                SetCursorState(false);
             }
-        }
     }
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
@@ -156,5 +162,10 @@ public class PlayerInteract : MonoBehaviour
             txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
             txt.text = NewTxtDoorLevel2;
         }
+    }
+
+    private void SetCursorState(bool newState)
+    {
+        Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }
