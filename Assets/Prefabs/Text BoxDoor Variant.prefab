@@ -21,19 +21,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908827243666542994, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_Size.x
-      value: 1.3869684
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 6908827243666542994, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_Size.y
-      value: 1.2139014
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6908827243666542994, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 891032f22645fd24cbefcacd5091cc9c, type: 3}
+      objectReference: {fileID: 21300000, guid: edc20027baa74ed489c51c9755d1b2f5, type: 3}
+    - target: {fileID: 6908827243666542994, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_Color.a
+      value: 0.9019608
+      objectReference: {fileID: 0}
     - target: {fileID: 6908827244335951683, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_Name
-      value: Text BoxDoor
+      value: Text BoxDoor Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244335951683, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_IsActive
@@ -107,19 +111,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_fontSize
-      value: 18
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 75f5eac83f81f3743af4e1ee8b20c803, type: 2}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.5764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.6627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7176471
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_fontSizeBase
-      value: 18
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 8606377838463861650, guid: 75f5eac83f81f3743af4e1ee8b20c803, type: 2}
+    - target: {fileID: 6908827244486392880, guid: 51e2e437664326241b8106974ff44d52, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4287867319
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244486392881, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 8606377838463861650, guid: 75f5eac83f81f3743af4e1ee8b20c803, type: 2}
     - target: {fileID: 6908827244486392895, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.71
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244486392895, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -127,7 +159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6908827244486392895, guid: 51e2e437664326241b8106974ff44d52, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.18
+      value: 0.52
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6908827244335951685, guid: 51e2e437664326241b8106974ff44d52, type: 3}
