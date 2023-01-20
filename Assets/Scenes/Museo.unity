@@ -15814,18 +15814,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1470925773}
     m_Modifications:
-    - target: {fileID: 1728134534827036272, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036272, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036272, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -15861,18 +15849,6 @@ PrefabInstance:
     - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
       propertyPath: m_SizeDelta.y
       value: 32.0162
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1728134534827036273, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15925,10 +15901,6 @@ PrefabInstance:
     - target: {fileID: 1728134534827036278, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
       propertyPath: m_Name
       value: Continue Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 1728134534827036278, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7238d3c15f8f3d4191ec1d6f3c67ab4, type: 3}
