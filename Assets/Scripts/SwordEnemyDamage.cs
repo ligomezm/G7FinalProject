@@ -15,7 +15,6 @@ public class SwordEnemyDamage : MonoBehaviour
     void OnEnable()
     {
         lifeBarPlayer = FindObjectOfType<LifeBar>();
-        Debug.Log(lifeBarPlayer);
         
     }
 

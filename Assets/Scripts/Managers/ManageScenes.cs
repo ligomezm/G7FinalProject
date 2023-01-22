@@ -112,11 +112,18 @@ public class ManageScenes : Singleton<ManageScenes>
             // PlayerSingleton.GetInstance().EnableLifeBar();
             // PlayerSingleton.GetInstance().IsInGameplay = true;
             OnSceneLoaded?.Invoke();
-            playerObject.GetComponentInChildren<PlayerSingleton>().transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+            StartCoroutine(PositionPlayerOnSpawnPoint());
         }
         // if (currentLevelName != "Museo")
         //     PlayerSingleton.GetInstance().SetPlayerPosition();
 
+
+    }
+    IEnumerator PositionPlayerOnSpawnPoint()
+    {
+        yield return new WaitForSeconds(0.4f);
+        playerObject.GetComponentInChildren<PlayerSingleton>().transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+        yield return null;
 
     }
     void OnUnloadOperationComplete(AsyncOperation ao)

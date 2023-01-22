@@ -11,7 +11,7 @@ public enum LevelNameType
 
 public enum DungeonNameType
 {
-    DUNGEON1, DUNGEON2, DUNGEON3, DUNGEON4
+    DUNGEON1, DUNGEON2, DUNGEON3, DUNGEON4, DUNGEON0
 }
 
 public class NPCInteractable : MonoBehaviour
@@ -77,13 +77,18 @@ public class NPCInteractable : MonoBehaviour
         gameManager.CurrentGamestate = GameState.GAME;
         GameManager.OnStateChanged?.Invoke(PlayerInteract.levelsNames[(int)levelToLoad]);
     }
-
     public void InteractWithDoor(DungeonNameType dungeonToLoad)
     {
         dialogueBox.SetActive(false);
         doorAnimation.Play();
-        Debug.Log("Cambiando de dungeon");
+        StartCoroutine(WaitForDoorToOpen(dungeonToLoad));
         //Set active new dungeon and deactive current dungeon
+    }
+
+    IEnumerator WaitForDoorToOpen(DungeonNameType dungeonToLoad)
+    {
+        yield return new WaitForSeconds(1.2f);
+        DungeonManager.ChangeDungeon(dungeonToLoad);
     }
 
     void FindAndSetInitialText()

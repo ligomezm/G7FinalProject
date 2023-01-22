@@ -15,7 +15,6 @@ public class SpawnableEnemy : MonoBehaviour
 
     void OnDisable()
     {
-        Debug.Log("Enemies position: " + transform.position);
         _manager.enemiesToSpawn.Remove(this);
         OnEnemyDefeated?.Invoke(transform.position);
     }

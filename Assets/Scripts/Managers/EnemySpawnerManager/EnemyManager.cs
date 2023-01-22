@@ -11,23 +11,32 @@ public class EnemyManager : MonoBehaviour
     void OnEnable()
     {
         SpawnableEnemy.OnEnemyDefeated += ManageEnemies;
+        InitEnemiesList();
     }
     void Start()
+    {
+    }
+    void OnDisable()
+    {
+        SpawnableEnemy.OnEnemyDefeated -= ManageEnemies;
+        //ClearEnemiesList();
+    }
+
+    void InitEnemiesList()
     {
         for (int i = 0; i < enemiesToSpawn.Count; i++)
         {
             enemiesToSpawn[i].Init(this);
         }
-        Debug.Log(enemiesToSpawn.Count);
     }
-    void OnDisable()
+
+    void ClearEnemiesList()
     {
-        SpawnableEnemy.OnEnemyDefeated -= ManageEnemies;
+        enemiesToSpawn.Clear();
     }
 
     private void ManageEnemies(Vector3 enemyPosition)
     {
-        
         if (enemiesToSpawn.Count <= 0)
         {
             goldKey.gameObject.SetActive(true);
