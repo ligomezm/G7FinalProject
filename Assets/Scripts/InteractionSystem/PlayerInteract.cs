@@ -14,32 +14,39 @@ public class PlayerInteract : MonoBehaviour
     private LevelNameType interactedRelicType;
     private DungeonNameType interactedDoorType;
 
-    public static string[] levelsNames = {"main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron"};
-    public static string[] dungeonsNames = {"Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4"};
+    public static string[] levelsNames = { "main", "Mezosoic", "Rome", "Vikings", "Mauricio", "Level2", "Bayron" };
+    public static string[] dungeonsNames = { "Dungeon1", "Dungeon2", "Dungeon3", "Dungeon4" };
 
     public Inventory inventory;
     public TakeSword takeSword;
     public GameObject museumDoor;
+
     TMP_Text txt;
     Animation museumDoorAnimation;
+    bool museumDoorIsClosed;
+
     GameObject canvasInstructions;
     GameObject canvasInstructionsII;
+    Button button;
 
-    GoldKeyCollectable goldKey;
+    //GoldKeyCollectable goldKey;
+    IInventoryItem goldkey;
     public const string Door = "Door";
     public const string NewTxtDoorLevel2 = "You need a key to open";
     public const string NewTxtRelicMuseum = "Get a sword <br>first";
-    
+
     void OnEnable()
     {
         takeSword = GameObject.FindObjectOfType<TakeSword>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        goldKey = FindObjectOfType<GoldKeyCollectable>();
+        //goldKey = FindObjectOfType<GoldKeyCollectable>();
         museumDoorAnimation = museumDoor.GetComponent<Animation>();
 
         OnRelicChosen += InteractionRelic;
         OnDoorChosen += InteractionDoor;
         ManageScenes.OnSceneLoaded += GetReferences;
+        museumDoorIsClosed = true;
+        CollectItem.OnitemPickup += SetPickedGoldKey;
     }
 
 
@@ -48,26 +55,28 @@ public class PlayerInteract : MonoBehaviour
         OnRelicChosen -= InteractionRelic;
         OnDoorChosen -= InteractionDoor;
         ManageScenes.OnSceneLoaded -= GetReferences;
+        CollectItem.OnitemPickup -= SetPickedGoldKey;
     }
+
+    void SetPickedGoldKey(IInventoryItem item) => goldkey = item;
 
     private void GetReferences()
     {
-        goldKey = FindObjectOfType<GoldKeyCollectable>();
+        goldkey = FindObjectOfType<GoldKeyCollectable>();
         inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
     }
 
     
+
     private void Update()
     {
+        if (inventory == null)
+            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        // if (goldKey == null)
+        //     goldKey = FindObjectOfType<GoldKeyCollectable>();
+            
         InteractWithKeyDown();
-        InteractingWithInstructions();
-        /*if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (canvasInstructions)
-            {
-                InteractingWithInstructions();
-            }
-        }*/
+        //InteractingWithInstructions();
     }
 
     private void InteractionRelic(LevelNameType levelNameType)
@@ -82,6 +91,7 @@ public class PlayerInteract : MonoBehaviour
 
     public void InteractWithKeyDown()
     {
+        
         if (Input.GetKeyDown(KeyCode.E))
         {
             float interactRange = 2f;
@@ -98,7 +108,11 @@ public class PlayerInteract : MonoBehaviour
                 else if (collider.TryGetComponent(out NPCInteractable npcInt) && collider.gameObject.name == "Book")
                 {
                     ShowInstructions(collider);
-                    museumDoorAnimation.Play();
+                    if (museumDoorIsClosed)
+                    { 
+                        museumDoorAnimation.Play();
+                        museumDoorIsClosed = false;
+                    }
                 }
                 
                 else if (collider.TryGetComponent(out NPCInteractable npcInteractable)
@@ -121,40 +135,55 @@ public class PlayerInteract : MonoBehaviour
 
     void ShowInstructions(Collider collider)
     {
+        SetCursorState(false);
+        
         canvasInstructions = collider.transform.GetChild(1).gameObject;
         canvasInstructionsII = collider.transform.GetChild(2).gameObject;
-        canvasInstructions.SetActive(true);  
+        
+        canvasInstructions.SetActive(true);
+                
+        button = canvasInstructions.transform.GetChild(0).GetChild(0).GetComponent<Button>();
+        button.onClick.AddListener(InteractingWithInstructions);
     }
 
     void InteractingWithInstructions()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
             if (canvasInstructions.activeInHierarchy)
             {
                 canvasInstructions.SetActive(false);
                 canvasInstructionsII.SetActive(true);
-            }
+                button = canvasInstructionsII.transform.GetChild(0).GetChild(0).GetComponent<Button>();
+                button.onClick.AddListener(InteractingWithInstructions);
+        }
             else
             {
                 canvasInstructionsII.SetActive(false);
+                SetCursorState(false);
             }
-        }
     }
 
     void TryToOpenDoor(NPCInteractable nPCInteractable, Collider collider)
     {
-        if (inventory.ItemInInventory(goldKey))
+        //inventory.mItems.Add(goldKey);
+        //inventory.AddItem(goldkey);
+        if (inventory.ItemInInventory(goldkey) && inventory.mItems.Contains(goldkey))
         {
+            Debug.Log("Entered inventory list");
+            
+            int itemKeyInInventory = inventory.GetKeyFromValue(goldkey);
+            Debug.Log("item key in inventory: " + itemKeyInInventory);
             nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
-            int itemKeyInInventory = inventory.GetKeyFromValue(goldKey);
-            inventory.mItems.Add(goldKey);
-            inventory.RemoveItem(goldKey, itemKeyInInventory);
+            inventory.RemoveItem(goldkey, itemKeyInInventory);
         }
         else
         {
             txt = collider.gameObject.transform.GetChild(0).GetChild(1).GetComponent<TMP_Text>();
             txt.text = NewTxtDoorLevel2;
         }
+    }
+
+    private void SetCursorState(bool newState)
+    {
+        Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
     }
 }

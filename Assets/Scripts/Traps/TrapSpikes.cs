@@ -34,10 +34,8 @@ public class TrapSpikes : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("This is triggering correctly");
         if (other.gameObject.name == "PlayerArmature" && spikesReloaded)
         {
-            Debug.Log("Damage to player");
             if (other.gameObject.GetComponent<Attack>().isRoll)
             {
                 //Debug.Log("Inmune");

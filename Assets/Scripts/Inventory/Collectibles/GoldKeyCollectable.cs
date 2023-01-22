@@ -45,12 +45,13 @@ public class GoldKeyCollectable : MonoBehaviour, IInventoryItem
         if (collectEffect)
             Instantiate(collectEffect, transform.position, Quaternion.identity);
 
+
         gameObject.SetActive(false);
     }
 
     public void OnConsume()
     {
-        gameObject.SetActive(false);
-        //Destroy(gameObject);
+        // gameObject.SetActive(false);
+        // Destroy(gameObject);
     }
 }
