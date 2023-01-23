@@ -14,6 +14,8 @@ public class GreenGemCollectible : MonoBehaviour, IInventoryItem
     private LifeBar lifeBarPlayer;
     private float life = 20;
 
+    FeedbackCanvas feedbackCanvas;
+
     private void Start()
     {
 
@@ -46,6 +48,14 @@ public class GreenGemCollectible : MonoBehaviour, IInventoryItem
         lifeBarPlayer.IncreaseLife(life);
         lifeBarPlayer.UpdateLifeBar();
         gameObject.SetActive(false);
+
+        if (feedbackCanvas == null)
+            TryGetFeedbackCanvas();
+
+        feedbackCanvas.ShowItemConsumed(this);
+
+        //Set and Show canvas "You consumed"
+
         //Destroy(gameObject);
     }
 
@@ -64,6 +74,18 @@ public class GreenGemCollectible : MonoBehaviour, IInventoryItem
         get
         {
             return _Image;
+        }
+    }
+
+    void TryGetFeedbackCanvas()
+    {
+        try
+        {
+            feedbackCanvas = GameObject.FindGameObjectWithTag("FeedbackCanvas").GetComponent<FeedbackCanvas>();
+        }
+        catch (System.Exception)
+        {
+            return;
         }
     }
 }
