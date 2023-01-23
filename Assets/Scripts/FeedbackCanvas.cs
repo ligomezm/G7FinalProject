@@ -9,6 +9,7 @@ public class FeedbackCanvas : MonoBehaviour
 
     GameObject blueGemFeedback;
     GameObject greenGemFeedback;
+    GameObject goldKeyFeedback;
     GameObject inventoryFull;
     GameObject itemConsumed;
 
@@ -21,7 +22,7 @@ public class FeedbackCanvas : MonoBehaviour
         greenGemFeedback = feedbackCanvas.gameObject.transform.GetChild(1).gameObject;
         inventoryFull = feedbackCanvas.gameObject.transform.GetChild(2).gameObject;
         itemConsumed = feedbackCanvas.gameObject.transform.GetChild(3).gameObject;
-
+        goldKeyFeedback = feedbackCanvas.gameObject.transform.GetChild(4).gameObject;
     }
 
 
@@ -32,10 +33,18 @@ public class FeedbackCanvas : MonoBehaviour
             blueGemFeedback.SetActive(true);
             Invoke("HideFeedbackCanvasBlue", 5f);
         }
-        
+
         if (item.Name == "GreenGem")
+        { 
             greenGemFeedback.SetActive(true);
-            Invoke("HideFeedbackCanvasGreen", 5f);
+            Invoke("HideFeedbackCanvasGreen", 5f);        
+        }
+
+        if (item.Name == "GoldKey")
+        {
+            goldKeyFeedback.SetActive(true);
+            Invoke("HideFeedbackCanvasGoldKey", 1f);
+        }
 
     }
 
@@ -51,6 +60,10 @@ public class FeedbackCanvas : MonoBehaviour
 
     }
 
+    public void HideFeedbackCanvasGoldKey()
+    {
+        goldKeyFeedback.SetActive(false);
+    }
     public void ShowCanvasInventoryFull()
     {
         inventoryFull.SetActive(true);

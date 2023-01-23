@@ -6,20 +6,19 @@ public class CollectItem : MonoBehaviour
 {
     public Inventory inventory;
     public static Action<IInventoryItem> OnitemPickup;
-    bool showTutorial;
     
     bool showTutorialBlue;
     bool showTutorialGreen;
+    bool showTutorialGoldKey;
 
 
     FeedbackCanvas feedbackCanvas;
 
     void Start()
-    {
-        showTutorial = true;
-        
+    {       
         showTutorialBlue = true;
         showTutorialGreen = true;
+        showTutorialGoldKey = true;
 
 
         //Debug.Log("This is happening");
@@ -55,17 +54,18 @@ public class CollectItem : MonoBehaviour
                 }
             }
 
-            /*if (showTutorial)
+            if (item.Name == "GoldKey")
             {
-                if (feedbackCanvas == null)
-                    TryGetFeedbackCanvas();
+                if (showTutorialGoldKey)
+                {
+                    feedbackCanvas.ShowCanvasOnPickUp(item);
+                    showTutorialGoldKey = false;
+                }
+            }
 
-                feedbackCanvas.ShowCanvasOnPickUp(item);
-            }*/
 
             OnitemPickup?.Invoke(item);
-            inventory.AddItem(item);
-            showTutorial = false;            
+            inventory.AddItem(item);       
         }
     }
 
