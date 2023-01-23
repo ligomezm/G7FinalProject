@@ -50,15 +50,12 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(IInventoryItem item, int itemPosition)
     {
-        Debug.Log("Item is trying to be removed");
         if (!itemsDict.ContainsKey(itemPosition)) return;
 
         if (mItems.Contains(itemsDict[itemPosition]))
         {
-            Debug.Log("List contains item");
             if (ItemRemoved != null)
             {
-                Debug.Log("Item removed is not null");
                 OnItemRemoved?.Invoke(itemPosition);
                 ItemRemoved(this, new InventoryEventArgs(itemsDict[itemPosition]));
                 //itemsDict.Remove(itemPosition);

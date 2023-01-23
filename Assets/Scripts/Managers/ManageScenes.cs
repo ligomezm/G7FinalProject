@@ -44,6 +44,7 @@ public class ManageScenes : Singleton<ManageScenes>
     
     public void LoadLevel(string levelName, int loadOperation = 0)
     {
+        //canvasManager.ScreenFade();
         Scene mainPersistenScene = SceneManager.GetSceneByName("MainMenu");
         placeholder = currentLevelName;
         currentLevelName = levelName;
@@ -64,7 +65,7 @@ public class ManageScenes : Singleton<ManageScenes>
             playerObject = GameObject.FindGameObjectWithTag("ParentPlayer");
 
         }
-
+        
         AsyncOperation ao;
         ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
 
@@ -78,6 +79,43 @@ public class ManageScenes : Singleton<ManageScenes>
             // FindObjectOfType<PlayerInput>().gameObject.SetActive(false);
             UnloadLevel("Museo", 1);
         }
+
+        ao.completed += OnLoadOperationComplete;
+    }
+
+    public void ReloadScene(string levelName)
+    {
+        Scene mainPersistenScene = SceneManager.GetSceneByName("MainMenu");
+        placeholder = currentLevelName;
+        currentLevelName = levelName;
+        try
+        {
+            playerObject = GameObject.FindGameObjectWithTag("ParentPlayer");
+
+        }
+        catch (System.Exception)
+        {
+            playerObject = null;
+        }
+        if (playerObject != null) { 
+            SceneManager.MoveGameObjectToScene(playerObject, mainPersistenScene);
+        }
+        else
+        {
+            playerObject = GameObject.FindGameObjectWithTag("ParentPlayer");
+
+        }
+        
+        UnloadLevel("Level2", 1);
+        AsyncOperation ao;
+        ao = SceneManager.LoadSceneAsync(levelName, LoadSceneMode.Additive);
+
+        if (ao == null)
+        {
+            Debug.LogError("[GameManager] unable to load level: " + levelName);
+            return;
+        }
+        
 
         ao.completed += OnLoadOperationComplete;
     }
@@ -112,11 +150,18 @@ public class ManageScenes : Singleton<ManageScenes>
             // PlayerSingleton.GetInstance().EnableLifeBar();
             // PlayerSingleton.GetInstance().IsInGameplay = true;
             OnSceneLoaded?.Invoke();
-            playerObject.GetComponentInChildren<PlayerSingleton>().transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+            StartCoroutine(PositionPlayerOnSpawnPoint());
         }
         // if (currentLevelName != "Museo")
         //     PlayerSingleton.GetInstance().SetPlayerPosition();
 
+
+    }
+    IEnumerator PositionPlayerOnSpawnPoint()
+    {
+        yield return new WaitForSeconds(0.4f);
+        playerObject.GetComponentInChildren<PlayerSingleton>().transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+        yield return null;
 
     }
     void OnUnloadOperationComplete(AsyncOperation ao)

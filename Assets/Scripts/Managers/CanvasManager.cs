@@ -8,6 +8,7 @@ public class CanvasManager : Singleton<CanvasManager>
     List<CanvasController> canvasControllerList;
     CanvasController lastActiveCanvas;
     public CanvasType initialCanvasType;
+    [SerializeField] FadeScreenBehavior fade;
     protected override void Awake()
     {
             base.Awake();
@@ -29,4 +30,9 @@ public class CanvasManager : Singleton<CanvasManager>
             else
                 Debug.LogWarning("The desired canvas was not found");
         }
+
+    public void ScreenFade()
+    {
+        fade.FadeIn();
+    }
 }

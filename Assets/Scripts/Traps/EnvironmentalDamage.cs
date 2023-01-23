@@ -91,7 +91,6 @@ public class EnvironmentalDamage : MonoBehaviour
     {
         while (receiveDamage)
         {
-            Debug.Log(lifeBarPlayer);
             playerAnimator.SetBool("Pain", true);
             lifeBarPlayer.TakeDamage(damage);
             lifeBarPlayer.UpdateLifeBar();

@@ -1048,6 +1048,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialCanvasType: 1
+  fade: {fileID: 0}
 --- !u!1 &467919845820921239
 GameObject:
   m_ObjectHideFlags: 0
