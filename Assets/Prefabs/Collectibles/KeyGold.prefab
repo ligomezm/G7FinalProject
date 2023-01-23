@@ -96,7 +96,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d80b24f9bb3bc0446819fd5e034ca748, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 51590d31e1be66c459fae4f0a4d1a378, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.503
   m_Pitch: 1
@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotate: 1
   rotationSpeed: 10
-  collectSound: {fileID: 8300000, guid: d80b24f9bb3bc0446819fd5e034ca748, type: 3}
+  collectSound: {fileID: 8300000, guid: 51590d31e1be66c459fae4f0a4d1a378, type: 3}
   collectEffect: {fileID: 1702657300312902, guid: a45c51da10cf1a84abc6a99c06951e3f, type: 3}
+  goldKeyPrefab: {fileID: 729216039777274571}
   _Image: {fileID: 21300000, guid: 9e9b217f04c8048499f46cb19751522e, type: 3}

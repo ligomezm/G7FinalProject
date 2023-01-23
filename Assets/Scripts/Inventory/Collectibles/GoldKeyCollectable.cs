@@ -11,6 +11,8 @@ public class GoldKeyCollectable : MonoBehaviour, IInventoryItem
     public AudioClip collectSound;
 
     public GameObject collectEffect;
+    public GameObject goldKeyPrefab;
+    Transform playerLocation;
 
     public string Name
     {
@@ -28,6 +30,11 @@ public class GoldKeyCollectable : MonoBehaviour, IInventoryItem
         {
             return _Image;
         }
+    }
+
+    private void Start()
+    {
+        
     }
 
     void Update()
@@ -51,6 +58,11 @@ public class GoldKeyCollectable : MonoBehaviour, IInventoryItem
 
     public void OnConsume()
     {
+        //Instanstiate new Gold Key prefab 
+        playerLocation = GameObject.FindGameObjectWithTag("Player").transform;
+        Vector3 newKeyLocation = new Vector3(playerLocation.position.x + 1f, 0.2f, playerLocation.position.z + 1f);
+        Instantiate(goldKeyPrefab, newKeyLocation, Quaternion.identity);
+
         // gameObject.SetActive(false);
         // Destroy(gameObject);
     }

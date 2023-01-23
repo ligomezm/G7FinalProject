@@ -454,6 +454,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2463704993014378213, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c63d70920d962314db7dc6d5c99e53a7, type: 3}
     - target: {fileID: 2524087079409401859, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -762,10 +766,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2519668715102594731, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2524087079409401859, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -814,10 +814,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueGem
       objectReference: {fileID: 0}
-    - target: {fileID: 5861689719953283725, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
-      propertyPath: feedbackCanvas
-      value: 
-      objectReference: {fileID: 1751671658}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a25d9438998af2c47b59ce8686f49e9c, type: 3}
 --- !u!1001 &941367581
@@ -1841,6 +1837,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon3 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4373111585782741670, guid: 770cacb9dd0b0d143b9d2025c8910a9f, type: 3}
+      propertyPath: goldKeyPrefab
+      value: 
+      objectReference: {fileID: 729216039777274571, guid: 9614163560274da49a64c5f083530486, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770cacb9dd0b0d143b9d2025c8910a9f, type: 3}
 --- !u!1001 &7711645632410124878
