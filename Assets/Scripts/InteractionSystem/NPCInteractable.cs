@@ -6,7 +6,7 @@ using TMPro;
 
 public enum LevelNameType
 {
-    MAIN, MEZOSOIC, ROME, VIKINGS, MAURICIO, LEVEL2, BAYRON
+    MAIN, MEZOSOIC, ROME, VIKINGS, MAURICIO, LEVEL2, BAYRON, LEVEL2TEST
 }
 
 public enum DungeonNameType
