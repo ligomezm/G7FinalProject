@@ -26,6 +26,8 @@ public class NPCInteractable : MonoBehaviour
     Animation doorAnimation;
     TMP_Text txt;
 
+    //public Animator canvasTransition;
+    public Animation canvasTransition;
 
     void Start()
     {
@@ -84,13 +86,16 @@ public class NPCInteractable : MonoBehaviour
         if (dialogueBox == null) return; 
         dialogueBox.SetActive(false);
         doorAnimation.Play();
+        Invoke("PlayCanvasTransitionAnimation", 1f);
         StartCoroutine(WaitForDoorToOpen(dungeonToLoad));
         //Set active new dungeon and deactive current dungeon
     }
 
     IEnumerator WaitForDoorToOpen(DungeonNameType dungeonToLoad)
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2.2f);
+
+
         DungeonManager.ChangeDungeon(dungeonToLoad);
     }
 
@@ -98,5 +103,11 @@ public class NPCInteractable : MonoBehaviour
     {
         txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
         txt.text = this.name + ": <br>Interact (E)";
+    }
+
+    void PlayCanvasTransitionAnimation()
+    { 
+        canvasTransition.Play();
+    
     }
 }
