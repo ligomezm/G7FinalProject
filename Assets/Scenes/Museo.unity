@@ -2579,6 +2579,7 @@ MonoBehaviour:
   levelNameType: 0
   dungeonNameType: 0
   dialogueBox: {fileID: 599228457}
+  canvasTransition: {fileID: 0}
 --- !u!23 &445654697
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12521,6 +12522,7 @@ MonoBehaviour:
   levelNameType: 5
   dungeonNameType: 0
   dialogueBox: {fileID: 2064640886}
+  canvasTransition: {fileID: 0}
 --- !u!65 &1030951692
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15129,9 +15131,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2b15a34a85b2d4e9cc86bc0439939f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNameType: 7
+  levelNameType: 5
   dungeonNameType: 0
   dialogueBox: {fileID: 664439568}
+  canvasTransition: {fileID: 0}
 --- !u!1 &1406465905
 GameObject:
   m_ObjectHideFlags: 0
