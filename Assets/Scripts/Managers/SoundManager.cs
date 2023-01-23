@@ -9,6 +9,10 @@ public class SoundManager : Singleton<SoundManager>
     {
         effectSource.PlayOneShot(clip);
     }
+    public void PlayMusic(AudioClip musicClip)
+    {
+        musicSource.Play();
+    }
     public void PlayClipAtPointRef(AudioClip clip, Vector3 clipTransform)
     {
         //effectSource.playclip
