@@ -37,7 +37,14 @@ public class DungeonManager : MonoBehaviour
         currentDungeon.gameObject.SetActive(false);
         currentDungeon = SelectRandomDungeon(changeToDungeon);
         currentDungeon.gameObject.SetActive(true);
-        PlayerSingleton.GetInstance().transform.position = currentDungeon.transform.position + new Vector3(0, 2, 0);
+        GameObject playerPosition = PlayerSingleton.GetInstance().gameObject;
+        //PlayerSingleton.GetInstance().gameObject.transform.position = currentDungeon.transform.position + new Vector3(0, 2, 0);
+        playerPosition.transform.position = currentDungeon.transform.position + new Vector3(1.2f, 2, -2.7f);
+        Debug.Log(currentDungeon.name);
+        Debug.Log("Current dungeon position: " + currentDungeon.transform.position);
+        Debug.Log("Player position: " + playerPosition.transform.localPosition);
+        Debug.Log("Player world position: " + playerPosition.transform.position);
+
     }
     public void EmptyDungeonsList()
     {

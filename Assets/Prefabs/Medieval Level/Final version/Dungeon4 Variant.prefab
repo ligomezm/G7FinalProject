@@ -5262,6 +5262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3615032971603065559}
+  - component: {fileID: 974404034475877594}
   m_Layer: 0
   m_Name: Dungeon4 Variant
   m_TagString: Untagged
@@ -5277,7 +5278,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4134583703832223853}
   m_LocalRotation: {x: -0, y: 0.99999547, z: -0, w: -0.003021832}
-  m_LocalPosition: {x: -9.7, y: 0, z: -28.53}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5292,9 +5293,23 @@ Transform:
   - {fileID: 8024163083580524944}
   - {fileID: 8024163084027191692}
   - {fileID: 8024163084640135913}
+  - {fileID: 1081625951317314378}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180.346, z: 0}
+--- !u!114 &974404034475877594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4134583703832223853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c7b3f282f0bf741b6a1e7951e898bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonNameType: 0
 --- !u!1 &4178936934429243204
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,6 +9463,51 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.021061897, y: 0.021062002, z: 0.00044380178}
   m_Center: {x: -0.010530949, y: -0.010531001, z: 0.00022190089}
+--- !u!1 &6533673002447934376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081625951317314378}
+  - component: {fileID: 5237644753182352841}
+  m_Layer: 0
+  m_Name: Blessing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1081625951317314378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533673002447934376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.33, y: 0.96, z: 6.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3615032971603065559}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5237644753182352841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6533673002447934376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.471348, y: 1, z: 12.462369}
+  m_Center: {x: -1.2356672, y: 0, z: -1.1087387}
 --- !u!1 &6650612572654575904
 GameObject:
   m_ObjectHideFlags: 0
@@ -13305,15 +13365,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 723227803984641023, guid: 9614163560274da49a64c5f083530486, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08690063
+      value: 0.0695
       objectReference: {fileID: 0}
     - target: {fileID: 723227803984641023, guid: 9614163560274da49a64c5f083530486, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09254772
+      value: -0.0713
       objectReference: {fileID: 0}
     - target: {fileID: 723227803984641023, guid: 9614163560274da49a64c5f083530486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.010299987
+      value: 0.0103
       objectReference: {fileID: 0}
     - target: {fileID: 723227803984641023, guid: 9614163560274da49a64c5f083530486, type: 3}
       propertyPath: m_LocalRotation.w

@@ -6,6 +6,7 @@ using TMPro;
 public class FeedbackCanvas : MonoBehaviour
 {
     [SerializeField] GameObject feedbackCanvas;
+    public const float tutorialTimeInScreen = 3.5f;
 
     GameObject blueGemFeedback;
     GameObject greenGemFeedback;
@@ -31,13 +32,13 @@ public class FeedbackCanvas : MonoBehaviour
         if (item.Name == "BlueGem")
         { 
             blueGemFeedback.SetActive(true);
-            Invoke("HideFeedbackCanvasBlue", 5f);
+            Invoke("HideFeedbackCanvasBlue", tutorialTimeInScreen);
         }
 
         if (item.Name == "GreenGem")
         { 
             greenGemFeedback.SetActive(true);
-            Invoke("HideFeedbackCanvasGreen", 5f);        
+            Invoke("HideFeedbackCanvasGreen", tutorialTimeInScreen);        
         }
 
         if (item.Name == "GoldKey")
