@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - ParentPlayer
   - lifeBarPlayer
+  - FeedbackCanvas
   layers:
   - Default
   - TransparentFX

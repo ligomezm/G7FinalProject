@@ -13,11 +13,11 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
 
     private LifeBar lifeBarPlayer;
     private float life = 10;
-    
+
+    FeedbackCanvas feedbackCanvas;
 
     private void Start()
     {
-
         lifeBarPlayer = FindObjectOfType<LifeBar>();
 
     }
@@ -51,17 +51,21 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
             //AudioSource.PlayClipAtPoint(collectSound, transform.position);
         if (collectEffect)
             Instantiate(collectEffect, transform.position, Quaternion.identity);
-
        
         gameObject.SetActive(false);
+
     }
 
-   
-    public void OnConsume()
+     public void OnConsume()
     {
         lifeBarPlayer.IncreaseLife(life);
         lifeBarPlayer.UpdateLifeBar();
         gameObject.SetActive(false);
+
+        if (feedbackCanvas == null)
+            TryGetFeedbackCanvas();
+
+        feedbackCanvas.ShowItemConsumed(this);
     }
     public string Name
     {
@@ -78,6 +82,17 @@ public class BlueGemCollectible : MonoBehaviour, IInventoryItem
         get
         {
             return _Image;
+        }
+    }
+    void TryGetFeedbackCanvas()
+    {
+        try
+        {
+            feedbackCanvas = GameObject.FindGameObjectWithTag("FeedbackCanvas").GetComponent<FeedbackCanvas>();
+        }
+        catch (System.Exception)
+        {
+            return;
         }
     }
 }

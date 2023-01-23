@@ -6,8 +6,22 @@ public class CollectItem : MonoBehaviour
 {
     public Inventory inventory;
     public static Action<IInventoryItem> OnitemPickup;
+    bool showTutorial;
+    
+    bool showTutorialBlue;
+    bool showTutorialGreen;
+
+
+    FeedbackCanvas feedbackCanvas;
+
     void Start()
     {
+        showTutorial = true;
+        
+        showTutorialBlue = true;
+        showTutorialGreen = true;
+
+
         //Debug.Log("This is happening");
         
     }
@@ -15,12 +29,43 @@ public class CollectItem : MonoBehaviour
     {
         if (inventory == null)
             TryGetInventory();
+
+        if (feedbackCanvas == null)
+            TryGetFeedbackCanvas();
+
         IInventoryItem item = hit.collider.GetComponent<IInventoryItem>();
         if (item != null)
         {
-            Debug.Log("item added");
+
+            if (item.Name == "BlueGem")
+            {
+                if (showTutorialBlue)
+                {
+                    feedbackCanvas.ShowCanvasOnPickUp(item);
+                    showTutorialBlue = false;
+                }
+            }
+
+            if (item.Name == "GreenGem")
+            {
+                if (showTutorialGreen)
+                {
+                    feedbackCanvas.ShowCanvasOnPickUp(item);
+                    showTutorialGreen = false;
+                }
+            }
+
+            /*if (showTutorial)
+            {
+                if (feedbackCanvas == null)
+                    TryGetFeedbackCanvas();
+
+                feedbackCanvas.ShowCanvasOnPickUp(item);
+            }*/
+
             OnitemPickup?.Invoke(item);
             inventory.AddItem(item);
+            showTutorial = false;            
         }
     }
 
@@ -34,6 +79,18 @@ public class CollectItem : MonoBehaviour
         catch (System.Exception)
         {
             
+            return;
+        }
+    }
+
+    void TryGetFeedbackCanvas()
+    {
+        try
+        {
+            feedbackCanvas = GameObject.FindGameObjectWithTag("FeedbackCanvas").GetComponent<FeedbackCanvas>();
+        }
+        catch (System.Exception)
+        {
             return;
         }
     }
