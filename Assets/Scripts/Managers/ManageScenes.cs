@@ -44,6 +44,7 @@ public class ManageScenes : Singleton<ManageScenes>
     
     public void LoadLevel(string levelName, int loadOperation = 0)
     {
+        canvasManager.ScreenFade();
         Scene mainPersistenScene = SceneManager.GetSceneByName("MainMenu");
         placeholder = currentLevelName;
         currentLevelName = levelName;
