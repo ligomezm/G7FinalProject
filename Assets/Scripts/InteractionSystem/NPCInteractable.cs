@@ -38,6 +38,7 @@ public class NPCInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (dialogueBox == null) return;
             dialogueBox.SetActive(true);
 
             if (currentScene == "Museo")
@@ -66,6 +67,7 @@ public class NPCInteractable : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (dialogueBox == null) return; 
             dialogueBox.SetActive(false);
         }
     }
@@ -79,6 +81,7 @@ public class NPCInteractable : MonoBehaviour
     }
     public void InteractWithDoor(DungeonNameType dungeonToLoad)
     {
+        if (dialogueBox == null) return; 
         dialogueBox.SetActive(false);
         doorAnimation.Play();
         StartCoroutine(WaitForDoorToOpen(dungeonToLoad));

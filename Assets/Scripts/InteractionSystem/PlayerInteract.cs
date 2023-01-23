@@ -168,10 +168,7 @@ public class PlayerInteract : MonoBehaviour
         //inventory.AddItem(goldkey);
         if (inventory.ItemInInventory(goldkey) && inventory.mItems.Contains(goldkey))
         {
-            Debug.Log("Entered inventory list");
-            
             int itemKeyInInventory = inventory.GetKeyFromValue(goldkey);
-            Debug.Log("item key in inventory: " + itemKeyInInventory);
             nPCInteractable.InteractWithDoor(nPCInteractable.dungeonNameType);
             inventory.RemoveItem(goldkey, itemKeyInInventory);
         }

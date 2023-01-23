@@ -13,6 +13,7 @@ public class LifeBar : MonoBehaviour
     public float currentValue = 100;
     bool flag = true;
     bool activeAndEnabled = false;
+    public DungeonManager dungeonManager;
 
     //private bool foundLinearIndicator = false;
 
@@ -128,11 +129,13 @@ public class LifeBar : MonoBehaviour
     {
         if (currentValue <= 0 && flag)
         {
+            dungeonManager.EmptyDungeonsList();
             flag = false;
+            ManageScenes.GetInstance().ReloadScene("Level2");
             //Set Game Over Canvas, sound, stop controller, etc.or Back to the museum
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene("MainMenu");
-            //ManageScenes.GetInstance().ChangeLevel("MainMenu");
+            // Scene scene = SceneManager.GetActiveScene();
+            // SceneManager.LoadScene("MainMenu");
+            //ManageScenes.GetInstance().ReloadScene("Level2");
         }
         else
         {

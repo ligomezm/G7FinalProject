@@ -16,7 +16,7 @@ public class DungeonManager : MonoBehaviour
     IEnumerator DeactivateDungeonsOnLoad()
     {
         yield return new WaitForSeconds(0.4f);
-        Debug.Log("Dungeons count: " + dungeons.Count);
+        
         // for (int i = 0; i < dungeons.Count; i++)
         // {
         //     dungeons[i].gameObject.SetActive(false);
@@ -33,9 +33,14 @@ public class DungeonManager : MonoBehaviour
     }
     public static void ChangeDungeon(DungeonNameType changeToDungeon)
     {
+        Debug.Log("Number of dungeons: "+ dungeons.Count);
         currentDungeon.gameObject.SetActive(false);
         currentDungeon = SelectRandomDungeon(changeToDungeon);
         currentDungeon.gameObject.SetActive(true);
         PlayerSingleton.GetInstance().transform.position = currentDungeon.transform.position + new Vector3(0, 2, 0);
+    }
+    public void EmptyDungeonsList()
+    {
+        dungeons.Clear();
     }
 }
