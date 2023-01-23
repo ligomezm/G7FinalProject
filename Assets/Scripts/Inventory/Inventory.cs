@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
 
     int itemKey;
 
+    FeedbackCanvas feedbackCanvas;
+
     public void AddItem(IInventoryItem item)
     {
         if (mItems.Count < SLOTS)
@@ -23,7 +25,7 @@ public class Inventory : MonoBehaviour
 
             if (collider.enabled)
             {
-                
+
                 collider.enabled = false;
                 mItems.Add(item);
                 itemsDict[mItems.IndexOf(item)] = item;
@@ -34,6 +36,15 @@ public class Inventory : MonoBehaviour
                     ItemAdded(this, new InventoryEventArgs(item));
                 }
             }
+        }
+        else
+        {
+            if (feedbackCanvas == null)
+                TryGetFeedbackCanvas();
+
+            feedbackCanvas.ShowCanvasInventoryFull();
+
+            // Show canvas "Inventory full"
         }
     }
 
@@ -73,5 +84,17 @@ public class Inventory : MonoBehaviour
             }
         }
         return itemKey;
+    }
+
+    void TryGetFeedbackCanvas()
+    {
+        try
+        {
+            feedbackCanvas = GameObject.FindGameObjectWithTag("FeedbackCanvas").GetComponent<FeedbackCanvas>();
+        }
+        catch (System.Exception)
+        {
+            return;
+        }
     }
 }
