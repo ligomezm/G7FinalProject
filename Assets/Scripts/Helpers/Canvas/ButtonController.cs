@@ -36,7 +36,10 @@ public class ButtonController : MonoBehaviour
                     canvasManager.SwitchCanvas(CanvasType.MUSEUM);
                     gameManager.CurrentGamestate = GameState.MUSEUM;
                     break;
-                case ButtonType.PAUSE:
+            case ButtonType.CREDITS:
+                canvasManager.SwitchCanvas(CanvasType.CREDITS);
+                break;
+            case ButtonType.PAUSE:
                     canvasManager.SwitchCanvas(CanvasType.PAUSE);
                     gameManager.CurrentGamestate = GameState.PAUSE;
                     break;
