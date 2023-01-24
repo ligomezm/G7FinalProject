@@ -161,7 +161,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 995391964}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1290,6 +1290,7 @@ GameObject:
   - component: {fileID: 1606595900}
   - component: {fileID: 2018970209}
   - component: {fileID: 2018970208}
+  - component: {fileID: 7199028769209716732}
   m_Layer: 8
   m_Name: Paladin_Enemy
   m_TagString: Enemy
@@ -1632,6 +1633,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7199028769209716732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3286494434029687291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3341547826202194592
 GameObject:
   m_ObjectHideFlags: 0
