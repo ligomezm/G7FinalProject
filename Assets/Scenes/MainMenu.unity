@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9399dc34c6baf9747add27db902228c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSource: {fileID: 196079923}
+  musicSource: {fileID: 1301191628}
   effectSource: {fileID: 1740164711}
 --- !u!4 &196079922
 Transform:
@@ -979,7 +979,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 09398f45a9cd7ab44b381380c1018afd, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
