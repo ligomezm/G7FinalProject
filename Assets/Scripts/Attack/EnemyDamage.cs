@@ -19,6 +19,9 @@ public class EnemyDamage : MonoBehaviour
 
     public GameObject sword;
 
+    public AudioSource sound_Slash;
+    public AudioSource sound_Death;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +34,7 @@ public class EnemyDamage : MonoBehaviour
     {
         if (hp < 0)
         {
+            sound_Death.Play();
             gameObject.SetActive(false);
         }
 
@@ -50,6 +54,7 @@ public class EnemyDamage : MonoBehaviour
 
     public void ActiveSlashSwordEnemy()
     {
+        sound_Slash.Play();
         _AttackEffect.Play();
     }
 }

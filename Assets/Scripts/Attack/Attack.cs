@@ -21,6 +21,8 @@ public class Attack : MonoBehaviour
     public AudioSource sound_StandardAttack;
     public AudioSource sound_SpecialAttack;
     public AudioSource sound_Roll;
+    public AudioSource sound_Damage;
+
 
     //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
@@ -107,5 +109,10 @@ public class Attack : MonoBehaviour
         _RollEffect.Stop();
     }
     
+    public void PlayerDamage()
+    {
+        animator.SetTrigger("Pain");
+        sound_Damage.Play();
+    }
 
 }
