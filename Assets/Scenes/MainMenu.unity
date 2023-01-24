@@ -2447,6 +2447,22 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 2525409740
       objectReference: {fileID: 0}
+    - target: {fileID: 6347603880989496219, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347603880989496219, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5257654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347603880989496219, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6945062
+      objectReference: {fileID: 0}
+    - target: {fileID: 6347603880989496219, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
+      objectReference: {fileID: 0}
     - target: {fileID: 6825497673974540029, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -2490,6 +2506,22 @@ PrefabInstance:
     - target: {fileID: 6892448803225735541, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974642188969540735, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974642188969540735, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5257654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974642188969540735, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6945062
+      objectReference: {fileID: 0}
+    - target: {fileID: 6974642188969540735, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8018868
       objectReference: {fileID: 0}
     - target: {fileID: 7266554529004108313, guid: ecd599fc8951cb547ad3fe33b3c1d2c8, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3035,7 +3067,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765285354}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: da7ae2e85a1719740ab5310c693ebfb7, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6dcd5d578a07b5c40accb6b51eb86237, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 89546128}
@@ -3046,7 +3078,7 @@ VideoPlayer:
   m_RenderMode: 0
   m_AspectRatio: 2
   m_DataSource: 0
-  m_PlaybackSpeed: 1
+  m_PlaybackSpeed: 0.7
   m_AudioOutputMode: 2
   m_TargetAudioSources: []
   m_DirectAudioVolumes: []
