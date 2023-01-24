@@ -1,4 +1,3 @@
-using CurlNoiseParticleSystem.Emitter;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -22,7 +21,6 @@ public class EnemyDamage : MonoBehaviour
     public AudioSource sound_Slash;
     public AudioSource sound_Death;
 
-    public ShapeEmitter shapeEmitter;
 
     bool flag = false;
 
@@ -48,12 +46,6 @@ public class EnemyDamage : MonoBehaviour
             animator.SetInteger("State", 5);
 
             sound_Death.Play();
-            try
-            {
-                shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
-                shapeEmitter.Emit();
-            }
-            catch(System.Exception) { }
         }
         hp = Mathf.Clamp(hp, minValue, maxValue);
 
