@@ -91,4 +91,9 @@ public class EnemyDamage : MonoBehaviour
         //Debug.Log("Entro ha activar Root Motion");
         animator.applyRootMotion = true;
     }
+
+    public void DamageByEnvironment()
+    {
+        hp -= 0.2f;
+    }
 }
