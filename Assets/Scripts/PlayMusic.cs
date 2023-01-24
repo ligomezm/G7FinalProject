@@ -14,7 +14,7 @@ public class PlayMusic : MonoBehaviour
 
     IEnumerator PrepareMusic()
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(0.3f);
         SoundManager.GetInstance().PlayMusic(audioClip);
 
     }
