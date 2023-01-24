@@ -3621,6 +3621,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 122048326}
     - target: {fileID: 3970945845133313486, guid: 03764ebc956fe5a44b277b10880f1de4, type: 3}
+      propertyPath: dungeonNameType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3970945845133313486, guid: 03764ebc956fe5a44b277b10880f1de4, type: 3}
       propertyPath: canvasTransition
       value: 
       objectReference: {fileID: 122048326}
@@ -4046,7 +4050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134583703832223853, guid: 59359737c70010e46bc9037ab2da022c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5497756036878611335, guid: 59359737c70010e46bc9037ab2da022c, type: 3}
       propertyPath: m_IsActive
