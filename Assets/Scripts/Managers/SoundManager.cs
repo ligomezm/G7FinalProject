@@ -1,10 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SoundManager : Singleton<SoundManager>
 {
-    [SerializeField] private AudioSource musicSource, effectSource; 
+    [SerializeField] private AudioSource musicSource, effectSource;
+    string currentLevelName;
+
+    private void Start()
+    {
+        currentLevelName = SceneManager.GetActiveScene().ToString();
+    }
+
     public void PlaySound(AudioClip clip)
     {
         effectSource.PlayOneShot(clip);
