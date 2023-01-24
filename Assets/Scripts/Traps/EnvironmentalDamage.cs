@@ -67,8 +67,9 @@ public class EnvironmentalDamage : MonoBehaviour
             //ShapeEmitter shapeEmitter = other.gameObject.GetComponent<ShapeEmitter>();
             try
             {
-                enemyDamage.hp -= 0.1f;
+                //enemyDamage.hp -= 0.2f;
                 //shapeEmitter.Emit();
+                enemyDamage.DamageByEnvironment();
             }
             catch (System.Exception)
             {
