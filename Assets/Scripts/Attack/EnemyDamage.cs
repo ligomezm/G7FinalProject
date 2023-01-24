@@ -35,13 +35,18 @@ public class EnemyDamage : MonoBehaviour
         if (hp < 0)
         {
             sound_Death.Play();
-            gameObject.SetActive(false);
+            StartCoroutine("WaitUntilDeathSound");
         }
 
         hp = Mathf.Clamp(hp, minValue, maxValue);
         linearIndicator.SetValue(hp);
     }
 
+    IEnumerator WaitUntilDeathSound()
+    {
+        yield return new WaitForSeconds(1.0f);
+        gameObject.SetActive(false);
+    }
 
     public void ActiveColliderSwordAttack()
     {
