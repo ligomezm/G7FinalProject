@@ -19,8 +19,7 @@ public class SoundManager : Singleton<SoundManager>
     }
     public void PlayMusic(AudioClip musicClip)
     {
-        if (currentLevelName == "Level2")
-            musicSource.Stop();
+        musicSource.Play();
     }
     public void PlayClipAtPointRef(AudioClip clip, Vector3 clipTransform)
     {
