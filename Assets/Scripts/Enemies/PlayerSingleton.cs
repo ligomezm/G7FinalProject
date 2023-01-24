@@ -17,6 +17,7 @@ public class PlayerSingleton : Singleton<PlayerSingleton>
            //Scene scene = SceneManager.GetActiveScene();
            //SceneManager.LoadScene("Level2");
         //    ManageScenes.GetInstance().ReloadScene("Level2");
+            ManageScenes.GetInstance().ReloadScene("Museo2");
 
         }
 

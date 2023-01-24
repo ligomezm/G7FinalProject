@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -70,12 +71,15 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
+        // if (SceneManager.GetActiveScene().buildIndex == 3) return;
+        InteractWithKeyDown();
         if (inventory == null)
             inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        else
+            return;
         // if (goldKey == null)
         //     goldKey = FindObjectOfType<GoldKeyCollectable>();
             
-        InteractWithKeyDown();
         //InteractingWithInstructions();
     }
 
