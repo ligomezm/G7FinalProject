@@ -129,9 +129,14 @@ public class LifeBar : MonoBehaviour
     {
         if (currentValue <= 0 && flag)
         {
-            dungeonManager.EmptyDungeonsList();
-            flag = false;
-            ManageScenes.GetInstance().ReloadScene("Level2");
+            try
+            {
+                dungeonManager.EmptyDungeonsList();
+                flag = false;
+                ManageScenes.GetInstance().ReloadScene("Level2");
+            }
+            catch (System.Exception) { }
+
             //Set Game Over Canvas, sound, stop controller, etc.or Back to the museum
             // Scene scene = SceneManager.GetActiveScene();
             // SceneManager.LoadScene("MainMenu");
