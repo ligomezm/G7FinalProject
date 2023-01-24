@@ -24,9 +24,16 @@ namespace CurlNoiseParticleSystem
 
         public CurlParticle Get()
         {
-            CurlParticle particle = _pool.Get();
-            particle.OnStop += OnStopHandler;
-            return particle;
+            try
+            {
+                CurlParticle particle = _pool.Get();
+                particle.OnStop += OnStopHandler;
+                return particle;
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
         }
 
         public void Release(CurlParticle particle)

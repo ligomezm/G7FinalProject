@@ -24,11 +24,17 @@ public class EnemyDamage : MonoBehaviour
 
     public ShapeEmitter shapeEmitter;
 
+    bool flag = false;
+
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
         maxValue = hp;
         linearIndicator.maxValue = maxValue;
+        animator = gameObject.GetComponent<Animator>();
+
         //shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
 
     }
@@ -36,8 +42,11 @@ public class EnemyDamage : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (hp < 0)
+        if (hp <= 0 && flag== false)
         {
+            flag = true;
+            animator.SetInteger("State", 5);
+
             sound_Death.Play();
             try
             {
@@ -45,17 +54,10 @@ public class EnemyDamage : MonoBehaviour
                 shapeEmitter.Emit();
             }
             catch(System.Exception) { }
-            StartCoroutine("WaitUntilDeathSound");
         }
         hp = Mathf.Clamp(hp, minValue, maxValue);
 
         linearIndicator.SetValue(hp);
-    }
-
-    IEnumerator WaitUntilDeathSound()
-    {
-        yield return new WaitForSeconds(1.0f);
-        gameObject.SetActive(false);
     }
 
     public void ActiveColliderSwordAttack()
@@ -71,5 +73,22 @@ public class EnemyDamage : MonoBehaviour
     {
         sound_Slash.Play();
         _AttackEffect.Play();
+    }
+
+    public void DeactiveEnemy()
+    {
+        gameObject.SetActive(false);
+
+    }
+
+    public void DesactiveRootMotion()
+    {
+        //Debug.Log("Entro a desactivar Root Motion");
+        animator.applyRootMotion = false;
+    }
+    public void ActiveRootMotion()
+    {
+        //Debug.Log("Entro ha activar Root Motion");
+        animator.applyRootMotion = true;
     }
 }
