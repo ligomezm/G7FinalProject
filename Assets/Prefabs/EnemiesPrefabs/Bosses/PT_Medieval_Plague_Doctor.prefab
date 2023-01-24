@@ -1304,6 +1304,7 @@ GameObject:
   - component: {fileID: 9207646654790848808}
   - component: {fileID: 9207646654790848805}
   - component: {fileID: 9207646654790848804}
+  - component: {fileID: 6018581213462898595}
   m_Layer: 0
   m_Name: PT_Medieval_Plague_Doctor
   m_TagString: Untagged
@@ -1440,6 +1441,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ae14615416c014b804850f5993fa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6018581213462898595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9207646654790817740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7fc1372fd6a4e744837efab23a3befc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _AttackEffect: {fileID: 9207646654879001894}
+  hp: 250
+  swordDamage: 35
+  linearIndicator: {fileID: 5547927535042905316}
+  maxValue: 100
+  minValue: 0
+  sword: {fileID: 9207646655586092480}
 --- !u!1 &9207646654790817742
 GameObject:
   m_ObjectHideFlags: 0
@@ -2625,6 +2645,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
   m_PrefabInstance: {fileID: 9207646655372060473}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5547927535042905316 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3690158297695167453, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+  m_PrefabInstance: {fileID: 9207646655372060473}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5ce1464f5479741ad96ce8b07120f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &9207646655585993568
 PrefabInstance:
   m_ObjectHideFlags: 0

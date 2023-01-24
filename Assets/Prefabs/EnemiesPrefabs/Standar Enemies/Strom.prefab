@@ -1329,7 +1329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _AttackEffect: {fileID: 6021985332540464183}
-  hp: 100
+  hp: 50
   swordDamage: 35
   linearIndicator: {fileID: 6963814802424787412}
   maxValue: 100
@@ -1855,8 +1855,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 6059833801035535816}
     m_Modifications:
     - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0011434435
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.00074700697
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.00074700697
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3690158297695167448, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -164.48
+      value: 1.244
       objectReference: {fileID: 0}
     - target: {fileID: 3690158297695167449, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_Layer
@@ -1936,7 +1956,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.10976
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1956,11 +1976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -519.57135
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 249.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4598064396457321228, guid: 6430634c82233bf42ba877ef5c049227, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
