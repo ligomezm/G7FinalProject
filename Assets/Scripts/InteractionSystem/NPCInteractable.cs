@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.VFX;
 
 public enum LevelNameType
 {
@@ -20,6 +21,10 @@ public class NPCInteractable : MonoBehaviour
     public DungeonNameType dungeonNameType;
     public GameObject dialogueBox;
     string currentScene;
+
+    public VisualEffect book_vfx;
+    public VisualEffect Swords_vfx;
+    public VisualEffect Posrtal_vfx;
     
     GameManager gameManager;
     ManageScenes manageScene;
@@ -49,8 +54,17 @@ public class NPCInteractable : MonoBehaviour
                 //txt = dialogueBox.gameObject.transform.GetChild(01).GetComponent<TMP_Text>();
                 //txt.text = this.name + ": <br>Interact (E)";
 
+
                 FindAndSetInitialText();
                 PlayerInteract.OnRelicChosen?.Invoke(levelNameType);
+
+                try
+                {
+                    Swords_vfx.Play();
+                    Posrtal_vfx.Play();
+                    book_vfx.Stop();
+                }
+                catch (System.Exception) { }
             }
 
             if (currentScene == "Level2")

@@ -8,6 +8,8 @@ public class EnvironmentalDamage : MonoBehaviour
     private LifeBar lifeBarPlayer;
     private float damage = 3;
 
+    public AudioSource sound_damage;
+
     bool receiveDamage;
 
     GameObject player;
@@ -50,6 +52,8 @@ public class EnvironmentalDamage : MonoBehaviour
                 return;
             }
             //other.GetComponent<EnemyDamage>().hp -= 30;
+            
+            sound_damage.Play();
             receiveDamage = true;
             StartCoroutine(ConstantDamage());
         }
