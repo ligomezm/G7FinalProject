@@ -18,6 +18,10 @@ public class Attack : MonoBehaviour
     public VisualEffect _SlashEffect_B;
     public VisualEffect _RollEffect;
 
+    public AudioSource sound_StandardAttack;
+    public AudioSource sound_SpecialAttack;
+    public AudioSource sound_Roll;
+
     //private List<ShapeEmitter> _emitter = new List<ShapeEmitter>();
 
     // Start is called before the first frame update
@@ -82,15 +86,18 @@ public class Attack : MonoBehaviour
 
     public void ActiveSlashAtackA()
     {
-        _SlashEffect_A.Play();  
+        _SlashEffect_A.Play();
+        sound_StandardAttack.Play();
     }
     public void ActiveSlashAtackB()
     {
-        _SlashEffect_B.Play();  
+        _SlashEffect_B.Play();
+        sound_SpecialAttack.Play();
     }
 
     public void ActiveUnscatched()
     {
+        sound_Roll.Play();
         isRoll = true;
         _RollEffect.Play();
     }
