@@ -10,7 +10,7 @@ public class EnemyDamage : MonoBehaviour
     public VisualEffect _AttackEffect;
 
 
-    public float hp = 100;
+    public float hp;
     public int swordDamage = 35;
 
     public LinearIndicator linearIndicator;
@@ -22,9 +22,13 @@ public class EnemyDamage : MonoBehaviour
     public AudioSource sound_Slash;
     public AudioSource sound_Death;
 
+    public ShapeEmitter shapeEmitter;
+
     // Start is called before the first frame update
     void Start()
     {
+        maxValue = hp;
+        linearIndicator.maxValue = maxValue;
         //shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
 
     }
@@ -35,10 +39,16 @@ public class EnemyDamage : MonoBehaviour
         if (hp < 0)
         {
             sound_Death.Play();
+            try
+            {
+                shapeEmitter = gameObject.GetComponent<ShapeEmitter>();
+                shapeEmitter.Emit();
+            }
+            catch(System.Exception) { }
             StartCoroutine("WaitUntilDeathSound");
         }
-
         hp = Mathf.Clamp(hp, minValue, maxValue);
+
         linearIndicator.SetValue(hp);
     }
 
