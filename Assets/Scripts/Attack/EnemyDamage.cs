@@ -44,6 +44,8 @@ public class EnemyDamage : MonoBehaviour
         {
             flag = true;
             gameObject.GetComponent<CapsuleCollider>().enabled = false;
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+
             animator.SetInteger("State", 5);
             sound_Death.Play();
         }

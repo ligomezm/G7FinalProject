@@ -1312,7 +1312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9207646654790454254
 Transform:
   m_ObjectHideFlags: 0
@@ -1366,7 +1366,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 20
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!136 &9207646654790848814
 CapsuleCollider:
@@ -1451,7 +1451,6 @@ MonoBehaviour:
   sword: {fileID: 9207646655586092480}
   sound_Slash: {fileID: 652799484}
   sound_Death: {fileID: 652799485}
-  shapeEmitter: {fileID: 0}
 --- !u!82 &652799484
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2630,7 +2629,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9207646654879001895}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
