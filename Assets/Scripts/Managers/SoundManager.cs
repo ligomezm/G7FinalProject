@@ -11,6 +11,8 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         currentLevelName = SceneManager.GetActiveScene().ToString();
+
+        ChangeMasterVolume(0.5f);
     }
 
     public void PlaySound(AudioClip clip)
