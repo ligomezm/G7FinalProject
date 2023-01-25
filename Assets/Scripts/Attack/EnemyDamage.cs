@@ -22,7 +22,7 @@ public class EnemyDamage : MonoBehaviour
     public AudioSource sound_Death;
 
 
-    bool flag = false;
+    public bool flag = false;
 
     private Animator animator;
 
@@ -44,8 +44,8 @@ public class EnemyDamage : MonoBehaviour
         {
             flag = true;
             animator.SetInteger("State", 5);
-
             sound_Death.Play();
+
         }
         hp = Mathf.Clamp(hp, minValue, maxValue);
 
