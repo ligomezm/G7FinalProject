@@ -24,8 +24,10 @@ public class SwordEnemyDamage : MonoBehaviour
     {
         //if (lifeBarPlayer == null) GetPlayerLifeBar();
         canAttack = AttackEnemy.ShouldAttackPlayer(transform.position);
+            Debug.Log("Entro ******************************** " + canAttack);
         if (other.gameObject.tag == "Player" && canAttack)
         {
+
             if (other.gameObject.GetComponent<Attack>().isRoll)
             {
                 //Debug.Log("Inmune");
