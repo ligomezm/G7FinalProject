@@ -30,10 +30,10 @@ public class AttackEnemy : StateMachineBehaviour
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) 
     {
-        //if (CheckLife())
-        //{
-        //    animator.SetInteger(IdleEnemy.transitionParameter, 5);
-        //}
+        if (CheckLife(animator))
+        {
+           animator.SetInteger(IdleEnemy.transitionParameter, 5);
+        }
 
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= animationTime)
         {
@@ -65,11 +65,11 @@ public class AttackEnemy : StateMachineBehaviour
     }
 
 
-    //public bool CheckLife()
-    //{
-    //    float hp = PlayerSingleton.GetInstance().gameObject.GetComponent<EnemyDamage>().hp;
+    public bool CheckLife(Animator animator)
+    {
+       float hp = animator.gameObject.GetComponent<EnemyDamage>().hp;
 
-    //    return hp<0;
-    //}
+       return hp<0;
+    }
 
 }
