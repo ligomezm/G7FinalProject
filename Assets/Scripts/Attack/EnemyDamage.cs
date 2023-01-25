@@ -69,6 +69,7 @@ public class EnemyDamage : MonoBehaviour
 
     public void DeactiveEnemy()
     {
+        Debug.Log("Enemy has been deactivated");
         gameObject.SetActive(false);
 
     }
