@@ -16,6 +16,10 @@ public class ChaseEnemy : StateMachineBehaviour
 
     public override void OnStateEnter(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) 
     {
+        if (CheckLife(animator))
+        {
+           animator.SetInteger(IdleEnemy.transitionParameter, 5);
+        }
         if (navAgent == null)
             navAgent = animator.GetComponent<NavMeshAgent>();
         if (target == null)
@@ -27,6 +31,10 @@ public class ChaseEnemy : StateMachineBehaviour
 
     public override void OnStateMove(Animator animator, AnimatorStateInfo animatorStateInfo, int layerIndex) 
     {
+        if (CheckLife(animator))
+        {
+           animator.SetInteger(IdleEnemy.transitionParameter, 5);
+        }
         Vector3 currPosition = animator.transform.position;
         if (!ShouldChasePlayer(currPosition))
             animator.SetInteger(IdleEnemy.transitionParameter, (int) Transition.IDLE);
@@ -65,5 +73,12 @@ public class ChaseEnemy : StateMachineBehaviour
     private void LookTowardsPlayer(Transform enemy, Transform player)
     {
         enemy.LookAt(player.transform, Vector3.up);
+    }
+
+     public bool CheckLife(Animator animator)
+    {
+       float hp = animator.gameObject.GetComponent<EnemyDamage>().hp;
+
+       return hp<0;
     }
 }

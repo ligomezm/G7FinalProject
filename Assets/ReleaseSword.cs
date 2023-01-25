@@ -13,17 +13,10 @@ public class ReleaseSword : MonoBehaviour
         enemyDamage = GetComponent<EnemyDamage>();
     }
 
-    private void Update()
+    
+    void OnDisable()
     {
-        RealeasingSword();
-    }
-
-    void RealeasingSword()
-    {
-        if (enemyDamage.flag == true)
-        {
-            newSword.SetActive(true);
-            newSword.transform.position = transform.position;
-        }
+        newSword.SetActive(true);
+        newSword.transform.position = transform.position + new Vector3(0, 0.5f, 0);
     }
 }
