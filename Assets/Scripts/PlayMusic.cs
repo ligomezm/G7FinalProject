@@ -10,12 +10,20 @@ public class PlayMusic : MonoBehaviour
     {
 
         StartCoroutine(PrepareMusic());
+        StartCoroutine(LoopMusic());
     }
 
     IEnumerator PrepareMusic()
     {
         yield return new WaitForSeconds(0.3f);
         SoundManager.GetInstance().PlayMusic(audioClip);
+        SoundManager.GetInstance().ChangeMasterVolume(0.5f);
+    }
 
+    IEnumerator LoopMusic()
+    {
+        yield return new WaitForSeconds(audioClip.length);
+        SoundManager.GetInstance().PlayMusic(audioClip);
+        SoundManager.GetInstance().ChangeMasterVolume(0.5f);
     }
 }
