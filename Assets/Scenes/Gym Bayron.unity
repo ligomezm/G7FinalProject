@@ -19921,13 +19921,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 995391966, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2690758919679967926, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
-      propertyPath: m_Constraints
-      value: 16
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2796781457523280705, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
       propertyPath: m_RootOrder
@@ -19977,16 +19973,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paladin_Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3286494434029687291, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7727904611329104263, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7727904611329104263, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e39f61122c5560c47b66e5e1a243d380, type: 3}
 --- !u!1 &983714637
 GameObject:
