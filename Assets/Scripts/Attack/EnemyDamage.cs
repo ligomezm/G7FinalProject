@@ -43,6 +43,7 @@ public class EnemyDamage : MonoBehaviour
         if (hp <= 0 && flag== false)
         {
             flag = true;
+            gameObject.GetComponent<CapsuleCollider>().enabled = false;
             animator.SetInteger("State", 5);
             sound_Death.Play();
 
